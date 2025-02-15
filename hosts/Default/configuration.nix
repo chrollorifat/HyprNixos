@@ -55,4 +55,11 @@
   users.users.minidlna = {
     extraGroups = ["users"]; # so minidlna can access the files.
   };
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "openssl-1.1.1w"
+    # "electron-19.1.9"
+  ];
+
+
 }

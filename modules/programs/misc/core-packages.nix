@@ -3,9 +3,9 @@
 
 { config, pkgs, ... }:
 # Flake for installing the Zen Browser
-let
-  flk-zen-browser = (builtins.getFlake "github:youwen5/zen-browser-flake").packages.x86_64-linux.default;
-in
+#let
+#  flk-zen-browser = (builtins.getFlake "github:youwen5/zen-browser-flake").packages.x86_64-linux.default;
+#in
 
 {
   environment.systemPackages =  
@@ -106,7 +106,7 @@ in
     ungoogled-chromium
 
     # using the flake of zen browser
-    flk-zen-browser
+      #flk-zen-browser
 
     # SDDM 
     sddm-astronaut
