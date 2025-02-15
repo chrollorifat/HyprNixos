@@ -37,6 +37,9 @@ in {
     # ../modules/programs/misc/nix-ld
     # ../modules/programs/misc/tlp
     # ../modules/programs/misc/virt-manager
+    ../modules/programs/misc/fonts.nix
+    ../modules/programs/misc/core-packages.nix
+    ../modules/programs/misc/env-vars.nix
   ];
 
   users.users.${username} = {
