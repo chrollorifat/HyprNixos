@@ -1,5 +1,5 @@
 # Edit this configuration file to define what should be installed on
-# your system. 
+# your system.
 
 { config, pkgs, ... }:
 # Flake for installing the Zen Browser
@@ -8,7 +8,7 @@
 #in
 
 {
-  environment.systemPackages =  
+  environment.systemPackages =
       with pkgs; [
         #ckb-next
         google-chrome
@@ -94,8 +94,8 @@
     # Chess Toolkits
     en-croissant
 
-    
-    alacritty 
+
+    alacritty
     ghostty
     anki-bin
     discord
@@ -108,12 +108,12 @@
     # using the flake of zen browser
       #flk-zen-browser
 
-    # SDDM 
-    sddm-astronaut
+    # SDDM
+    #sddm-astronaut
 
     # Anime & Manga Stuff
     miru
 
   ];
-  
+
 }

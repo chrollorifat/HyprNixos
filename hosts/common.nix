@@ -23,7 +23,7 @@ in {
     ../modules/programs/terminal/kitty
     ../modules/programs/shell/bash
     ../modules/programs/shell/zsh
-    ../modules/programs/browser/firefox
+    #../modules/programs/browser/firefox
     ../modules/programs/editor/nixvim
     #../modules/programs/editor/vscode
     ../modules/programs/cli/starship
@@ -35,9 +35,9 @@ in {
     ../modules/programs/cli/btop
     ../modules/programs/media/mpv
     # ../modules/programs/misc/nix-ld
-    # ../modules/programs/misc/tlp
+     ../modules/programs/misc/tlp
     # ../modules/programs/misc/virt-manager
-    ../modules/programs/misc/fonts.nix
+    ../modules/programs/fonts
     ../modules/programs/misc/core-packages.nix
     #../modules/programs/misc/env-vars.nix
   ];
@@ -53,6 +53,7 @@ in {
       "libvirtd"
       "video"
       "audio"
+      "storage"
     ];
   };
 
@@ -71,7 +72,7 @@ in {
       home.stateVersion = "23.11"; # Please read the comment before changing.
       home.sessionVariables = {
         EDITOR = "nvim";
-        BROWSER = "firefox";
+        BROWSER = "ungoogled-chromium";
         TERMINAL = terminal;
       };
 
@@ -189,7 +190,7 @@ in {
     sddm = {
       enable = true;
       wayland.enable = true;
-      theme = "astronaut";
+      theme = "tokyo-night";
       settings.Theme.CursorTheme = "Bibata-Modern-Classic";
     };
   };
@@ -279,7 +280,7 @@ in {
     vulkan-tools
     sddm-themes.astronaut
     # sddm-themes.sugar-dark
-    # sddm-themes.tokyo-night
+    sddm-themes.tokyo-night
 
     # Development
     devbox # faster nix-shells
@@ -340,7 +341,7 @@ in {
       # Garbage Collection
       automatic = true;
       dates = "daily";
-      options = "--delete-older-than 10d";
+      options = "--delete-older-than 6d";
     };
     optimise.automatic = true;
     package = pkgs.nixVersions.stable;
