@@ -118,7 +118,7 @@
             "sleep 1 && waybar"
             "swaync"
             "pamixer --set-volume 40"
-            "dunst"
+            #"dunst"
             # "blueman-applet"
             "nm-applet --indicator"
             "wl-clipboard-history -t"
