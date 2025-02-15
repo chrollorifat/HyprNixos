@@ -10,9 +10,9 @@
 
     ../../modules/hardware/video/${gpuDriver}.nix # Enable gpu drivers defined in flake.nix
 
-    ../../modules/programs/games
+    #../../modules/programs/games
     ../../modules/programs/media/discord
-    ../../modules/programs/media/spicetify
+    #../../modules/programs/media/spicetify
     # ../modules/programs/media/obs
 
     ../../modules/hardware/drives
@@ -23,8 +23,8 @@
   home-manager.sharedModules = [
     (_: {
       home.packages = with pkgs; [
-        krita
-        gimp
+        #krita
+        #gimp
         okular # pdf viwer
         # godot_4
         # unityhub
