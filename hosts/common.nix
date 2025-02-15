@@ -40,6 +40,8 @@ in {
     ../modules/programs/fonts
     ../modules/programs/misc/core-packages.nix
     #../modules/programs/misc/env-vars.nix
+    ../modules/programs/misc/kdeconnect.nix
+    ../modules/programs/browser/zen-browser
   ];
 
   users.users.${username} = {

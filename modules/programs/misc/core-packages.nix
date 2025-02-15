@@ -112,7 +112,9 @@
     #sddm-astronaut
 
     # Anime & Manga Stuff
-    miru
+    #miru
+
+    zen-browser
 
   ];
 
