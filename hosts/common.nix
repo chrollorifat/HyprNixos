@@ -358,13 +358,14 @@ in {
       warn-dirty = false;
       keep-outputs = true;
       keep-derivations = true;
-    };
-    gc = {
-      # Garbage Collection
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than 6d";
-    };
+      };
+
+  # Garbage Collection
+  #gc = {
+      #    automatic = true;
+      #dates = "daily";
+      #options = "--delete-older-than 6d";
+    #};
     optimise.automatic = true;
     package = pkgs.nixVersions.stable;
   };
