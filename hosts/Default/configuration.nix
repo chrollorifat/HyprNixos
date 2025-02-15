@@ -39,22 +39,22 @@
   networking.hostName = hostname; # Define your hostname.
 
   # Stream my Language lessons to my devices via vlc media player
-  services.minidlna = {
-    enable = true;
-    openFirewall = true;
-    settings = {
-      friendly_name = "NixOS-DLNA";
-      media_dir = [ # A = Audio, P = Pictures, V, = Videos, PV = Pictures and Videos.
-        "/mnt/work/Pimsleur"
+  #services.minidlna = {
+  #  enable = true;
+  #  openFirewall = true;
+  #  settings = {
+  #    friendly_name = "NixOS-DLNA";
+  #    media_dir = [ # A = Audio, P = Pictures, V, = Videos, PV = Pictures and Videos.
+  #      "/mnt/work/Pimsleur"
         # "A,/mnt/work/Pimsleur/Russian"
-      ];
-      inotify = "yes";
-      log_level = "error";
-    };
-  };
-  users.users.minidlna = {
-    extraGroups = ["users"]; # so minidlna can access the files.
-  };
+  #    ];
+  #    inotify = "yes";
+  #    log_level = "error";
+  #  };
+  #};
+  #users.users.minidlna = {
+  # extraGroups = ["users"]; # so minidlna can access the files.
+  #};
 
   nixpkgs.config.permittedInsecurePackages = [
     "openssl-1.1.1w"
