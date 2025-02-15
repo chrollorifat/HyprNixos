@@ -83,7 +83,7 @@
           "$term" = "${getExe pkgs.${terminal}}";
           "$editor" = "code --disable-gpu";
           "$file" = "$term --class \"terminalFileManager\" -e ${terminalFileManager}";
-          "$browser" = "firefox";
+          "$browser" = "ungoogled-chromium";
 
           env = [
             "XDG_CURRENT_DESKTOP,Hyprland"
@@ -117,7 +117,7 @@
             "sleep 1 && waybar"
             "swaync"
             "pamixer --set-volume 40"
-            # "dunst"
+             "dunst"
             "blueman-applet"
             "nm-applet --indicator"
             "wl-clipboard-history -t"
@@ -136,7 +136,7 @@
 
             follow_mouse = 1;
 
-            touchpad = {natural_scroll = false;};
+            touchpad = {natural_scroll = true;};
 
             sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
             force_no_accel = true;
