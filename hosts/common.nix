@@ -176,6 +176,14 @@ in {
   # Enable dconf for home-manager
   programs.dconf.enable = true;
 
+  # Enable bluetooth
+  services.blueman.enable = true;
+  hardware.bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+      settings.General.Experimental = true;
+  };
+
   # Enable networking
   networking = {
     # hostName = hostname; # Define your hostname.
@@ -318,6 +326,18 @@ in {
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+
+  programs = {
+    nh = {
+      enable = true;
+      clean = {
+        enable = true;
+        extraArgs = "--keep-since 10d --keep 3";
+      };
+      flake = "/home/${username}/chrono-nixos-config";
+    };
+  };
 
   nix = {
     # Nix Package Manager Settings
