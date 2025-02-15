@@ -11,7 +11,6 @@
   environment.systemPackages =
       with pkgs; [
         #ckb-next
-        google-chrome
         #wpsoffice
         arandr
        #arc-theme
@@ -50,7 +49,6 @@
     #inxi
     keepassxc
     killall
-    kitty
     libgccjit
     llvmPackages_17.libcxxClang
     lm_sensors
@@ -74,7 +72,6 @@
     scrot
     #simplescreenrecorder
     #spotify
-    starship
     tree
     variety
     #vivaldi
@@ -92,19 +89,31 @@
     zsh-syntax-highlighting
 
     # Chess Toolkits
-    en-croissant
+    #en-croissant
 
-
+    
+    # Terminals  
     alacritty
     ghostty
+    kitty
+    starship
+
+
     anki-bin
     discord
-    sublime4
     telegram-desktop
     qbittorrent-enhanced
+
+    # Editors  
     zed-editor
+    sublime4
+
+
+    google-chrome
     ungoogled-chromium
 
+    
+    brightnessctl
     # using the flake of zen browser
       #flk-zen-browser
 
@@ -113,8 +122,6 @@
 
     # Anime & Manga Stuff
     #miru
-
-    zen-browser
 
   ];
 
