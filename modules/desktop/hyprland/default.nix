@@ -39,6 +39,7 @@
         hyprpaper
         cliphist
         grimblast
+        kdePackages.dolphin
         libnotify
         #light
         networkmanagerapplet
