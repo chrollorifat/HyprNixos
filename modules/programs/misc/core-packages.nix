@@ -114,8 +114,6 @@
 
     
     brightnessctl
-    # using the flake of zen browser
-      #flk-zen-browser
 
     # SDDM
     #sddm-astronaut
@@ -123,6 +121,8 @@
     # Anime & Manga Stuff
     #miru
 
+    # Find username across all social netwrks
+    sherlock
   ];
 
 }
