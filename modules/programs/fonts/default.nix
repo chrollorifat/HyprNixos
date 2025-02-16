@@ -20,6 +20,11 @@
   # Enable if you are unsure about what languages you might end up reading
   fonts.enableDefaultPackages = true;
 
+  let
+   siyam-rupali = pkgs.callPackage ./siyamrupali/default.nix { inherit pkgs };
+  in
+
+
   fonts.packages = with pkgs; [
 	hack-font
 	nerd-fonts.fira-code
@@ -29,10 +34,11 @@
 	nerd-fonts.iosevka
 	nerd-fonts.iosevka-term
 	udev-gothic-nf			# Programming font with UD Gothic, JBrains and NF
-	ipaexfont 			# JP font with Mincho and Gothic fonts
-	noto-fonts-cjk-sans		# Sans style between modern and traditional Chinese,Japanese,Korean fonts
-   	noto-fonts-cjk-serif		# Serif style between modern and traditional Chinese,Japanese,Korean fonts
-	kanji-stroke-order-font		# Contains diagrams for 6500+ kanjis and more
+	ipaexfont 		    	# JP font with Mincho and Gothic fonts
+	noto-fonts-cjk-sans	  # Sans style between modern and traditional Chinese,Japanese,Korean fonts
+  noto-fonts-cjk-serif		# Serif style between modern and traditional Chinese,Japanese,Korean fonts
+  kanji-stroke-order-font		# Contains diagrams for 6500+ kanjis and more
+  siyam-rupali            # Siyam Rupali Bangla Font   
   ];
 
 }
