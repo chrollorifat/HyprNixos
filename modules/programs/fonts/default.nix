@@ -4,7 +4,6 @@
 
 { config, pkgs, ... }:
 
-
 {
   # Enable font.fontDir
   fonts.fontDir.enable = true;
@@ -20,9 +19,6 @@
   # Enable if you are unsure about what languages you might end up reading
   fonts.enableDefaultPackages = true;
 
-  let
-   siyam-rupali = pkgs.callPackage ./siyamrupali/default.nix { inherit pkgs };
-  in
 
 
   fonts.packages = with pkgs; [
@@ -38,7 +34,7 @@
 	noto-fonts-cjk-sans	  # Sans style between modern and traditional Chinese,Japanese,Korean fonts
   noto-fonts-cjk-serif		# Serif style between modern and traditional Chinese,Japanese,Korean fonts
   kanji-stroke-order-font		# Contains diagrams for 6500+ kanjis and more
-  siyam-rupali            # Siyam Rupali Bangla Font   
+  #(callPackage ./siyamrupali/default.nix { inherit pkgs; })            # Siyam Rupali Bangla Font(have issues rn) 
   ];
 
 }
