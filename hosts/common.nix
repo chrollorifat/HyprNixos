@@ -279,7 +279,7 @@ in {
     scripts.tmux-sessionizer
     scripts.collect-garbage
     scripts.driverinfo
-    scripts.underwatt
+    #scripts.underwatt
 
     # System
     lact

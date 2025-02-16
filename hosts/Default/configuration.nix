@@ -34,6 +34,10 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    p7zip-rar
+    gnutar
+    zip
+    unrar
   ];
 
   networking.hostName = hostname; # Define your hostname.
