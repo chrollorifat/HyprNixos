@@ -38,6 +38,8 @@
     gnutar
     zip
     unrar
+    nemo-fileroller
+    kdePackages.ark
   ];
 
   networking.hostName = hostname; # Define your hostname.

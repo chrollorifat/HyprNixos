@@ -40,7 +40,7 @@
         cliphist
         grimblast
         kdePackages.dolphin
-        kdePackges.kio-extras    # Adds compress, extract functionalities in dolphin
+        kdePackages.kio-extras    # Adds compress, extract functionalities in dolphin
         libnotify
         #light
         networkmanagerapplet
