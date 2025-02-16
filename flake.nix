@@ -21,6 +21,15 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nvchad4nix = {
+          url = "github:MOIS3Y/nvchad4nix";
+          inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nvchad-on-steroids = {
+          # <- here
+          url = "github:maotseantonio/nvchad_config";
+          flake = false;
+    };
 
   };
 
@@ -56,6 +65,7 @@
               config.allowUnfree = true;
               config.nvidia.acceptLicense = true;
             };
+            nvchad = inputs.nvchad4nix.packages."x86_64-linux".nvchad;
           }
         )
       ];

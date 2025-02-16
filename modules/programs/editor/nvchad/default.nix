@@ -2,8 +2,6 @@
   config,
   pkgs,
   inputs,
-  nvchad4nix,
-
   ...
 }: {
   imports = [

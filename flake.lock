@@ -445,6 +445,42 @@
         "type": "github"
       }
     },
+    "nvchad-on-steroids": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1739629628,
+        "narHash": "sha256-sxBLLZkejzyvLx5a5q1GPSrlz8Y4SP7C/XWOnsGK6wg=",
+        "owner": "maotseantonio",
+        "repo": "nvchad_config",
+        "rev": "1b6cfe45322b17f6ae034c6cbd984b81efb3192f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "maotseantonio",
+        "repo": "nvchad_config",
+        "type": "github"
+      }
+    },
+    "nvchad4nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1732616202,
+        "narHash": "sha256-NvrTwdzaZYlMNuEdAMuoAB/n7RpiC2fX7AVA7P5DzcI=",
+        "owner": "MOIS3Y",
+        "repo": "nvchad4nix",
+        "rev": "0aa513c1fec993548140f2d0dc9a92b08406e877",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MOIS3Y",
+        "repo": "nvchad4nix",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
@@ -452,6 +488,8 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "nixvim": "nixvim",
         "nur": "nur",
+        "nvchad-on-steroids": "nvchad-on-steroids",
+        "nvchad4nix": "nvchad4nix",
         "spicetify-nix": "spicetify-nix",
         "zen-browser": "zen-browser"
       }

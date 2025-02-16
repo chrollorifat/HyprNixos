@@ -34,10 +34,11 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    ### Archiving Utilities
     p7zip-rar
     gnutar
     zip
-    unrar
+    unrar-free
     nemo-fileroller
     kdePackages.ark
   ];
