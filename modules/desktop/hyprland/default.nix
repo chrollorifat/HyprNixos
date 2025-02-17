@@ -55,6 +55,7 @@
         wtype
         wl-clipboard
         xdotool
+        yad
       ];
 
       xdg.configFile."hypr/scripts" = {
@@ -278,6 +279,7 @@
             "opacity 0.80 0.80,class:^(nwg-look)$"
             "opacity 0.80 0.80,class:^(qt5ct)$"
             "opacity 0.80 0.80,class:^(qt6ct)$"
+            "opacity 0.80 0.80,class:^(yad)$"
 
             "opacity 0.90 0.90,class:^(com.github.rafostar.Clapper)$" #Clapper-Gtk
             "opacity 0.80 0.80,class:^(com.github.tchx84.Flatseal)$" #Flatseal-Gtk
@@ -307,9 +309,9 @@
             "float,class:^(com.github.rafostar.Clapper)$" #Clapper-Gtk
             "float,class:^(app.drey.Warp)$" #Warp-Gtk
             "float,class:^(net.davidotek.pupgui2)$" #ProtonUp-Qt
-            "float,class:^(yad)$" #Protontricks-Gtk
             "float,class:^(eog)$" #Imageviewer-Gtk
             "float,class:^(io.gitlab.theevilskeleton.Upscaler)$" #Upscaler-Gtk
+            "float,class:^(yad)$"
             "float,class:^(pavucontrol)$"
             "float,class:^(blueman-manager)$"
             "float,class:^(.blueman-manager-wrapped)$"
@@ -338,6 +340,8 @@
           ];
           bind =
             [
+              # Keybinds help menu
+              "$mainMod SHIFT, K, exec, $hyprScriptsDir/keybinds.sh"
               # Night Mode (lower value means warmer temp)
               "$mainMod, F9, exec, ${getExe pkgs.wlsunset} -t 3000 -T 3900"
               "$mainMod, F10, exec, pkill wlsunset"
