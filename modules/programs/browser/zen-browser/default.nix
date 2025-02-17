@@ -6,7 +6,7 @@
 { config, pkgs, inputs, zen-browser, ... }:
 {
       environment.systemPackages = with pkgs; [
-        zen-browser
+        inputs.zen-browser.packages."x86_64-linux".default
 
       ];
 }
