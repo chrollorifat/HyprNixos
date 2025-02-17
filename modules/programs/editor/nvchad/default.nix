@@ -1,20 +1,38 @@
 {
-  config,
-  pkgs,
   inputs,
+  pkgs,
   ...
 }: {
-  imports = [
-    inputs.nvchad4nix.homeManagerModule
-  ];
-  programs.nvchad = {
-    enable = true;
-    extraPackages = with pkgs; [
-      emmet-language-server
-      nixd
+  home-manager.sharedModules = [
+      (_: {
+        imports = [inputs.nvchad4nix.homeManagerModule];
+        programs.nvchad = {
+          enable = true;
+          extraPlugins = ''
+            return {
+              {
+                "Sly-Harvey/radium.nvim",
+                priority = 1000,
+              },
+            }
+          '';
+          extraPackages = with pkgs; [
+            nixd
+            # nodePackages.bash-language-server
+            # docker-compose-language-service
+            # dockerfile-language-server-nodejs
+            # emmet-language-server
+            /*
+             (python3.withPackages (ps:
+            with ps; [
+              python-lsp-server
+              flake8
+            ]))
+            */
+          ];
+          hm-activation = true;
+          backup = false;
+        };
+      })
     ];
-    extraConfig = inputs.nvchad-on-steroids;
-    hm-activation = true;
-    backup = false;
-  };
 }

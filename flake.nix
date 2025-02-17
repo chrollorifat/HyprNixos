@@ -22,7 +22,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvchad4nix = {
-          url = "github:MOIS3Y/nvchad4nix";
+          url = "github:nix-community/nix4nvchad";
           inputs.nixpkgs.follows = "nixpkgs";
     };
     nvchad-on-steroids = {
@@ -41,6 +41,7 @@
     settings = {
       # User configuration
       username = "rif"; # no need to touch this since install.sh uses sed to replace this (otherwise if manually installing then you need to change this yourself)
+      editor = "nvchad"; # nixvim, vscode, emacs, nvchad, neovim
       terminal = "kitty"; # kitty or alacritty
       terminalFileManager = "yazi"; # yazi or lf
       wallpaper = "Train.jpg"; # see modules/themes/wallpapers
@@ -65,7 +66,6 @@
               config.allowUnfree = true;
               config.nvidia.acceptLicense = true;
             };
-            nvchad = inputs.nvchad4nix.packages."x86_64-linux".nvchad;
           }
         )
       ];

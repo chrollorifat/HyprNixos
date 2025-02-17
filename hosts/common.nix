@@ -3,6 +3,7 @@
   pkgs,
   overlays,
   username,
+  editor,
   terminal,
   terminalFileManager,
   locale,
@@ -24,8 +25,8 @@ in {
     ../modules/programs/shell/bash
     ../modules/programs/shell/zsh
     #../modules/programs/browser/firefox
-    ../modules/programs/editor/nixvim
-    #../modules/programs/editor/nvchad  # doesn't work for some reason
+    ../modules/programs/editor/${editor}
+    #../modules/programs/editor/nvchad
     #../modules/programs/editor/vscode
     ../modules/programs/cli/starship
     ../modules/programs/cli/tmux
