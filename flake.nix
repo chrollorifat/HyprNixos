@@ -4,19 +4,20 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
-    nur.url = "github:nix-community/NUR";
-    nixvim = {
-      url = "github:Sly-Harvey/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixvim = {
+          url = "github:Sly-Harvey/nixvim";
+          inputs.nixpkgs.follows = "nixpkgs";
     };
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur.url = "github:nix-community/NUR";
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -104,7 +105,10 @@
     // {
       # To use a template do: nix flake init -t $templates#TEMPLATE_NAME"
       templates = rec {
-        default = ./dev-shells/empty;
+        default = {
+                  path = ./dev-shells/empty;
+                  description = "Empty development environment";
+        };
         bun = {
           path = ./dev-shells/bun;
           description = "Bun development environment";
