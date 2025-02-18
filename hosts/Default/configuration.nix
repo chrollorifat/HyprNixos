@@ -19,6 +19,8 @@
     ./hardware-configuration.nix
   ];
 
+
+
   # Home-manager config
   home-manager.sharedModules = [
     (_: {
@@ -32,8 +34,7 @@
       ];
     })
   ];
-
-  environment.systemPackages = with pkgs; [
+   environment.systemPackages = with pkgs; [
     ### Archiving Utilities
     p7zip-rar
     gnutar

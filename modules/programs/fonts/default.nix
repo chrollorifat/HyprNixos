@@ -2,6 +2,9 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
+#let
+#  siyamrupali = pkgs.callPackage ./siyamrupali { inherit pkgs };
+#in
 { config, pkgs, ... }:
 
 {
@@ -20,13 +23,12 @@
   fonts.enableDefaultPackages = true;
 
 
-
   fonts.packages = with pkgs; [
 	hack-font
 	nerd-fonts.fira-code
 	nerd-fonts.jetbrains-mono
 	nerd-fonts.zed-mono
-	nerd-fonts.victor-mono		
+	nerd-fonts.victor-mono
 	nerd-fonts.iosevka
 	nerd-fonts.iosevka-term
 	udev-gothic-nf			# Programming font with UD Gothic, JBrains and NF
@@ -34,8 +36,8 @@
 	noto-fonts-cjk-sans	  # Sans style between modern and traditional Chinese,Japanese,Korean fonts
   noto-fonts-cjk-serif		# Serif style between modern and traditional Chinese,Japanese,Korean fonts
   kanji-stroke-order-font		# Contains diagrams for 6500+ kanjis and more
-  #(callPackage ./siyamrupali/default.nix { inherit pkgs; })            # Siyam Rupali Bangla Font(have issues rn) 
+  #(callPackage ./siyamrupali/default.nix { inherit pkgs; })            # Siyam Rupali Bangla Font(have issues rn)
+
   ];
 
 }
-

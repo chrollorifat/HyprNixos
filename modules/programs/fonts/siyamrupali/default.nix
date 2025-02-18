@@ -1,26 +1,23 @@
-{
-  stdenvNoCC,
-  lib,
-}:
-stdenvNoCC.mkDerivation {
+# make a  derivation for siyamrupali font installation
+{ pkgs }:
+pkgs.stdenv.mkDerivation {
   pname = "siyamrupali";
-  version = "1.065";
-  src = ./.;
+  version = "1.009";
 
-  installPhase = ''
-    mkdir -p $out/share/fonts/truetype/
-    if [ -d "$src" ]; then
-      cp -r $src/*.ttf $out/share/fonts/truetype/
-    else
-      echo "No fonts found in $src"
-      exit 0
-    fi
+  src = ../siyamrupali.zip;
+
+  unpackPhase = ''
+    runHook preUnpack
+    ${pkgs.unzip}/bin/unzip $src
+
+    runHook postUnpack
   '';
 
-  meta = with lib; {
-    description = "Siyam Rupali Bangla font Regular";
-    homepage = "https://www.freebanglafont.com/download.php?id=724";
-    platforms = platforms.all;
-  };
-}
+  installPhase = ''
+    runHook preInstall
 
+    install -Dm644 siyamrupali/*.ttf -t $out/share/fonts/truetype
+
+    runHook postInstall
+  '';
+}
