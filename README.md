@@ -22,7 +22,7 @@ But you can use this as reference tho.
             <img src="https://img.shields.io/badge/NixOS-Unstable-blue?style=for-the-badge&logo=NixOS&logoColor=white&label=NixOS&labelColor=303446&color=91D7E3">
             <!-- <img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=91D7E3"> -->
          </a>
-         <a href="https://github.com/Sly-Harvey/NixOS/blob/main/LICENSE">
+         <a href="https://github.com/chrollorifat/chrono-nixos-config/blob/main/LICENSE">
             <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&colorA=313244&colorB=F5A97F&logo=unlicense&logoColor=F5A97F&"/>
          </a>
       </div>
@@ -38,7 +38,7 @@ But you can use this as reference tho.
 > <p>You should review the configuration variables in flake.nix before installing.</p>
 <!-- ## Using the install script -->
 ```bash
-nix run --experimental-features "nix-command flakes" nixpkgs#git clone https://github.com/Sly-Harvey/NixOS.git ~/NixOS
+nix run --experimental-features "nix-command flakes" nixpkgs#git clone https://github.com/chrollorifat/chrono-nixos-config.git ~/NixOS
 ```
 ```bash
 cd ~/NixOS
@@ -56,6 +56,7 @@ cd ~/NixOS
 sudo nixos-rebuild switch --flake .#Default
 ``` -->
 ### Credits/Inspiration
+https://github.com/Sly-Harvey/NixOS<br>
 https://github.com/JaKooLit/Hyprland-Dots<br>
 https://github.com/prasanthrangan/hyprdots
 
