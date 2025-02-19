@@ -1,10 +1,15 @@
 # chrono-nixos-config
 Still work in a progress, don't just blindly copy.
+# Few things to keep in mind
+- This config is for Legacy Boot with MBR disk partioning
+- It uses Grub as a bootloader
+- You can make the necessary changes to fit your setup in the hosts directory
+
 But you can use this as reference tho.
 <h1 align="center">
    <img src="assets/nixos-logo.png" width="100px" /> 
    <br>
-      My NixOS system
+      Chrono NixOS Dotfiles
    <br>
       <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" /> <br>
    <div align="center">
