@@ -49,7 +49,7 @@
       editor = "nvchad"; # nixvim, vscode, emacs, nvchad, neovim
       terminal = "kitty"; # kitty or alacritty
       terminalFileManager = "yazi"; # yazi or lf
-      wallpaper = "Train.jpg"; # see modules/themes/wallpapers
+      wallpaper = "ghost.jpg"; # see modules/themes/wallpapers
         #zen-browser = inputs.zen-browser.packages."x86_64-linux".default;
 
       # System configuration
