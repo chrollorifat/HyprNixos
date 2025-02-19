@@ -2,9 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ndots, ... }:
 
 {
+  #siyamrupali = pkgs.callPackage ./siyamrupali { };
+  #kalpurush = pkgs.callPackage ./kalpurush {inherit pkgs; };
+
   # Enable font.fontDir
   fonts.fontDir.enable = true;
 
@@ -34,6 +37,8 @@
   noto-fonts-cjk-serif		# Serif style between modern and traditional Chinese,Japanese,Korean fonts
   kanji-stroke-order-font		# Contains diagrams for 6500+ kanjis and more
   #(callPackage ./siyamrupali/default.nix { inherit pkgs; })            # Siyam Rupali Bangla Font(have issues rn)
+  #siyamrupali
+  inputs.ndots.packages."x86_64-linux".road-rage
 
   ];
 

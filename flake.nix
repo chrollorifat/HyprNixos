@@ -31,6 +31,10 @@
           url = "github:maotseantonio/nvchad_config";
           flake = false;
     };
+    ndots = {
+      url = "/home/rif/ndots";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
