@@ -45,6 +45,7 @@ in {
     #../modules/programs/misc/env-vars.nix
     ../modules/programs/misc/kdeconnect.nix
     ../modules/programs/browser/zen-browser
+    ../modules/programs/misc/thunar
   ];
 
   users.users.${username} = {
@@ -85,7 +86,6 @@ in {
       home.packages = with pkgs; [
         # Applications
         #kate
-        xfce.thunar
 
         # Terminal
         fzf
