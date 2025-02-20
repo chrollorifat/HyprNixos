@@ -35,7 +35,10 @@
       url = "/home/rif/ndots";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    hyprpanel= {
+          url = "github:Jas-SinghFSU/HyprPanel";
+          inputs.nixpkgs.follows = "nixpkgs";
+        };
   };
 
   outputs = {
@@ -63,6 +66,7 @@
 
       overlays = [
         inputs.nur.overlays.default
+        inputs.hyprpanel.overlay
         (
           _final: _prev: {
             stable = import nixpkgs-stable {

@@ -56,6 +56,8 @@
         wl-clipboard
         xdotool
         yad
+
+        hyprpanel
       ];
 
       xdg.configFile."hypr/scripts" = {
@@ -117,7 +119,7 @@
             #"[workspace special silent] alacritty"
             #"[workspace 8 silent] alacritty -e cava"
             #"[workspace 9 silent] alacritty -e cava"
-
+            "hyprpanel"
             "hyprpaper"
             "sleep 1 && waybar"
             "swaync"
