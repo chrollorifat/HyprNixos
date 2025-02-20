@@ -21,8 +21,10 @@ in {
   imports = [
     inputs.home-manager.nixosModules.home-manager
 
+    #../modules/programs/terminal/${terminal}
     ../modules/programs/terminal/alacritty
     ../modules/programs/terminal/kitty
+    ../modules/programs/terminal/wezterm
     ../modules/programs/shell/bash
     ../modules/programs/shell/zsh
     #../modules/programs/browser/firefox

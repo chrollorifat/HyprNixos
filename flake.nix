@@ -39,6 +39,10 @@
     #      url = "github:Jas-SinghFSU/HyprPanel";
     #      inputs.nixpkgs.follows = "nixpkgs";
     #    };
+    #nixpkgs-f2k = {
+    #  url = "github:moni-dz/nixpkgs-f2k";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
 
   outputs = {
@@ -50,7 +54,7 @@
       # User configuration
       username = "rif"; # no need to touch this since install.sh uses sed to replace this (otherwise if manually installing then you need to change this yourself)
       editor = "nvchad"; # nixvim, vscode, emacs, nvchad, neovim
-      terminal = "kitty"; # kitty or alacritty
+      terminal = "wezterm"; # kitty or alacritty
       terminalFileManager = "yazi"; # yazi or lf
       wallpaper = "forest.jpg"; # see modules/themes/wallpapers
 
@@ -66,7 +70,7 @@
 
       overlays = [
         inputs.nur.overlays.default
-        inputs.hyprpanel.overlay
+        #inputs.hyprpanel.overlay
         (
           _final: _prev: {
             stable = import nixpkgs-stable {
