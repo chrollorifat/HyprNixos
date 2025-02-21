@@ -8,21 +8,21 @@
 #in
 
 {
-  environment.systemPackages =
-      with pkgs; [
-        #ckb-next
-        #wpsoffice
-        arandr
-       #arc-theme
-        avahi
-        baobab
-        bash-completion
-        bat
-        bibata-cursors
-        blueberry
-        btop
-        curl
-        dex
+  environment.systemPackages = with pkgs; [
+
+    #ckb-next
+    #wpsoffice
+    arandr
+    #arc-theme
+    avahi
+    baobab
+    bash-completion
+    bat
+    bibata-cursors
+    blueberry
+    btop
+    curl
+    dex
     dmenu
     #dropbox
     duf
@@ -31,7 +31,6 @@
     evince
     feh
     #filezilla
-    firefox-devedition
     flameshot
     font-manager
     fsearch
@@ -39,7 +38,7 @@
     git
     dconf-editor
     gnome-disk-utility
-    gnome.gvfs
+    #gnome.gvfs   # Activated through NixOS options
     hblock
     hw-probe
     hwinfo
@@ -48,7 +47,7 @@
     #insync
     #inxi
     keepassxc
-    killall
+    #killall
     libgccjit
     llvmPackages_17.libcxxClang
     lm_sensors
@@ -61,23 +60,29 @@
     fastfetch
     networkmanagerapplet
     nixos-generators
+
+    # Image
     nomacs
-    numlockx
+    imv
+    variety
+
+    # Video
+    #vlc
+    mpv
+
+    # Screen Recording
     #obs-studio
+    simplescreenrecorder
+
+    numlockx
     #ookla-speedtest
     platinum-searcher
     #polybar
     qt6Packages.qtstyleplugin-kvantum
     ripgrep
     scrot
-    #simplescreenrecorder
     #spotify
     tree
-    variety
-    #vivaldi
-    #vivaldi-ffmpeg-codecs
-    #vlc
-    mpv
     volumeicon
     #vscode
     wget
@@ -94,13 +99,13 @@
     
     # Terminals  
     alacritty
-    ghostty
+    #ghostty
     kitty
-    starship
+    #starship
 
 
     anki-bin
-    discord
+    #discord
     telegram-desktop
     qbittorrent-enhanced
 
@@ -108,9 +113,12 @@
     zed-editor
     sublime4
 
-
+    # Browsers
     google-chrome
     ungoogled-chromium
+    firefox-devedition
+    #vivaldi
+    #vivaldi-ffmpeg-codecs
 
     
     brightnessctl
