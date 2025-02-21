@@ -59,7 +59,6 @@
       wallpaper = "forest.jpg"; # see modules/themes/wallpapers
 
       # System configuration
-      system = "x86_64-linux"; # most users will be on 64 bit pcs
       gpuDriver = "amdgpu"; # CHOOSE YOUR GPU DRIVERS (nvidia or amdgpu) THIS IS IMPORTANT
       hostname = "chrono"; # CHOOSE A HOSTNAME HERE
       locale = "en_GB.UTF-8"; # CHOOSE YOUR LOCALE
@@ -74,7 +73,7 @@
         (
           _final: _prev: {
             stable = import nixpkgs-stable {
-              system = settings.system;
+              system = forAllSystems (system: system);
               config.allowUnfree = true;
               config.nvidia.acceptLicense = true;
             };
