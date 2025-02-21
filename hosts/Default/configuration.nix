@@ -13,7 +13,8 @@
     #../../modules/programs/games
     ../../modules/programs/media/discord
     #../../modules/programs/media/spicetify
-    # ../modules/programs/media/obs
+    #../../modules/programs/media/obs
+    ../../modules/programs/media/thunderbird
 
     ../../modules/hardware/drives
     ./hardware-configuration.nix
