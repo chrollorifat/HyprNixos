@@ -6,7 +6,7 @@ Still a work in progress, don't just blindly copy. But you can use this as refer
 - You can make the necessary changes to fit your setup in the hosts directory
 
 <h1 align="center">
-   <img src="assets/nixos-logo.png" width="100px" /> 
+   <img src="assets/nixos-logo.png" width="100px" />
    <br>
       Chrono NixOS Dotfiles
    <br>
@@ -51,6 +51,17 @@ cd ~/NixOS
 ./install.sh
 ```
 ##### SUPER + SHIFT + K for a list of keybinds
+<details>
+<summary>How to use the dev-shells</summary>
+<!-- ##### here is how to use a dev-shell template as defined in dev-shells/default.nix: -->
+```bash
+nix flake init -t ~/NixOS#NAME
+```
+or
+```bash
+nix flake new -t ~/NixOS#NAME PROJECT_NAME
+```
+</details>
 <!-- ## Building manually
 > [!IMPORTANT]
 > <p>When building manually from the flake make sure to place your hardware-configuration.nix in hosts/Default/<br>
@@ -63,4 +74,3 @@ sudo nixos-rebuild switch --flake .#Default
 https://github.com/Sly-Harvey/NixOS<br>
 https://github.com/JaKooLit/Hyprland-Dots<br>
 https://github.com/prasanthrangan/hyprdots
-
