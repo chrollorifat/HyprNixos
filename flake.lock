@@ -2882,16 +2882,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1739222645,
-        "narHash": "sha256-6FsTAjrO0TN5+gVxx3hmWqEJWs1sJ1p3E8DKWHdlN6M=",
-        "owner": "youwen5",
-        "repo": "zen-browser-flake",
-        "rev": "7e60ade066a54797b376ebaf554bc2efa255ff8a",
+        "lastModified": 1740096795,
+        "narHash": "sha256-pS+bnS+VA9LH2VVoegh0GAhaOt4X8JK+9t7lRl1I1RY=",
+        "owner": "maximoffua",
+        "repo": "zen-browser.nix",
+        "rev": "1e6f1e72edda889e0329476a4712047cce8b4b3d",
         "type": "github"
       },
       "original": {
-        "owner": "youwen5",
-        "repo": "zen-browser-flake",
+        "owner": "maximoffua",
+        "repo": "zen-browser.nix",
         "type": "github"
       }
     }
