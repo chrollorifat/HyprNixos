@@ -13,7 +13,7 @@
     avahi
     baobab
     bash-completion
-    #bat  # Activated through the modules
+    bat  
     bibata-cursors
     blueberry
     btop
