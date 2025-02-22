@@ -36,7 +36,6 @@
              },
 
             color_scheme = "Catppuccin Mocha",
-            window_background_opacity = 0.9,
             warn_about_missing_glyphs = false,
             enable_scroll_bar = false,
             enable_tab_bar = false,

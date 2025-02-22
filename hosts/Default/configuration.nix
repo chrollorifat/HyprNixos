@@ -35,7 +35,7 @@
       ];
     })
   ];
-   environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     ### Archiving Utilities
     p7zip-rar
     gnutar
