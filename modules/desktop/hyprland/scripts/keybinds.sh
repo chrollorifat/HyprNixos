@@ -1,17 +1,29 @@
 #!/usr/bin/env bash
+
 if pidof rofi >/dev/null; then
   pkill rofi
 fi
+
 if pidof yad >/dev/null; then
   pkill yad
 fi
-# scriptdir=$(realpath "$(dirname "$0")")
+
+# get_nix_value() {
+#     grep "$1" "$HOME/NixOS/flake.nix" | sed -E 's/.*"([^"]+)".*/\1/'
+# }
 get_nix_value() {
-    grep "$1" "$HOME/NixOS/flake.nix" | sed -E 's/.*"([^"]+)".*/\1/'
+    awk '
+    /settings = {/ {inside_settings=1; next} 
+    inside_settings && /}/ {inside_settings=0} 
+    inside_settings && $0 ~ key {print gensub(/.*"([^"]+)".*/, "\\1", "g", $0)}
+    ' key="$1" "$HOME/NixOS/flake.nix"
 }
-_editor=$(get_nix_value "editor =")
+
+
+_browser=$(get_nix_value "browser =")
 _terminal=$(get_nix_value "terminal =")
 _terminal_FM=$(get_nix_value "terminalFileManager =")
+
 yad \
   --center \
   --title="Hyprland Keybinds" \
@@ -26,8 +38,7 @@ yad \
   "SUPER Return" "Launch terminal" "$_terminal" \
   "SUPER T" "Launch terminal" "$_terminal" \
   "SUPER E" "Launch file manager" "$_terminal_FM" \
-  "SUPER C" "Launch text editor" "$_editor" \
-  "SUPER F" "Launch browser" "Firefox" \
+  "SUPER F" "Launch browser" "$_browser" \
   "CTRL ALT Delete" "Open system monitor" "$_terminal -e 'btop'" \
   "SUPER A" "Launch application menu" "\$launcher" \
   "SUPER SPACE" "Launch application menu" "\$launcher" \
@@ -65,6 +76,7 @@ yad \
   "SUPER ALT K" "Change keyboard layout" "Scripts/keyboardswitch.sh" \
   "SUPER SHIFT N" "Open notification panel" "swaync-client -t -sw" \
   "SUPER SHIFT Q" "Open notification panel" "swaync-client -t -sw" \
+  "SUPER CTRL ALT KP_Divide" "Rebuild" "exec, $_terminal -e Scripts/rebuild.sh" \
   "SUPER G" "Launch game launcher" "Scripts/gamelauncher.sh" \
   "SUPER ALT G" "Enable game mode" "Scripts/gamemode.sh" \
   "SUPER V" "Clipboard manager" "Scripts/ClipManager.sh" \

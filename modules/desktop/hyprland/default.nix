@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  browser,
   terminal,
   terminalFileManager,
   kbdLayout,
@@ -88,7 +89,7 @@
           "$term" = "${getExe pkgs.${terminal}}";
           "$editor" = "code --disable-gpu";
           "$fileManager" = "$term --class \"terminalFileManager\" -e ${terminalFileManager}";
-          "$browser" = "ungoogled-chromium";
+          "$browser" = browser;
 
           env = [
             "XDG_CURRENT_DESKTOP,Hyprland"
@@ -244,19 +245,15 @@
           windowrulev2 = [
             #"noanim, class:^(Rofi)$
             "tile,title:(.*)(Godot)(.*)$"
-            "workspace 1, class:^(kitty)$"
-            "workspace 1, class:^(Alacritty)$"
-            "workspace 1, class:^(org.wezfurlong.wezterm)$"
+            "workspace 1, class:^(kitty|Alacritty|org.wezfurlong.wezterm)$"
             "workspace 2, class:^(VSCodium)$"
-            "workspace 2, class:^(codium-url-handler)$"
-            "workspace 2, class:^(code)$"
-            "workspace 2, class:^(code-url-handler)$"
+            "workspace 2, class:^(code|VSCodium|code-url-handler|codium-url-handler)$"
             "workspace 3, class:^(krita)$"
             "workspace 3, title:(.*)(Godot)(.*)$"
             "workspace 3, title:(GNU Image Manipulation Program)(.*)$"
             "workspace 3, class:^(factorio)$"
             "workspace 3, class:^(steam)$"
-            "workspace 5, class:^(firefox)$"
+            "workspace 5, class:^(firefox|floorp|zen)$"
             "workspace 6, class:^(Spotify)$"
             "workspace 6, title:(.*)(Spotify)(.*)$"
             "workspace 8, class:^(rebuildScript)$"

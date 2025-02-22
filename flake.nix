@@ -18,6 +18,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nur.url = "github:nix-community/NUR";
+    betterfox = {
+      url = "github:yokoffing/Betterfox";
+      flake = false;
+    };
     zen-browser = {
       url = "github:maximoffua/zen-browser.nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -55,6 +59,7 @@
       username = "rif"; # no need to touch this since install.sh uses sed to replace this (otherwise if manually installing then you need to change this yourself)
       editor = "nvchad"; # nixvim, vscode, emacs, nvchad, neovim
       terminal = "wezterm"; # kitty or alacritty
+      browser = "floorp"; # firefox, floorp, zen
       terminalFileManager = "yazi"; # yazi or lf
       wallpaper = "forest.jpg"; # see modules/themes/wallpapers
 

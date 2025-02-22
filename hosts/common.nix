@@ -3,6 +3,7 @@
   pkgs,
   overlays,
   username,
+  browser,
   editor,
   terminal,
   terminalFileManager,
@@ -22,12 +23,13 @@ in {
     inputs.home-manager.nixosModules.home-manager
 
     #../modules/programs/terminal/${terminal}
-    ../modules/programs/terminal/alacritty
+    #../modules/programs/terminal/alacritty
     ../modules/programs/terminal/kitty
     ../modules/programs/terminal/wezterm
     ../modules/programs/shell/bash
     ../modules/programs/shell/zsh
-    #../modules/programs/browser/firefox
+    ../modules/programs/browser/${browser}
+    ../modules/programs/browser/zen
     ../modules/programs/editor/${editor}
     #../modules/programs/editor/nvchad
     #../modules/programs/editor/vscode
@@ -46,7 +48,6 @@ in {
     ../modules/programs/misc/core-packages.nix
     #../modules/programs/misc/env-vars.nix
     ../modules/programs/misc/kdeconnect.nix
-    ../modules/programs/browser/zen-browser
     ../modules/programs/misc/thunar
   ];
 

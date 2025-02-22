@@ -2,10 +2,6 @@
 # your system.
 
 { config, pkgs, ... }:
-# Flake for installing the Zen Browser
-#let
-#  flk-zen-browser = (builtins.getFlake "github:youwen5/zen-browser-flake").packages.x86_64-linux.default;
-#in
 
 {
   environment.systemPackages = with pkgs; [
@@ -17,7 +13,7 @@
     avahi
     baobab
     bash-completion
-    bat
+    #bat  # Activated through the modules
     bibata-cursors
     blueberry
     btop
@@ -50,13 +46,13 @@
     #killall
     libgccjit
     llvmPackages_17.libcxxClang
-    lm_sensors
+    lm_sensors  # Already declared in common.nix
     #lollypop
     lshw
     meld
     most
     neovim
-    neofetch
+    #neofetch
     fastfetch
     networkmanagerapplet
     nixos-generators
@@ -72,14 +68,14 @@
 
     # Screen Recording
     #obs-studio
-    simplescreenrecorder
+    #simplescreenrecorder  # Only works with x11, no wayland support atm
 
     numlockx
     #ookla-speedtest
     platinum-searcher
     #polybar
     qt6Packages.qtstyleplugin-kvantum
-    ripgrep
+    #ripgrep
     scrot
     #spotify
     tree
@@ -88,7 +84,7 @@
     wget
     widevine-cdm
     xorg.xkill
-    zsh
+    #zsh
     zsh-autosuggestions
     zsh-completions
     zsh-syntax-highlighting
@@ -97,10 +93,10 @@
     #en-croissant
 
     
-    # Terminals  
-    alacritty
-    #ghostty
-    kitty
+    # Terminals   
+    #alacritty  # Activated through the modules
+    #ghostty    
+    #kitty    # Activated through the modules
     #starship
 
 
@@ -116,7 +112,7 @@
     # Browsers
     google-chrome
     ungoogled-chromium
-    firefox-devedition
+    #firefox-devedition
     #vivaldi
     #vivaldi-ffmpeg-codecs
 
