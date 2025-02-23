@@ -1,11 +1,11 @@
 {pkgs, ...}: {
   force = true;
-  default = "Startpage";
-  privateDefault = "Startpage";
+  default = "Brave";
+  privateDefault = "Searx";
   order = [
+    "Brave"
     "Startpage"
     "Searx"
-    "Brave"
     "NixOS Packages"
     "NixOS Options"
     "NixOS Wiki"

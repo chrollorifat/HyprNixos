@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  fonts.packages = with pkgs.nerd-fonts; [jetbrains-mono];
+  fonts.packages = with pkgs.nerd-fonts; [jetbrains-mono symbols-only iosevka-term hachimarupop migmix];
   home-manager.sharedModules = [
     (_: {
       programs.wezterm = {
