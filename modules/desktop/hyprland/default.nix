@@ -256,7 +256,6 @@
             "workspace 5, class:^(firefox|floorp|zen)$"
             "workspace 6, class:^(Spotify)$"
             "workspace 6, title:(.*)(Spotify)(.*)$"
-            "workspace 8, class:^(rebuildScript)$"
 
             "opacity 0.80 0.80,class:^(alacritty)$"
             "opacity 0.80 0.80,class:^(org.wezfurlong.wezterm)$"
@@ -273,7 +272,6 @@
             "opacity 0.80 0.80,class:^(code-url-handler)$"
             "opacity 0.80 0.80,class:^(kitty)$"
             "opacity 0.80 0.80,class:^(terminalFileManager)$"
-            "opacity 0.80 0.80,class:^(rebuildScript)$"
             "opacity 0.80 0.80,class:^(org.kde.dolphin)$"
             "opacity 0.80 0.80,class:^(org.kde.ark)$"
             "opacity 0.80 0.80,class:^(nwg-look)$"
@@ -431,7 +429,7 @@
               "$mainMod CTRL, mouse:275, movetoworkspacesilent, 6"
 
               # Rebuild NixOS with a KeyBind
-              "$mainMod CTRL ALT, KP_Divide, exec, $term --class \"rebuildScript\" -e $hyprScriptsDir/rebuild.sh"
+              "$mainMod CTRL ALT, KP_Divide, exec, [workspace 8] $term -e $hyprScriptsDir/rebuild.sh"
 
               # Scroll through existing workspaces with mainMod + scroll
               "$mainMod, mouse_down, workspace, e+1"
