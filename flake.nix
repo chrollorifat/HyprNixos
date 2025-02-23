@@ -73,7 +73,7 @@
       locale = "en_GB.UTF-8"; # CHOOSE YOUR LOCALE
       timezone = "Asia/Dhaka"; # CHOOSE YOUR TIMEZONE
       kbdLayout = "us"; # CHOOSE YOUR KEYBOARD LAYOUT
-      kbdVariant = "extd"; # CHOOSE YOUR KEYBOARD VARIANT (Can leave empty)
+      kbdVariant = ""; # CHOOSE YOUR KEYBOARD VARIANT (Can leave empty)
       consoleKeymap = "us-acentos"; # CHOOSE YOUR CONSOLE KEYMAP (Affects the tty?)
 
       overlays = [

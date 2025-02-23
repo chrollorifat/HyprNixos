@@ -36,7 +36,7 @@
           ];
         }
       ];
-      iconUpdateURL = "https://brave.com/static-assets/images/brave-logo-sans-text.svg"
+      iconUpdateURL = "https://brave.com/static-assets/images/brave-logo-sans-text.svg";
       definedAliases = ["@br"];
       updateInterval = 24 * 60 * 60 * 1000;
     };
@@ -44,8 +44,8 @@
       urls = [{template = "https://searx.aicampground.com/?q={searchTerms}";}];
       # iconUpdateURL = "https://nixos.wiki/favicon.png";
       icon = builtins.fetchurl {
-            url = "https://raw.githubusercontent.com/searxng/searxng/edf6d96625444b5b214b4ca0e2885467ed265411/src/brand/searxng-wordmark.svg";
-            sha256 = "sha256:0lnc0cf7rgl6a54zm4i5z3i3npp87bg9kmwf5mii88gys980y32g";
+        url = "https://raw.githubusercontent.com/searxng/searxng/edf6d96625444b5b214b4ca0e2885467ed265411/src/brand/searxng-wordmark.svg";
+        sha256 = "sha256:0lnc0cf7rgl6a54zm4i5z3i3npp87bg9kmwf5mii88gys980y32g";
       };
       definedAliases = ["@sx"];
     };
