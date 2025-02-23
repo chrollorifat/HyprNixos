@@ -1,5 +1,6 @@
 {pkgs, ...}: {
-  fonts.packages = with pkgs.nerd-fonts; [jetbrains-mono symbols-only iosevka-term hachimarupop migmix];
+  fonts.packages = with pkgs;
+    [nerd-fonts.jetbrains-mono nerd-fonts.symbols-only nerd-fonts.iosevka-term hachimarupop migmix font-awesome_5 material-design-icons ];
   home-manager.sharedModules = [
     (_: {
       programs.wezterm = {
@@ -46,7 +47,11 @@
               top = 0,
               bottom = 0,
             },
+
+            -- Enable image rendering
+            enable_kitty_graphics = true,
             enable_wayland = true,
+
             check_for_updates = false,
             default_cursor_style = "SteadyBar",
             automatically_reload_config = true,
