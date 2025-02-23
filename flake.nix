@@ -22,6 +22,10 @@
       url = "github:yokoffing/Betterfox";
       flake = false;
     };
+    thunderbird-catppuccin = {
+      url = "github:catppuccin/thunderbird";
+      flake = false;
+    };
     zen-browser = {
       url = "github:maximoffua/zen-browser.nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -69,8 +73,8 @@
       locale = "en_GB.UTF-8"; # CHOOSE YOUR LOCALE
       timezone = "Asia/Dhaka"; # CHOOSE YOUR TIMEZONE
       kbdLayout = "us"; # CHOOSE YOUR KEYBOARD LAYOUT
-      kbdVariant = ""; # CHOOSE YOUR KEYBOARD LAYOUT VARIANT (Can leave empty)
-      consoleKeymap = "us"; # CHOOSE YOUR CONSOLE KEYMAP (Affects the tty?)
+      kbdVariant = "extd"; # CHOOSE YOUR KEYBOARD VARIANT (Can leave empty)
+      consoleKeymap = "us-acentos"; # CHOOSE YOUR CONSOLE KEYMAP (Affects the tty?)
 
       overlays = [
         inputs.nur.overlays.default

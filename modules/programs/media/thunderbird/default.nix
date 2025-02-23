@@ -1,5 +1,6 @@
-{...}: let
+{thunderbird-catppuccin, ...}: let
   extensions = [
+    "${thunderbird-catppuccin}/themes/mocha/mocha-mauve.xpi"
     # Theme
     # "https://addons.thunderbird.net/thunderbird/downloads/latest/dracula-theme-for-thunderbird/addon-987962-latest.xpi"
     # "https://addons.thunderbird.net/thunderbird/downloads/latest/luminous-matter/addon-988120-latest.xpi"
