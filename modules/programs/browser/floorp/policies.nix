@@ -88,6 +88,14 @@ in {
       installation_mode = "force_installed";
       install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
     };
+    "extension@one-tab.com" = {
+      installation_mode = "force_installed";
+      install_url = "https://addons.mozilla.org/firefox/downloads/file/4175239/onetab-1.83.xpi";
+    };
+    "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
+      installation_mode = "force_installed";
+      install_url = "https://addons.mozilla.org/firefox/downloads/file/4410896/bitwarden_password_manager-2024.12.4.xpi";
+    };
     "addon@darkreader.org" = {
       installation_mode = "force_installed";
       install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
