@@ -21,37 +21,49 @@
       monospace = [
         "DejaVu Sans Mono"
         "IPAGothic"
+        "FiraCode Nerd Font Mono"
+        "Noto Color Emoji"
       ];
       sansSerif = [
         "DejaVu Sans"
         "IPAPGothic"
+        "SFProDisplay Nerd Font" 
+        "Noto Color Emoji" 
       ];
       serif = [
         "DejaVu Serif"
         "IPAPMincho"
+        "SFProDisplay Nerd Font" 
+        "Noto Color Emoji"
       ];
+      emoji = [ "Noto Color Emoji" ];
     };
 
   fonts.packages = with pkgs; [
-	hack-font
-	nerd-fonts.fira-code
-	nerd-fonts.jetbrains-mono
-	nerd-fonts.zed-mono
-	nerd-fonts.victor-mono
-	nerd-fonts.iosevka
-	nerd-fonts.iosevka-term
-	udev-gothic-nf	# Programming font with UD Gothic, JBrains and NF
-	ipaexfont  # JP font with Mincho and Gothic fonts
-	noto-fonts-cjk-sans	# Sans style between modern and traditional Chinese,Japanese,Korean fonts
-  noto-fonts-cjk-serif # Serif style between modern and traditional Chinese,Japanese,Korean fonts
-  kanji-stroke-order-font	 # Contains diagrams for 6500+ kanjis and more
-  material-design-icons # 7k+ material design icons from the community
-  font-awesome_5
-  migmix  # High Quality JP font based on M+ and IPA fonts
-  hachimarupop  # Cute Japanese Font
-  #(callPackage ./siyamrupali/default.nix { inherit pkgs; })  # Siyam Rupali Bangla Font(have issues rn)
-  #siyamrupali
-  inputs.ndots.packages."x86_64-linux".road-rage
+    hack-font
+    dejavu_fonts
+    noto-fonts
+    noto-fonts-emoji
+    openmoji-color
+    twemoji-color-font
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.zed-mono
+    nerd-fonts.victor-mono
+    nerd-fonts.iosevka
+    nerd-fonts.iosevka-term
+    udev-gothic-nf	# Programming font with UD Gothic, JBrains and NF
+    ipaexfont  # JP font with Mincho and Gothic fonts
+    noto-fonts-cjk-sans	# Sans style between modern and traditional Chinese,Japanese,Korean fonts
+    noto-fonts-cjk-serif # Serif style between modern and traditional Chinese,Japanese,Korean fonts
+    kanji-stroke-order-font	 # Contains diagrams for 6500+ kanjis and more
+    material-design-icons # 7k+ material design icons from the community
+    font-awesome_5
+    migmix  # High Quality JP font based on M+ and IPA fonts
+    hachimarupop  # Cute Japanese Font
+    #(callPackage ./siyamrupali/default.nix { inherit pkgs; })  # Siyam Rupali Bangla Font(have issues rn)
+    #siyamrupali
+    inputs.ndots.packages."x86_64-linux".road-rage
 
   ];
 
