@@ -44,6 +44,12 @@
     dejavu_fonts
     noto-fonts
     noto-fonts-emoji
+    lexend
+    lato
+    jost
+    comic-neue
+    material-icons 
+    comfortaa
     openmoji-color
     twemoji-color-font
     nerd-fonts.fira-code
@@ -61,6 +67,9 @@
     font-awesome_5
     migmix  # High Quality JP font based on M+ and IPA fonts
     hachimarupop  # Cute Japanese Font
+    migu  # HQ JP font based on modified M+ and IPA fonts
+    hanazono  # JP Mincho Typeface Truetype font
+    kochi-substitute  # Free replacement for MS Gothic and MS Mincho JP 
     #(callPackage ./siyamrupali/default.nix { inherit pkgs; })  # Siyam Rupali Bangla Font(have issues rn)
     #siyamrupali
     inputs.ndots.packages."x86_64-linux".road-rage
