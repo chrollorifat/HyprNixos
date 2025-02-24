@@ -1,6 +1,6 @@
 {pkgs, ...}: {
-  fonts.packages = with pkgs;
-    [nerd-fonts.jetbrains-mono nerd-fonts.symbols-only nerd-fonts.iosevka-term ipaexfont hachimarupop migmix font-awesome_5 material-design-icons ];
+  # fonts.packages = with pkgs;
+  #   [nerd-fonts.jetbrains-mono nerd-fonts.symbols-only nerd-fonts.iosevka-term ipaexfont hachimarupop migmix font-awesome_5 material-design-icons ];
   home-manager.sharedModules = [
     (_: {
       programs.wezterm = {
