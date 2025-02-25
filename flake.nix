@@ -9,9 +9,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixvim = {
-          url = "github:Sly-Harvey/nixvim";
-          inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:Sly-Harvey/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -31,13 +35,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvchad4nix = {
-          url = "github:nix-community/nix4nvchad";
-          inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nix4nvchad";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nvchad-on-steroids = {
-          # <- here
-          url = "github:maotseantonio/nvchad_config";
-          flake = false;
+      # <- here
+      url = "github:maotseantonio/nvchad_config";
+      flake = false;
     };
     ndots = {
       url = "/home/rif/ndots";

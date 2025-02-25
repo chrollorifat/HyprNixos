@@ -20,19 +20,19 @@
   fonts.fontconfig.defaultFonts = {
       monospace = [
         "DejaVu Sans Mono"
-        "IPAGothic"
+        "Migu"
         "FiraCode Nerd Font Mono"
         "Noto Color Emoji"
       ];
       sansSerif = [
         "DejaVu Sans"
-        "IPAPGothic"
+        "Migu"
         "SFProDisplay Nerd Font" 
         "Noto Color Emoji" 
       ];
       serif = [
         "DejaVu Serif"
-        "IPAPMincho"
+        "MigMix"
         "SFProDisplay Nerd Font" 
         "Noto Color Emoji"
       ];

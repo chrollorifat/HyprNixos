@@ -21,6 +21,7 @@
 in {
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    inputs.nix-index-database.nixosModules.nix-index
 
     #../modules/programs/terminal/${terminal}
     #../modules/programs/terminal/alacritty
@@ -50,6 +51,8 @@ in {
     ../modules/programs/misc/kdeconnect.nix
     ../modules/programs/misc/thunar
   ];
+
+  programs.nix-index-database.comma.enable = true;
 
   users.users.${username} = {
     isNormalUser = true;
