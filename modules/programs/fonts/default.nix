@@ -21,19 +21,24 @@
       monospace = [
         "DejaVu Sans Mono"
         "Migu"
+        "JetBrainsMono Nerd Font"
         "FiraCode Nerd Font Mono"
         "Noto Color Emoji"
       ];
       sansSerif = [
-        "DejaVu Sans"
+        "Lexend"
         "Migu"
+        "DejaVu Sans"
+        "Jost"
         "SFProDisplay Nerd Font" 
+        "Noto Sans CJK JP"
         "Noto Color Emoji" 
       ];
       serif = [
         "DejaVu Serif"
         "MigMix"
         "SFProDisplay Nerd Font" 
+        "Noto Serif CJK JP"
         "Noto Color Emoji"
       ];
       emoji = [ "Noto Color Emoji" ];
@@ -48,8 +53,8 @@
     lato
     jost
     comic-neue
-    material-icons 
     comfortaa
+    material-icons 
     openmoji-color
     twemoji-color-font
     nerd-fonts.fira-code
@@ -64,6 +69,7 @@
     noto-fonts-cjk-serif # Serif style between modern and traditional Chinese,Japanese,Korean fonts
     kanji-stroke-order-font	 # Contains diagrams for 6500+ kanjis and more
     material-design-icons # 7k+ material design icons from the community
+    font-awesome
     font-awesome_5
     migmix  # High Quality JP font based on M+ and IPA fonts
     hachimarupop  # Cute Japanese Font
