@@ -255,11 +255,6 @@ in {
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
-  fonts.packages = with pkgs.nerd-fonts; [
-    jetbrains-mono
-    fira-code
-  ];
-
   nixpkgs = {
     config.allowUnfree = true;
     # config.allowUnfreePredicate = _: true;
@@ -317,18 +312,18 @@ in {
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  /*
+  
      services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = true;
-      AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
-      UseDns = true;
-      X11Forwarding = false;
-      PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+      enable = true;
+      settings = {
+        PasswordAuthentication = true;
+        # AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
+        UseDns = true;
+        X11Forwarding = false;
+        PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+      };
     };
-  };
-  */
+  
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

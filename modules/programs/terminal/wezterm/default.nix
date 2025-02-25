@@ -10,7 +10,7 @@
           local wezterm = require ("wezterm")
 
           local function font_with_fallback(name, params)
-            local names = { name, "Material Symbols Outlined", "Noto Sans CJK JP"}
+            local names = { name, "Material Symbols Outlined", "Noto Sans CJK JP", "Material Design Icons", "Noto Fonts Emoji"}
             return wezterm.font_with_fallback(names, params)
           end
 
