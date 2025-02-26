@@ -19,24 +19,26 @@
   fonts.enableDefaultPackages = true;
   fonts.fontconfig.defaultFonts = {
       monospace = [
-        "DejaVu Sans Mono"
-        "Migu"
         "JetBrainsMono Nerd Font"
+        "Migu"
+        "DejaVu Sans Mono"
         "FiraCode Nerd Font Mono"
         "Noto Color Emoji"
       ];
       sansSerif = [
         "Lexend"
         "Migu"
-        "DejaVu Sans"
         "Jost"
+        "DejaVu Sans"
         "SFProDisplay Nerd Font" 
         "Noto Sans CJK JP"
         "Noto Color Emoji" 
       ];
       serif = [
-        "DejaVu Serif"
+        "Lora"
+        "Merriweather"
         "MigMix"
+        "DejaVu Serif"
         "SFProDisplay Nerd Font" 
         "Noto Serif CJK JP"
         "Noto Color Emoji"
@@ -51,9 +53,11 @@
     noto-fonts-emoji
     lexend
     lato
+    lora
     jost
     comic-neue
     comfortaa
+    merriweather
     material-icons 
     openmoji-color
     twemoji-color-font
