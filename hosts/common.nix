@@ -35,6 +35,7 @@ in {
     #../modules/programs/editor/nvchad
     #../modules/programs/editor/vscode
     ../modules/programs/cli/starship
+    ../modules/programs/cli/fastfetch
     ../modules/programs/cli/tmux
     ../modules/programs/cli/direnv
     ../modules/programs/cli/${terminalFileManager}
