@@ -23,6 +23,7 @@
         "Migu"
         "DejaVu Sans Mono"
         "FiraCode Nerd Font Mono"
+        "Maple Mono Nerd Font"
         "Noto Color Emoji"
       ];
       sansSerif = [
@@ -67,6 +68,7 @@
     nerd-fonts.victor-mono
     nerd-fonts.iosevka
     nerd-fonts.iosevka-term
+    maple-mono-NF
     udev-gothic-nf	# Programming font with UD Gothic, JBrains and NF
     ipaexfont  # JP font with Mincho and Gothic fonts
     noto-fonts-cjk-sans	# Sans style between modern and traditional Chinese,Japanese,Korean fonts
