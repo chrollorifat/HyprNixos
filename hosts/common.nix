@@ -217,8 +217,9 @@ in {
     };
   };
 
-  # Setup auth agent and keyring
+  # Setup  keyring
   services.gnome.gnome-keyring.enable = true;
+  /* # Setup Auth Agent (No need if hyprpolkitagent is activated)
   systemd = {
     user.services.polkit-kde-authentication-agent-1 = {
       description = "polkit-kde-authentication-agent-1";
@@ -234,7 +235,7 @@ in {
       };
     };
   };
-
+  */
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
