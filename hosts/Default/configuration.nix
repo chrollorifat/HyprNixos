@@ -10,6 +10,8 @@
 
     ../../modules/hardware/video/${gpuDriver}.nix # Enable gpu drivers defined in flake.nix
 
+    ../../modules/fonts
+
     #../../modules/programs/games
     ../../modules/programs/media/discord
     #../../modules/programs/media/spicetify
@@ -28,7 +30,7 @@
       home.packages = with pkgs; [
         #krita
         #gimp
-        okular # pdf viwer
+        kdePackages.okular # pdf viwer
         # godot_4
         # unityhub
         # gparted
