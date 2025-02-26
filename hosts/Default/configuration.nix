@@ -50,7 +50,7 @@
   programs.file-roller = {
     enable = true;
     package = with pkgs;[file-roller];
-  }
+  };
 
   networking.hostName = hostname; # Define your hostname.
 
