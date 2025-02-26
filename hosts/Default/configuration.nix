@@ -49,7 +49,7 @@
   # Archive manager
   programs.file-roller = {
     enable = true;
-    package = with pkgs;[file-roller];
+    package = pkgs.file-roller;
   };
 
   networking.hostName = hostname; # Define your hostname.
