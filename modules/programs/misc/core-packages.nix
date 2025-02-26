@@ -53,7 +53,7 @@
     most
     neovim
     #neofetch
-    fastfetch
+    # fastfetch  # Enabled through modules
     networkmanagerapplet
     nixos-generators
 
