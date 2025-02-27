@@ -6,7 +6,9 @@
         enable = true;
         settings = {
           logo = {
-            type = "none";
+             # source = "";
+             height = 15;
+            # type = "none";
           };
           display = {
             separator = "->   ";
@@ -23,7 +25,7 @@
             }
             "break"
             {
-              key = "     OS           ";
+              key = "    🐧OS           ";
               keyColor = "red";
               type = "os";
             }
@@ -92,11 +94,11 @@
               keyColor = "red";
               type = "localip";
             }
-            {
+            /*{
               key = "    󰩠 Public IP    ";
               keyColor = "cyan";
               type = "publicip";
-            }
+            }*/
             "break"
             {
               type = "custom";
@@ -111,5 +113,6 @@
           ];
         };
       };
-    };
     })
+  ];
+}
