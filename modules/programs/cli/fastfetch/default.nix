@@ -90,6 +90,11 @@
               type = "memory";
             }
             {
+              key = "    💿 Disk        ";
+              keyColor = "cyan";
+              type = "disk";
+            }
+            {
               key = "    󰩟 Local IP     ";
               keyColor = "red";
               type = "localip";
