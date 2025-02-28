@@ -31,6 +31,7 @@
         #krita
         #gimp
         kdePackages.okular # pdf viwer
+        evince  
         # godot_4
         # unityhub
         # gparted
