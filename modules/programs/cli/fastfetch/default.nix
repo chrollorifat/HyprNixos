@@ -7,7 +7,7 @@
         settings = {
           logo = {
              # source = "";
-             height = 15;
+             height = 18;
             # type = "none";
           };
           display = {
