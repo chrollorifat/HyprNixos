@@ -3,6 +3,7 @@
 {
   #siyamrupali = pkgs.callPackage ./siyamrupali { };
   #kalpurush = pkgs.callPackage ./kalpurush {inherit pkgs; };
+  #siyamrupali= pkgs.callPackage ./siyamrupali/default.nix { };
 
   # Enable font.fontDir
   fonts.fontDir.enable = true;
@@ -31,16 +32,16 @@
         "Migu"
         "Jost"
         "DejaVu Sans"
-        "SFProDisplay Nerd Font" 
+        "SFProDisplay Nerd Font"
         "Noto Sans CJK JP"
-        "Noto Color Emoji" 
+        "Noto Color Emoji"
       ];
       serif = [
         "Lora"
         "Merriweather"
         "MigMix"
         "DejaVu Serif"
-        "SFProDisplay Nerd Font" 
+        "SFProDisplay Nerd Font"
         "Noto Serif CJK JP"
         "Noto Color Emoji"
       ];
@@ -59,7 +60,7 @@
     comic-neue
     comfortaa
     merriweather
-    material-icons 
+    material-icons
     openmoji-color
     twemoji-color-font
     nerd-fonts.fira-code
@@ -81,7 +82,7 @@
     hachimarupop  # Cute Japanese Font
     migu  # HQ JP font based on modified M+ and IPA fonts
     hanazono  # JP Mincho Typeface Truetype font
-    kochi-substitute  # Free replacement for MS Gothic and MS Mincho JP 
+    kochi-substitute  # Free replacement for MS Gothic and MS Mincho JP
     #(callPackage ./siyamrupali/default.nix { inherit pkgs; })  # Siyam Rupali Bangla Font(have issues rn)
     #siyamrupali
     inputs.ndots.packages."x86_64-linux".road-rage
