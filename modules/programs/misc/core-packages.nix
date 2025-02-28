@@ -34,7 +34,7 @@
     git
     dconf-editor
     gnome-disk-utility
-    #gnome.gvfs   # Activated through NixOS options
+    #gnome.gvfs   # Enabled through NixOS options
     hblock
     hw-probe
     hwinfo
@@ -46,21 +46,21 @@
     #killall
     libgccjit
     llvmPackages_17.libcxxClang
-    lm_sensors  # Already declared in common.nix
+    #lm_sensors  # Already declared in common.nix
     #lollypop
     lshw
     meld
     most
     neovim
     #neofetch
-    # fastfetch  # Enabled through modules
+    #fastfetch  # Enabled through modules
     networkmanagerapplet
     nixos-generators
 
     # Image
     nomacs
     imv
-    variety
+    variety   # Wallpaper selector
 
     # Video
     #vlc
@@ -80,9 +80,7 @@
     #spotify
     tree
     volumeicon
-    #vscode
     wget
-    widevine-cdm
     xorg.xkill
     #zsh
     zsh-autosuggestions
@@ -98,6 +96,7 @@
     #ghostty    
     #kitty    # Activated through the modules
     #starship
+    #wezterm
 
 
     anki-bin
@@ -108,10 +107,12 @@
     # Editors  
     zed-editor
     sublime4
+    #vscode
 
     # Browsers
     google-chrome
     ungoogled-chromium
+    widevine-cdm
     #firefox-devedition
     #vivaldi
     #vivaldi-ffmpeg-codecs
