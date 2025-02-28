@@ -122,6 +122,7 @@
           default = pkgs.mkShell {
             packages = with pkgs; [
               git
+              neovim
               nix
               figlet
               lolcat
