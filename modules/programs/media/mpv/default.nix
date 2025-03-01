@@ -7,6 +7,17 @@
         scripts = with pkgs.mpvScripts; [
           thumbnail
           mpris
+          mpvacious
+          mpv-discord
+          manga-reader
+          mpv-osc-tethys
+          mpv-cheatsheet
+          #modernx-zydezu
+          #uosc
+          autosubsync-mpv
+          #simple-mpv-webui
+          #builtins.autoload
+          smart-copy-paste-2
         ];
         bindings = rec {
           MBTN_LEFT_DBL = "cycle fullscreen";
