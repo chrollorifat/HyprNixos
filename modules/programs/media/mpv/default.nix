@@ -16,7 +16,7 @@
           #uosc
           autosubsync-mpv
           #simple-mpv-webui
-          #builtins.autoload
+          builtins.autoload
           smart-copy-paste-2
         ];
         bindings = rec {
@@ -123,7 +123,7 @@
           # gpu-context = "waylandvk";
           wayland-edge-pixels-pointer = 0;
           wayland-edge-pixels-touch = 0;
-          screenshot-format = "webp";
+          screenshot-format = "jpg";
           screenshot-webp-lossless = true;
           screenshot-directory = "${config.home.homeDirectory}/Pictures/Screenshots/mpv";
           screenshot-sw = true;
