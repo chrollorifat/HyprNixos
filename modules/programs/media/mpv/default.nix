@@ -16,7 +16,7 @@
           #uosc
           autosubsync-mpv
           #simple-mpv-webui
-          builtins.autoload
+          autoload
           smart-copy-paste-2
         ];
         bindings = rec {
