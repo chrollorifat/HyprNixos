@@ -90,7 +90,7 @@
               type = "memory";
             }
             {
-              key = "    💿 Disk        ";
+              key = "    💿Disk         ";
               keyColor = "cyan";
               type = "disk";
             }
