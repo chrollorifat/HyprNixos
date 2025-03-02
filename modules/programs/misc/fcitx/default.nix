@@ -15,5 +15,6 @@
       kdePackages.fcitx5-configtool
       fcitx5-m17n 
     ];
+    fcitx5.waylandFrontend = true;
   };
 }

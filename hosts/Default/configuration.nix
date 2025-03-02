@@ -54,6 +54,7 @@
   };
 
   networking.hostName = hostname; # Define your hostname.
+  
 
   # Stream my Language lessons to my devices via vlc media player
   /*services.minidlna = {
