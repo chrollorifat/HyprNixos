@@ -50,6 +50,7 @@ in {
     #../modules/programs/misc/env-vars.nix
     ../modules/programs/misc/kdeconnect.nix
     ../modules/programs/misc/thunar
+    ../modules/programs/misc/fcitx
   ];
 
   programs.nix-index-database.comma.enable = true;

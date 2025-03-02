@@ -124,6 +124,9 @@
             "QT_AUTO_SCREEN_SCALE_FACTOR,1"
             "WLR_RENDERER_ALLOW_SOFTWARE,1"
             "NIXPKGS_ALLOW_UNFREE,1"
+            "QT_IM_MODULE, fcitx"
+            "GTK_IM_MODULE, fcitx"
+            "XMODIFIERS, @im=fcitx"
           ];
           exec-once = [
             #"[workspace 1 silent] ${terminal}"
@@ -135,8 +138,10 @@
             "hyprpaper"
             "sleep 1 && waybar"
             "swaync"
+            "fcitx5 -d -r"
+            "fcitx5-remote -r"
             "pamixer --set-volume 40"
-            "dunst"
+            #"dunst"
             # "blueman-applet"
             "nm-applet --indicator"
             "wl-clipboard-history -t"
