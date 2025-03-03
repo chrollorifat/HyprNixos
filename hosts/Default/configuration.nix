@@ -25,9 +25,7 @@
   # Option defined in intel.nix
   hardware.intel = {
       enable = true;
-      powerProfile = "powersave";
-      enableThermal = true;
-      enableMediaAccel = true;
+      powerProfile = "balanced";
   };
 
   # Home-manager config

@@ -3,7 +3,6 @@
 {
   options.hardware.intel = {
     enable = lib.mkEnableOption "Intel hardware configuration";
-    enableThermal = lib.mkEnableOption "Intel thermal management" default = true;
     powerProfile = lib.mkOption {
       type = lib.types.enum ["balanced" "powersave" "performance"];
       default = "balanced";
@@ -42,24 +41,11 @@
       "mem_sleep_default=deep"  # Allow deepest sleep states
     ];
 
-    # Thermal Management
-    lib.mkIf config.hardware.intel.enableThermal {
+      
+      # Thermal Management
       services.thermald.enable = true;
       services.throttled.enable = true;
-      
-      environment.etc."throttled.conf".text = ''
-        [GENERAL]
-        Enabled: True
-        [UNDERVOLT.BATTERY]
-        CPU: -75
-        GPU: -50
-        CACHE: -75
-        [UNDERVOLT.AC]
-        CPU: -50
-        GPU: -25
-        CACHE: -50
-      '';
-    };
+
 
     # Dell-specific hardware support
     hardware.enableRedistributableFirmware = true;
