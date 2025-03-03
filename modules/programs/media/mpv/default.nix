@@ -8,8 +8,8 @@
           thumbnail
           mpris
           mpvacious
-          mpv-discord
-          manga-reader
+          #mpv-discord
+          #manga-reader
           mpv-osc-tethys
           mpv-cheatsheet
           #modernx-zydezu
