@@ -14,6 +14,14 @@
                 "Sly-Harvey/radium.nvim",
                 priority = 1000,
               },
+              {
+                "olimorris/codecompanion.nvim",
+                config = true,
+                dependencies = {
+                  "nvim-lua/plenary.nvim",
+                  "nvim-treesitter/nvim-treesitter",
+                },
+              }, 
             }
           '';
           extraPackages = with pkgs; [
