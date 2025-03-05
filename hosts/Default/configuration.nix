@@ -22,11 +22,11 @@
     ./hardware-configuration.nix
   ];
   
-  # Option defined in intel.nix
-  hardware.intel = {
-      enable = true;
-      powerProfile = "balanced";
-  };
+  # # Option defined in intel.nix
+  # hardware.intel = {
+  #     enable = true;
+  #     powerProfile = "balanced";
+  # };
 
   # Home-manager config
   home-manager.sharedModules = [
