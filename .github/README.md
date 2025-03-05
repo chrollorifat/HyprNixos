@@ -1,10 +1,3 @@
-# chrono-nixos-config
-Still a work in progress, don't just blindly copy. But you can use this as reference tho.
-# Few things to keep in mind
-- This config is for Legacy Boot with MBR disk partitioning
-- It uses Grub as a bootloader
-- You can make the necessary changes to fit your setup in the hosts directory
-
 <h1 align="center">
    <img src="assets/nixos-logo.png" width="100px" />
    <br>
@@ -12,7 +5,7 @@ Still a work in progress, don't just blindly copy. But you can use this as refer
    <br>
       <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" /> <br>
    <div align="center">
-
+      
    <div align="center">
       <p></p>
       <div align="center">
@@ -36,6 +29,13 @@ Still a work in progress, don't just blindly copy. But you can use this as refer
 
 ![Screenshot](assets/preview.png)
 ![Screenshot](assets/preview2.png)
+
+# Few things to keep in mind
+
+- Still a work in progress, don't just blindly copy. But you can use this as reference tho.
+- This config is for Legacy Boot with MBR disk partitioning
+- It uses Grub as a bootloader
+- You can make the necessary changes to fit your setup in the hosts directory
 
 # Installation
 > [!Note]
