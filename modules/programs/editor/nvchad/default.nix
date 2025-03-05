@@ -17,6 +17,7 @@
               {
                 "olimorris/codecompanion.nvim",
                 config = true,
+                priority = 1100,
                 dependencies = {
                   "nvim-lua/plenary.nvim",
                   "nvim-treesitter/nvim-treesitter",
