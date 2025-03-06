@@ -130,7 +130,6 @@
     sherlock
 
     pdfarranger  # pdf merging and splitting tool
-    karp  # kde alternative to pdfarranger
     ventoy-full
 
     nwg-look
