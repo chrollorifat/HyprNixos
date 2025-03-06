@@ -60,11 +60,11 @@
     # Image
     nomacs
     imv
-    variety   # Wallpaper selector
+    #variety   # Wallpaper selector
 
     # Video
     #vlc
-    mpv
+    # mpv  # Enabled through module
 
     # Screen Recording
     #obs-studio
@@ -130,10 +130,12 @@
     sherlock
 
     pdfarranger  # pdf merging and splitting tool
-    ventoy-full
+    ventoy-full  # usb flasher
 
     nwg-look
     waytrogen # Fast wallpaper setter for wayland
+
+    yt-dlp   # cli tool for downloading youtube videos
 
   ];
 
