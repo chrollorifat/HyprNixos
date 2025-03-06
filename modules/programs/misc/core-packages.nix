@@ -128,6 +128,14 @@
 
     # Find username across all social netwrks
     sherlock
+
+    pdfarranger  # pdf merging and splitting tool
+    karp  # kde alternative to pdfarranger
+    ventoy-full
+
+    nwg-look
+    waytrogen # Fast wallpaper setter for wayland
+
   ];
 
 }
