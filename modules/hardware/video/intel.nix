@@ -39,8 +39,9 @@ in {
       boot.kernelParams = [
         "i915.enable_guc=2"       # Enable GuC/HuC firmware loading
         "i915.enable_psr=1"       # Panel Self Refresh
-        "i915.fastboot=1"
-        "mem_sleep_default=deep"
+        "i915.fastboot=1"         # Skip unnecessary mode sets at boot
+        "mem_sleep_default=deep"  # Allow deepest sleep states
+        "i915.enable_dc=2"        # Display power saving
       ];
     })
 
