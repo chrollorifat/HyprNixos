@@ -32,7 +32,7 @@ in {
       # Power Management
       powerManagement = {
         enable = true;
-        cpuFreqGovernor = "powersave";
+        cpuFreqGovernor = "balanced";
         powertop.enable = true;
       };
 
