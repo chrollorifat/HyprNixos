@@ -16,9 +16,8 @@ in {
     (mkIf cfg.enable {
       # Graphics Configuration
       services.xserver.videoDrivers = [ "modesetting" ];
-      hardware.opengl = {
+      hardware.graphics = {
         enable = true;
-        driSupport = true;
         extraPackages = with pkgs; [
           intel-media-driver
           vaapiIntel
@@ -55,19 +54,6 @@ in {
     (mkIf (cfg.enable && cfg.enableThermal) {
       services.thermald.enable = true;
       services.throttled.enable = true;
-      
-      environment.etc."throttled.conf".text = ''
-        [GENERAL]
-        Enabled = true
-        [UNDERVOLT.BATTERY]
-        CPU = -75
-        GPU = -50
-        CACHE = -75
-        [UNDERVOLT.AC]
-        CPU = -50
-        GPU = -25
-        CACHE = -50
-      '';
     })
   ];
 }
