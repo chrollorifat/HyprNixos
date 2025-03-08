@@ -27,8 +27,11 @@
    </div>
 </h1>
 
-![Screenshot](assets/preview.png)
+![Screenshot](assets/preview1.png)
 ![Screenshot](assets/preview2.png)
+![Screenshot](assets/preview3.png)
+![Screenshot](assets/preview4.png)
+![Screenshot](assets/preview5.png)
 
 # Few things to keep in mind
 
