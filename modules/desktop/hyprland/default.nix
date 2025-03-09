@@ -23,7 +23,7 @@
     substituters = ["https://hyprland.cachix.org"];
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
-  
+
   # Setup hyprpolkitagent
   systemd.user.services.hyprpolkitagent = {
       description = "Hyprpolkitagent - Polkit authentication agent";
@@ -416,8 +416,8 @@
               # ",XF86AudioPause,exec,$hyprScriptsDir/MediaCtrl.sh play-pause" # go to next media
 
               # to switch between windows in a floating workspace
-              "SUPER,Tab,cyclenext"
-              "SUPER,Tab,bringactivetotop"
+              "$mainMod, Tab, cyclenext"
+              "$mainMod, Tab, bringactivetotop"
 
               # Switch workspaces relative to the active workspace with mainMod + CTRL + [←→]
               "$mainMod CTRL, right, workspace, r+1"
