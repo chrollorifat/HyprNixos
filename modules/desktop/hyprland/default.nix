@@ -53,18 +53,17 @@
         blueman
         brightnessctl
         hyprpaper
+        hyprpicker
         cliphist
         grimblast
+        swappy
         kdePackages.dolphin
         kdePackages.kio-extras    # Adds compress, extract functionalities in dolphin
         libnotify
-        #light
         networkmanagerapplet
         pamixer
         pavucontrol
         playerctl
-        slurp
-        swappy
         swaynotificationcenter
         waybar
         wtype
@@ -379,7 +378,8 @@
               "$mainMod, E, exec, $fileManager"
               "$mainMod, C, exec, $editor"
               "$mainMod, F, exec, $browser"
-              "$CONTROL ALT, DELETE, exec, $term -e '${getExe pkgs.btop}'" # system monitor
+              "$CONTROL ALT, DELETE, exec, $term -e '${getExe pkgs.btop}'" # System Monitor
+              "$mainMod CTRL, C, exec, hyprpicker --autocopy --format=hex" # Colour Picker
 
               "$mainMod, A, exec, pkill -x rofi || $launcher" # launch desktop applications
               "$mainMod, SPACE, exec, pkill -x rofi || $launcher" # launch desktop applications
