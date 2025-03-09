@@ -8,5 +8,11 @@
     ];
   };
 
+  # Archive manager
+  programs.file-roller = {
+    enable = true;
+    package = pkgs.file-roller;
+  };
+
   services.tumbler.enable = true; # Thumbnail support for images
 }

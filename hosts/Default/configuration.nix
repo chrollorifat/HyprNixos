@@ -53,11 +53,6 @@
     unrar-free
     kdePackages.ark
   ];
-  # Archive manager
-  programs.file-roller = {
-    enable = true;
-    package = pkgs.file-roller;
-  };
 
   networking.hostName = hostname; # Define your hostname.
   
