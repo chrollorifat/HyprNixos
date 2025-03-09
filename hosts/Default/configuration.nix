@@ -18,7 +18,7 @@
     #../../modules/programs/media/obs
     ../../modules/programs/media/thunderbird
 
-    ../../modules/hardware/drives
+    # ../../modules/hardware/drives
     ./hardware-configuration.nix
   ];
   

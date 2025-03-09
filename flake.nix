@@ -69,7 +69,7 @@
       terminal = "wezterm"; # kitty or alacritty
       browser = "floorp"; # firefox, floorp, zen
       terminalFileManager = "yazi"; # yazi or lf
-      wallpaper = "forest.jpg"; # see modules/themes/wallpapers
+      wallpaper = "dark-forest.jpg"; # see modules/themes/wallpapers
 
       # System configuration
       gpuDriver = "intel"; # CHOOSE YOUR GPU DRIVERS (nvidia or amdgpu or intel) THIS IS IMPORTANT
