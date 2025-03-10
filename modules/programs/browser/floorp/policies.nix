@@ -85,44 +85,60 @@ in {
       installation_mode = "blocked";
     };
     "uBlock0@raymondhill.net" = {
+      private_browsing = true;
+      default_area = "navbar";
       installation_mode = "force_installed";
       install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
     };
     "extension@one-tab.com" = {
+      private_browsing = true;
+      default_area = "navbar";
       installation_mode = "force_installed";
       install_url = "https://addons.mozilla.org/firefox/downloads/file/4175239/onetab-1.83.xpi";
     };
     "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
+      private_browsing = true;
+      default_area = "navbar";
       installation_mode = "force_installed";
       install_url = "https://addons.mozilla.org/firefox/downloads/file/4410896/bitwarden_password_manager-2024.12.4.xpi";
     };
-    "addon@darkreader.org" = {
-      installation_mode = "force_installed";
-      install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
-    };
     "firemonkey@eros.man" = {
+      private_browsing = true;
+      default_area = "navbar";
       installation_mode = "force_installed";
       install_url = "https://addons.mozilla.org/firefox/downloads/latest/firemonkey/latest.xpi";
     };
+    "addon@darkreader.org" = {
+      private_browsing = true;
+      # default_area = "navbar";
+      installation_mode = "force_installed";
+      install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
+    };
     "sponsorBlocker@ajay.app" = {
+      private_browsing = true;
+      default_area = "menupanel";
       installation_mode = "force_installed";
       install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
     };
     "{762f9885-5a13-4abd-9c77-433dcd38b8fd}" = {
+      private_browsing = true;
       installation_mode = "force_installed";
       install_url = "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi";
     };
     "frankerfacez@frankerfacez.com" = {
+      private_browsing = true;
       installation_mode = "force_installed";
       install_url = "https://addons.mozilla.org/firefox/downloads/latest/frankerfacez/latest.xpi";
     };
     # Catppuccin theme
     "{8446b178-c865-4f5c-8ccc-1d7887811ae3}" = {
+      private_browsing = true;
       installation_mode = "force_installed";
       install_url = "https://addons.mozilla.org/firefox/downloads/latest/catppuccin-mocha-lavender-git/latest.xpi";
     };
     # View Xpi Id's in Firefox Extension Store
     "queryamoid@kaply.com" = {
+      private_browsing = true;
       installation_mode = "force_installed";
       install_url = "https://github.com/mkaply/queryamoid/releases/download/v0.2/query_amo_addon_id-0.2-fx.xpi";
     };
@@ -142,7 +158,8 @@ in {
       fetchNews = false;
       previewNewDesign = true;
       # Catppuccin mocha theme
-            /* theme = {
+            /*
+            theme = {
               mode = 1;
               brightness = 100;
               contrast = 100;
@@ -163,7 +180,8 @@ in {
               lightColorScheme = "Default";
               darkColorScheme = "Default";
               immediateModify = false;
-            }; */
+            };
+            */
             # enabledFor = [];
             # disabledFor = [];
     };
