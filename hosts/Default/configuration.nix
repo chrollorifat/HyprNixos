@@ -11,7 +11,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/hardware/video/${gpuDriver}.nix # Enable gpu drivers defined in flake.nix
-    #../../modules/hardware/drives
+    ../../modules/hardware/drives
     ../common.nix
     ../../modules/fonts
 

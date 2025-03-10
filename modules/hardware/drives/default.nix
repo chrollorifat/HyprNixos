@@ -1,6 +1,8 @@
 {...}: {
   imports = [
-    ./games.nix
-    ./work.nix
+    # ./games.nix
+    # ./work.nix
+    ./rem.nix
+    ./tsubasa.nix
   ];
 }
