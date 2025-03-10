@@ -284,8 +284,8 @@ in {
     templates = "${self}/dev-shells";
   };
 
-  systemd.packages = with pkgs; [lact];
-  systemd.services.lactd.wantedBy = ["multi-user.target"];
+  # systemd.packages = with pkgs; [lact];
+  # systemd.services.lactd.wantedBy = ["multi-user.target"];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -297,7 +297,7 @@ in {
     #scripts.underwatt
 
     # System
-    lact
+    # lact
     killall
     lm_sensors
     jq
