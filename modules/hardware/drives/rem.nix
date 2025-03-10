@@ -1,7 +1,7 @@
 {...}: {
   fileSystems."/mnt/Rem" = {
     device = "/dev/disk/by-uuid/BAD011B7D0117B39";
-    fsType = "ntfs";
+    fsType = "ntfs-3g";
     options = [
       "X-mount.mkdir"
       "uid=1000"

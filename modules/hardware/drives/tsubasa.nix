@@ -1,7 +1,7 @@
 {...}: {
   fileSystems."/mnt/Tsubasa-Hanekawa" = {
     device = "/dev/disk/by-uuid/40E226A7E226A160";
-    fsType = "ntfs";
+    fsType = "ntfs-3g";
     options = [
       "X-mount.mkdir"
       "uid=1000"
