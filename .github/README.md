@@ -5,7 +5,7 @@
    <br>
       <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" /> <br>
    <div align="center">
-      
+
    <div align="center">
       <p></p>
       <div align="center">
@@ -42,7 +42,8 @@
 
 # Installation
 > [!Note]
-> <p>You should review the configuration variables in flake.nix before installing.</p>
+> <p>You should review the configuration variables in flake.nix before installing.<br>
+Also check out the imports at the top of hosts/Default/configuration.nix</p>
 <!-- ## Using the install script -->
 ```bash
 nix run --experimental-features "nix-command flakes" nixpkgs#git clone https://github.com/chrollorifat/chrono-nixos-config.git ~/NixOS

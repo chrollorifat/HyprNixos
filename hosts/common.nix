@@ -4,9 +4,7 @@
   overlays,
   username,
   browser,
-  editor,
   terminal,
-  terminalFileManager,
   locale,
   timezone,
   kbdLayout,
@@ -22,35 +20,6 @@ in {
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.nix-index-database.nixosModules.nix-index
-
-    #../modules/programs/terminal/${terminal}
-    #../modules/programs/terminal/alacritty
-    ../modules/programs/terminal/kitty
-    ../modules/programs/terminal/wezterm
-    ../modules/programs/shell/bash
-    ../modules/programs/shell/zsh
-    ../modules/programs/browser/${browser}
-    ../modules/programs/browser/zen
-    ../modules/programs/editor/${editor}
-    #../modules/programs/editor/nvchad
-    #../modules/programs/editor/vscode
-    ../modules/programs/cli/starship
-    ../modules/programs/cli/fastfetch
-    ../modules/programs/cli/tmux
-    ../modules/programs/cli/direnv
-    ../modules/programs/cli/${terminalFileManager}
-    ../modules/programs/cli/lazygit
-    ../modules/programs/cli/cava
-    ../modules/programs/cli/btop
-    ../modules/programs/media/mpv
-    # ../modules/programs/misc/nix-ld
-     ../modules/programs/misc/tlp
-    # ../modules/programs/misc/virt-manager
-    ../modules/programs/misc/core-packages.nix
-    #../modules/programs/misc/env-vars.nix
-    ../modules/programs/misc/kdeconnect.nix
-    ../modules/programs/misc/thunar
-    ../modules/programs/misc/fcitx
   ];
 
   programs.nix-index-database.comma.enable = true;
@@ -215,7 +184,6 @@ in {
 
   # Enable sddm login manager
   services.displayManager = {
-    defaultSession = "hyprland";
     sddm = {
       enable = true;
       wayland.enable = true;
@@ -323,7 +291,7 @@ in {
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  
+
      services.openssh = {
       enable = true;
       settings = {
@@ -334,7 +302,7 @@ in {
         PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
       };
     };
-  
+
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

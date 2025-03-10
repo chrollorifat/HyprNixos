@@ -2,26 +2,62 @@
   pkgs,
   gpuDriver,
   hostname,
+  browser,
+  editor,
+  terminal,
+  terminalFileManager,
   ...
 }: {
   imports = [
-    ../common.nix
-    ../../modules/desktop/hyprland # Enable hyprland window manager
-
+    ./hardware-configuration.nix
     ../../modules/hardware/video/${gpuDriver}.nix # Enable gpu drivers defined in flake.nix
-
+    #../../modules/hardware/drives
+    ../common.nix
     ../../modules/fonts
 
-    #../../modules/programs/games
-    ../../modules/programs/media/discord
-    #../../modules/programs/media/spicetify
-    #../../modules/programs/media/obs
-    ../../modules/programs/media/thunderbird
+    ../../modules/desktop/hyprland # Enable hyprland window manager
 
-    # ../../modules/hardware/drives
-    ./hardware-configuration.nix
+    #../../modules/programs/games
+
+    # ../../modules/programs/terminal/${terminal}
+    # ../../modules/programs/terminal/alacritty
+    ../../modules/programs/terminal/kitty
+    ../../modules/programs/terminal/wezterm
+
+    ../../modules/programs/shell/bash
+    ../../modules/programs/shell/zsh
+
+    ../../modules/programs/browser/${browser}
+    ../../modules/programs/browser/zen
+    ../../modules/programs/editor/${editor}
+    # ../../modules/programs/editor/nvchad
+    # ../../modules/programs/editor/vscode
+
+    ../../modules/programs/cli/starship
+    ../../modules/programs/cli/fastfetch
+    ../../modules/programs/cli/tmux
+    ../../modules/programs/cli/direnv
+    ../../modules/programs/cli/${terminalFileManager}
+    ../../modules/programs/cli/lazygit
+    ../../modules/programs/cli/cava
+    ../../modules/programs/cli/btop
+
+    #../../modules/programs/media/obs
+    #../../modules/programs/media/spicetify
+    ../../modules/programs/media/discord
+    ../../modules/programs/media/thunderbird
+    ../../modules/programs/media/mpv
+
+    # ../../modules/programs/misc/nix-ld
+    # ../../modules/programs/misc/virt-manager
+    # ../../modules/programs/misc/env-vars.nix
+    ../../modules/programs/misc/core-packages.nix
+    ../../modules/programs/misc/fcitx
+    ../../modules/programs/misc/kdeconnect.nix
+    ../../modules/programs/misc/thunar
+    ../../modules/programs/misc/tlp
   ];
-  
+
   # UnComment this section only if you have chosen intel as your gpu in flake.nix
   hardware.intel = {
     enable = true;
@@ -37,7 +73,7 @@
         #krita
         #gimp
         kdePackages.okular # pdf viwer
-        evince  
+        evince
         # godot_4
         # unityhub
         # gparted
@@ -55,7 +91,7 @@
   ];
 
   networking.hostName = hostname; # Define your hostname.
-  
+
 
   # Stream my Language lessons to my devices via vlc media player
   /*services.minidlna = {
@@ -63,7 +99,8 @@
     openFirewall = true;
     settings = {
       friendly_name = "NixOS-DLNA";
-      media_dir = [ # A = Audio, P = Pictures, V, = Videos, PV = Pictures and Videos.
+      media_dir = [
+        # A = Audio, P = Pictures, V, = Videos, PV = Pictures and Videos.
         "/mnt/work/Pimsleur"
         # "A,/mnt/work/Pimsleur/Russian"
       ];
