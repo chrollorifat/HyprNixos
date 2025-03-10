@@ -20,10 +20,7 @@
 
   swapDevices = [ 
   {
-    device = "/dev/sda2";
-  }
-  {
-    label = "NixOS-Swap";
+    device = "/dev/disk/by-uuid/2b7b9e30-fc81-437e-bad5-f5c9fa6a9cc7";
   }
   ];
 
