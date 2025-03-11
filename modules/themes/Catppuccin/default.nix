@@ -31,11 +31,20 @@ in {
           };
         };
         iconTheme = {
-          #package = pkgs.adwaita-icon-theme;
-          #name = "Adwaita";
-          package = pkgs.papirus-icon-theme;
-          name = "Papirus-Dark";
-
+          # package = pkgs.adwaita-icon-theme;
+          # name = "Adwaita";
+          # package = pkgs.papirus-icon-theme;
+          # name = "Papirus-Dark";
+          # package = pkgs.tela-icon-theme;
+          # name = "Tela-purple-dark";
+          # package = pkgs.qogir-icon-theme;
+          # name = "Qogir";
+          # package = pkgs.epapirus-icon-theme;
+          # name = "Epapirus-Dark";
+          package = pkgs.dracula-icon-theme;
+          name = "Dracula";
+          # package = pkgs.vimix-icon-theme;
+          # name = "Vimix";
         };
         gtk3.extraConfig = {
           Settings = ''
