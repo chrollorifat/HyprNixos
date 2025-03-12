@@ -1,7 +1,7 @@
 <h1 align="center">
    <img src="assets/nixos-logo.png" width="100px" />
    <br>
-      Chrono NixOS Dotfiles
+      Hyprland NixOS Dotfiles
    <br>
       <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" /> <br>
    <div align="center">
