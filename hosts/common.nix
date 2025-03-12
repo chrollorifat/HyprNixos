@@ -187,6 +187,8 @@ in {
     sddm = {
       enable = true;
       wayland.enable = true;
+      enableHidpi = true;
+      package = pkgs.kdePackages.sddm;      
       theme = "tokyo-night";
       settings.Theme.CursorTheme = "Bibata-Modern-Classic";
     };
@@ -269,6 +271,7 @@ in {
     killall
     lm_sensors
     jq
+    bibata-cursors
     libsForQt5.qt5.qtgraphicaleffects # For sddm to function properly
     #vulkan-tools
     sddm-themes.astronaut
