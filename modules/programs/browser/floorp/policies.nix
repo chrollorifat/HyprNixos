@@ -94,13 +94,13 @@ in {
       private_browsing = true;
       default_area = "navbar";
       installation_mode = "force_installed";
-      install_url = "https://addons.mozilla.org/firefox/downloads/file/4175239/onetab-1.83.xpi";
+      install_url = "https://addons.mozilla.org/firefox/downloads/latest/onetab/latest.xpi";
     };
     "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
       private_browsing = true;
       default_area = "navbar";
       installation_mode = "force_installed";
-      install_url = "https://addons.mozilla.org/firefox/downloads/file/4410896/bitwarden_password_manager-2024.12.4.xpi";
+      install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
     };
     "firemonkey@eros.man" = {
       private_browsing = true;
