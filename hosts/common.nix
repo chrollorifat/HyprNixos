@@ -14,7 +14,6 @@
   self,
   ...
 }: let
-  sddm-themes = pkgs.callPackage ../modules/themes/sddm/themes.nix {};
   scripts = pkgs.callPackage ../modules/scripts {};
 in {
   imports = [
@@ -188,7 +187,7 @@ in {
       enable = true;
       wayland.enable = true;
       enableHidpi = true;
-      package = pkgs.kdePackages.sddm;      
+      package = pkgs.kdePackages.sddm;
       theme = "tokyo-night";
       settings.Theme.CursorTheme = "Bibata-Modern-Classic";
     };
@@ -254,9 +253,6 @@ in {
     templates = "${self}/dev-shells";
   };
 
-  # systemd.packages = with pkgs; [lact];
-  # systemd.services.lactd.wantedBy = ["multi-user.target"];
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -267,16 +263,18 @@ in {
     #scripts.underwatt
 
     # System
-    # lact
     killall
     lm_sensors
     jq
     bibata-cursors
-    libsForQt5.qt5.qtgraphicaleffects # For sddm to function properly
+    pkgs.kdePackages.qtsvg
+    pkgs.kdePackages.qtmultimedia
+    pkgs.kdePackages.qtvirtualkeyboard
     #vulkan-tools
-    sddm-themes.astronaut
-    # sddm-themes.sugar-dark
-    sddm-themes.tokyo-night
+    (pkgs.callPackage ../pkgs/sddm-themes/astronaut.nix {
+          theme = sddmTheme;
+    })
+    # libsForQt5.qt5.qtgraphicaleffects # For sddm to function properly
 
     # Development
     #devbox # faster nix-shells
