@@ -69,6 +69,7 @@
       terminal = "wezterm"; # kitty or alacritty
       browser = "floorp"; # firefox, floorp, zen
       terminalFileManager = "yazi"; # yazi or lf
+      sddmTheme = "purple_leaves"; # astronaut, black_hole, purple_leaves, jake_the_dog, hyprland_kath
       wallpaper = "dark-forest.jpg"; # see modules/themes/wallpapers
 
       # System configuration

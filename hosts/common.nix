@@ -5,6 +5,7 @@
   username,
   browser,
   terminal,
+  sddmTheme,
   locale,
   timezone,
   kbdLayout,
@@ -188,7 +189,7 @@ in {
       wayland.enable = true;
       enableHidpi = true;
       package = pkgs.kdePackages.sddm;
-      theme = "tokyo-night";
+      theme = "sddm-astronaut-theme";
       settings.Theme.CursorTheme = "Bibata-Modern-Classic";
     };
   };
