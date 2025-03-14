@@ -191,6 +191,11 @@ in {
       package = pkgs.kdePackages.sddm;
       theme = "sddm-astronaut-theme";
       settings.Theme.CursorTheme = "Bibata-Modern-Classic";
+      extraPackages = with pkgs; [
+        kdePackages.qtmultimedia
+        kdePackages.qtsvg
+        kdePackages.qtvirtualkeyboard
+      ];
     };
   };
 
@@ -275,7 +280,7 @@ in {
     (pkgs.callPackage ../pkgs/sddm-themes/astronaut.nix {
           theme = sddmTheme;
     })
-    # libsForQt5.qt5.qtgraphicaleffects # For sddm to function properly
+    # libsForQt5.qt5.qtgraphicaleffects 
 
     # Development
     #devbox # faster nix-shells
@@ -320,7 +325,7 @@ in {
         enable = true;
         extraArgs = "--keep-since 3d --keep 3";
       };
-      flake = "/home/${username}/chrono-nixos-config";
+      flake = "/home/${username}/hyprland-nixos-config";
     };
   };
 
