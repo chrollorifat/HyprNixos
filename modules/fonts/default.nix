@@ -86,6 +86,8 @@
     kochi-substitute  # Free replacement for MS Gothic and MS Mincho JP
     (callPackage ./personal/kalpurush {})  # Kalpurush Bangla Font
     (callPackage ./personal/beyond-wonderland {})  # Beyond Wonderland Font
+    (callPackage ./personal/sutonnymj {})  # SutonnyMj Bangla Font
+    (callPackage ./personal/siyamrupali {})  # Siyam Rupali Bangla Font
     #siyamrupali
     #kalpurush
     inputs.ndots.packages."x86_64-linux".road-rage
