@@ -73,6 +73,7 @@
       home.packages = with pkgs; [
         #krita
         #gimp
+        (pkgs.callPackage ../../pkgs/pokego.nix {})
         kdePackages.okular # pdf viwer
         evince
         # godot_4
