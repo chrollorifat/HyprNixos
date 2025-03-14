@@ -1,10 +1,10 @@
 { lib, stdenv, fontconfig, pkgs, ...}:
 
 stdenv.mkDerivation rec {
-  pname = "kalpurush";
-  version = "6.2";
+  pname = "Siyam-Rupali";
+  version = "Unknown";
 
-  src = ./kalpurush.ttf;
+  src = ./Siyamrupali.ttf;
 
   buildInputs = [ fontconfig ];
   phases = [ "installPhase" ];
@@ -14,9 +14,9 @@ stdenv.mkDerivation rec {
   '';
 
   meta = with lib; {
-    description = "Punky Style font";
+    description = "Siyam Rupali Bangla Font";
     license = licenses.ofl;
-    maintainers = [ maintainers.niksingh710 ];
+    maintainers = [ maintainers.ChrolloRifat ];
     platforms = platforms.all;
   };
 }

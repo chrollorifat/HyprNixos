@@ -1,8 +1,9 @@
 { config, pkgs, inputs, ndots, ... }:
 
 {
+  # imports = [./personal/default.nix];  # doesn't exactlty work as intended (WIP)
   #siyamrupali = pkgs.callPackage ./siyamrupali { };
-  #kalpurush = pkgs.callPackage ./kalpurush {inherit pkgs; };
+  #kalpurush = (pkgs.callPackage ./kalpurush/default.nix {});
   #siyamrupali= pkgs.callPackage ./siyamrupali/default.nix { };
 
   # Enable font.fontDir
@@ -83,8 +84,10 @@
     migu  # HQ JP font based on modified M+ and IPA fonts
     hanazono  # JP Mincho Typeface Truetype font
     kochi-substitute  # Free replacement for MS Gothic and MS Mincho JP
-    #(callPackage ./siyamrupali/default.nix { inherit pkgs; })  # Siyam Rupali Bangla Font(have issues rn)
+    (callPackage ./personal/kalpurush {})  # Kalpurush Bangla Font
+    (callPackage ./personal/beyond-wonderland {})  # Beyond Wonderland Font
     #siyamrupali
+    #kalpurush
     inputs.ndots.packages."x86_64-linux".road-rage
 
   ];
