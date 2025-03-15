@@ -58,9 +58,16 @@
     comic-neue
     comfortaa
     merriweather
+
+    # Icon Fonts
     material-icons
     openmoji-color
     twemoji-color-font
+    material-design-icons # 7k+ material design icons from the community
+    font-awesome
+    font-awesome_5
+
+    # Nerd Fonts
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
     nerd-fonts.zed-mono
@@ -69,22 +76,26 @@
     nerd-fonts.iosevka-term
     maple-mono-NF
     udev-gothic-nf	# Programming font with UD Gothic, JBrains and NF
+
+    # Japanese Fonts
     ipaexfont  # JP font with Mincho and Gothic fonts
     noto-fonts-cjk-sans	# Sans style between modern and traditional Chinese,Japanese,Korean fonts
     noto-fonts-cjk-serif # Serif style between modern and traditional Chinese,Japanese,Korean fonts
     kanji-stroke-order-font	 # Contains diagrams for 6500+ kanjis and more
-    material-design-icons # 7k+ material design icons from the community
-    font-awesome
-    font-awesome_5
     migmix  # High Quality JP font based on M+ and IPA fonts
     hachimarupop  # Cute Japanese Font
     migu  # HQ JP font based on modified M+ and IPA fonts
     hanazono  # JP Mincho Typeface Truetype font
     kochi-substitute  # Free replacement for MS Gothic and MS Mincho JP
+
+    # Personal Custom Fonts
     (callPackage ./personal/kalpurush {})  # Kalpurush Bangla Font
     (callPackage ./personal/beyond-wonderland {})  # Beyond Wonderland Font
     (callPackage ./personal/sutonnymj {})  # SutonnyMj Bangla Font
     (callPackage ./personal/siyamrupali {})  # Siyam Rupali Bangla Font
+    (callPackage ./personal/bangla {})  
+    (callPackage ./personal/shonar-bangla {})  # Microsoft's Shonar Bangla Font
+    (callPackage ./personal/apona-lohit {})  # AponaLohit Bangla Font
     inputs.ndots.packages."x86_64-linux".road-rage
 
   ];
