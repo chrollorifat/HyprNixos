@@ -10,7 +10,7 @@ stdenv.mkDerivation rec {
   phases = [ "installPhase" ];
   installPhase = ''
     mkdir -p "$out/share/fonts"
-    cp ${src} "$out/share/fonts/"
+    cp -r ${src} "$out/share/fonts/"
   '';
 
   meta = with lib; {

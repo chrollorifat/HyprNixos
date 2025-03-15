@@ -4,13 +4,13 @@ stdenv.mkDerivation rec {
   pname = "Siyam-Rupali";
   version = "Unknown";
 
-  src = ./Siyamrupali.ttf;
+  src = ./ttf/.;
 
   buildInputs = [ fontconfig ];
   phases = [ "installPhase" ];
   installPhase = ''
     mkdir -p "$out/share/fonts"
-    cp ${src} "$out/share/fonts/"
+    cp -r ${src} "$out/share/fonts/"
   '';
 
   meta = with lib; {

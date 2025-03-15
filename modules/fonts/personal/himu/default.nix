@@ -1,7 +1,7 @@
 { lib, stdenv, fontconfig, pkgs, ...}:
 
 stdenv.mkDerivation rec {
-  pname = "kalpurush";
+  pname = "himu";
   version = "Unknown";
 
   src = ./ttf/.;
@@ -14,7 +14,7 @@ stdenv.mkDerivation rec {
   '';
 
   meta = with lib; {
-    description = "Kalpurush Bangla Font";
+    description = "Himu Bangla Font";
     license = licenses.ofl;
     maintainers = [ maintainers.ChrolloRifat ];
     platforms = platforms.all;

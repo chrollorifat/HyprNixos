@@ -96,6 +96,11 @@
     (callPackage ./personal/bangla {})  
     (callPackage ./personal/shonar-bangla {})  # Microsoft's Shonar Bangla Font
     (callPackage ./personal/apona-lohit {})  # AponaLohit Bangla Font
+    (callPackage ./personal/bd-protidin {})  # BDProtidin newspaper Bangla Font
+    (callPackage ./personal/bengali-dhaka-ssk {})
+    (callPackage ./personal/himu {})  # Himu Bangla Font
+    (callPackage ./personal/nikosh {})  # Nikosh Bangla Font
+    (callPackage ./personal/shurjo {})  # Shurjo Bangla Font
     inputs.ndots.packages."x86_64-linux".road-rage
 
   ];

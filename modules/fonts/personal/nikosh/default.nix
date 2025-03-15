@@ -1,8 +1,8 @@
 { lib, stdenv, fontconfig, pkgs, ...}:
 
 stdenv.mkDerivation rec {
-  pname = "kalpurush";
-  version = "Unknown";
+  pname = "Nikosh";
+  version = "1.00";
 
   src = ./ttf/.;
 
@@ -14,7 +14,7 @@ stdenv.mkDerivation rec {
   '';
 
   meta = with lib; {
-    description = "Kalpurush Bangla Font";
+    description = "Nikosh font developed by election commision of Bangladesh";
     license = licenses.ofl;
     maintainers = [ maintainers.ChrolloRifat ];
     platforms = platforms.all;

@@ -1,8 +1,8 @@
 { lib, stdenv, fontconfig, pkgs, ...}:
 
 stdenv.mkDerivation rec {
-  pname = "kalpurush";
-  version = "Unknown";
+  pname = "BengaliDhakaSSK";
+  version = "4.1";
 
   src = ./ttf/.;
 
@@ -14,7 +14,7 @@ stdenv.mkDerivation rec {
   '';
 
   meta = with lib; {
-    description = "Kalpurush Bangla Font";
+    description = "BengaliDhakaSSK Font created by Macromedia Fontographer";
     license = licenses.ofl;
     maintainers = [ maintainers.ChrolloRifat ];
     platforms = platforms.all;
