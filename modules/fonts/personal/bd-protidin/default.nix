@@ -1,7 +1,7 @@
 { lib, stdenv, fontconfig, pkgs, ...}:
 
 stdenv.mkDerivation rec {
-  pname = "Bangladesh-Protidin";
+  pname = "bd-protidin";
   version = "1.1";
 
   src = ./BDPRATID.TTF;
