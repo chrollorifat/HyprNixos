@@ -66,6 +66,7 @@
     material-design-icons # 7k+ material design icons from the community
     font-awesome
     font-awesome_5
+    (callPackage ./font-awesome {})
 
     # Nerd Fonts
     nerd-fonts.fira-code
@@ -101,6 +102,7 @@
     (callPackage ./personal/himu {})  # Himu Bangla Font
     (callPackage ./personal/nikosh {})  # Nikosh Bangla Font
     (callPackage ./personal/shurjo {})  # Shurjo Bangla Font
+    (callPackage ./proxima-nova {})
     inputs.ndots.packages."x86_64-linux".road-rage
 
   ];
