@@ -1,7 +1,7 @@
 { lib, stdenv, fontconfig, pkgs, ...}:
 
 stdenv.mkDerivation rec {
-  pname = "font-awesome-pirated";
+  pname = "font-awesome";
   version = "6.0";
 
   src = ./otfs/.;
