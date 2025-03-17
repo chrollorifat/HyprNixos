@@ -58,6 +58,7 @@
     comic-neue
     comfortaa
     merriweather
+    inter
 
     # Icon Fonts
     material-icons
