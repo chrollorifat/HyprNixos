@@ -59,6 +59,7 @@
     comfortaa
     merriweather
     inter
+    inter-nerdfont
 
     # Icon Fonts
     material-icons
