@@ -104,6 +104,7 @@
     (callPackage ./personal/nikosh {})  # Nikosh Bangla Font
     (callPackage ./personal/shurjo {})  # Shurjo Bangla Font
     (callPackage ./proxima-nova {})
+    (callPackage ./helvetica-neue {})
     inputs.ndots.packages."x86_64-linux".road-rage
 
   ];
