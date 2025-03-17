@@ -77,6 +77,7 @@
     nerd-fonts.iosevka-term
     maple-mono-NF
     udev-gothic-nf	# Programming font with UD Gothic, JBrains and NF
+    (callPackage ./personal/caskaydia-cove {})
 
     # Japanese Fonts
     ipaexfont  # JP font with Mincho and Gothic fonts
