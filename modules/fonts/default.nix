@@ -51,9 +51,10 @@
     dejavu_fonts
     noto-fonts
     noto-fonts-emoji
-    lexend
     lato
+    lexend
     lora
+    liberation_ttf
     jost
     comic-neue
     comfortaa
@@ -111,6 +112,8 @@
     (callPackage ./gabriel-sans {})
     (callPackage ./solomon-sans {})
     (callPackage ./intro {})
+    (callPackage ./avenir {})
+    (callPackage ./garamond {})
 
     inputs.ndots.packages."x86_64-linux".road-rage
 
