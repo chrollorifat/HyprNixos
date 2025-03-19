@@ -107,6 +107,11 @@
     (callPackage ./personal/shurjo {})  # Shurjo Bangla Font
     (callPackage ./proxima-nova {})
     (callPackage ./helvetica-neue {})
+    (callPackage ./code-pro {})
+    (callPackage ./gabriel-sans {})
+    (callPackage ./solomon-sans {})
+    (callPackage ./intro {})
+
     inputs.ndots.packages."x86_64-linux".road-rage
 
   ];
