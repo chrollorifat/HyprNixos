@@ -48,6 +48,7 @@
 
   fonts.packages = with pkgs; [
     aileron
+    alegreya
     barlow
     comic-neue
     comfortaa
