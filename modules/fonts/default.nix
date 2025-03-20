@@ -61,6 +61,7 @@
     lora
     merriweather
     noto-fonts
+    open-sans
     liberation_ttf
     poppins
 
