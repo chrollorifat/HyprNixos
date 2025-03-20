@@ -47,10 +47,12 @@
     };
 
   fonts.packages = with pkgs; [
+    aileron
     barlow
     comic-neue
     comfortaa
     dejavu_fonts
+    fragment-mono
     hack-font
     inter
     jost
@@ -59,12 +61,13 @@
     lora
     merriweather
     noto-fonts
-    noto-fonts-emoji
     liberation_ttf
     poppins
 
     # Icon Fonts
     material-icons
+    noto-fonts-color-emoji
+    noto-fonts-emoji
     openmoji-color
     twemoji-color-font
     material-design-icons # 7k+ material design icons from the community
