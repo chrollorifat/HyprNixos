@@ -60,7 +60,6 @@
     comfortaa
     merriweather
     inter
-    inter-nerdfont
 
     # Icon Fonts
     material-icons
@@ -69,6 +68,7 @@
     material-design-icons # 7k+ material design icons from the community
     font-awesome
     font-awesome_5
+    inter-nerdfont
     (callPackage ./font-awesome {})
 
     # Nerd Fonts
@@ -114,6 +114,7 @@
     (callPackage ./intro {})
     (callPackage ./avenir {})
     (callPackage ./garamond {})
+    (callPackage ./pf-encore-sans {})
 
     inputs.ndots.packages."x86_64-linux".road-rage
 
