@@ -47,19 +47,21 @@
     };
 
   fonts.packages = with pkgs; [
-    hack-font
+    barlow
+    comic-neue
+    comfortaa
     dejavu_fonts
-    noto-fonts
-    noto-fonts-emoji
+    hack-font
+    inter
+    jost
     lato
     lexend
     lora
-    liberation_ttf
-    jost
-    comic-neue
-    comfortaa
     merriweather
-    inter
+    noto-fonts
+    noto-fonts-emoji
+    liberation_ttf
+    poppins
 
     # Icon Fonts
     material-icons
