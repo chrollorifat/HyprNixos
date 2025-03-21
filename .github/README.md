@@ -9,17 +9,17 @@
    <div align="center">
       <p></p>
       <div align="center">
-         <a href="https://github.com/chrollorifat/chrono-nixos-config/stargazers">
-            <img src="https://img.shields.io/github/stars/chrollorifat/chrono-nixos-config?color=F5BDE6&labelColor=303446&style=for-the-badge&logo=starship&logoColor=F5BDE6">
+         <a href="https://github.com/chrollorifat/HyprNixos/stargazers">
+            <img src="https://img.shields.io/github/stars/chrollorifat/HyprNixos?color=F5BDE6&labelColor=303446&style=for-the-badge&logo=starship&logoColor=F5BDE6">
          </a>
-         <a href="https://github.com/chrollorifat/chrono-nixos-config">
-            <img src="https://img.shields.io/github/repo-size/chrollorifat/chrono-nixos-config?color=C6A0F6&labelColor=303446&style=for-the-badge&logo=github&logoColor=C6A0F6">
+         <a href="https://github.com/chrollorifat/HyprNixos">
+            <img src="https://img.shields.io/github/repo-size/chrollorifat/HyprNixos?color=C6A0F6&labelColor=303446&style=for-the-badge&logo=github&logoColor=C6A0F6">
          </a>
          <a = href="https://nixos.org">
             <img src="https://img.shields.io/badge/NixOS-Unstable-blue?style=for-the-badge&logo=NixOS&logoColor=white&label=NixOS&labelColor=303446&color=91D7E3">
             <!-- <img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=91D7E3"> -->
          </a>
-         <a href="https://github.com/chrollorifat/chrono-nixos-config/blob/main/LICENSE">
+         <a href="https://github.com/chrollorifat/HyprNixos/blob/main/LICENSE">
             <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&colorA=313244&colorB=F5A97F&logo=unlicense&logoColor=F5A97F&"/>
          </a>
       </div>
@@ -46,10 +46,10 @@
 Also check out the imports at the top of hosts/Default/configuration.nix</p>
 <!-- ## Using the install script -->
 ```bash
-nix run --experimental-features "nix-command flakes" nixpkgs#git clone https://github.com/chrollorifat/chrono-nixos-config.git ~/NixOS
+nix run --experimental-features "nix-command flakes" nixpkgs#git clone https://github.com/chrollorifat/HyprNixos.git ~/HyprNixos
 ```
 ```bash
-cd ~/NixOS
+cd ~/HyprNixos
 ```
 ```bash
 ./install.sh
@@ -59,11 +59,11 @@ For a list of keybinds press Super + Shift + K
 <summary>How to use the dev-shells</summary>
 
 ```bash
-nix flake init -t ~/NixOS#NAME
+nix flake init -t ~/HyprNixos#NAME
 ```
 or  use the "new" keyword to initialise a new directory
 ```bash
-nix flake new -t ~/NixOS#NAME PROJECT_NAME
+nix flake new -t ~/HyprNixos#NAME PROJECT_NAME
 ```
 where NAME is any of the templates defined in dev-shells/default.nix
 </details>
