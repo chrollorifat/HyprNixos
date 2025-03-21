@@ -124,8 +124,6 @@
     (callPackage ./garamond {})
     (callPackage ./pf-encore-sans {})
 
-    inputs.ndots.packages."x86_64-linux".road-rage
-
   ];
 
   # Ensure the Fontconfig cache is updated after the fonts are installed
