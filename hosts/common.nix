@@ -331,7 +331,7 @@ in {
         enable = true;
         extraArgs = "--keep-since 3d --keep 3";
       };
-      flake = "/home/${username}/hyprland-nixos-config";
+      flake = "/home/${username}/HyprNixos";
     };
   };
 
