@@ -241,7 +241,7 @@
           rebuild = "~/.config/hypr/scripts/rebuild.sh";
 
           # Directory Shortcuts.
-          dots = "cd ~/NixOS/";
+          dots = "cd ~/HyprNixos/";
           games = "cd /mnt/games/";
           work = "cd /mnt/work/";
           media = "cd /mnt/work/media/";

@@ -9,14 +9,14 @@ if pidof yad >/dev/null; then
 fi
 
 # get_nix_value() {
-#     grep "$1" "$HOME/NixOS/flake.nix" | sed -E 's/.*"([^"]+)".*/\1/'
+#     grep "$1" "$HOME/HyprNixos/flake.nix" | sed -E 's/.*"([^"]+)".*/\1/'
 # }
 get_nix_value() {
     awk '
     /settings = {/ {inside_settings=1; next} 
     inside_settings && /}/ {inside_settings=0} 
     inside_settings && $0 ~ key {print gensub(/.*"([^"]+)".*/, "\\1", "g", $0)}
-    ' key="$1" "$HOME/NixOS/flake.nix"
+    ' key="$1" "$HOME/HyprNixos/flake.nix"
 }
 
 

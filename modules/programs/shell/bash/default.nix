@@ -132,13 +132,13 @@
       list-gens = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system/";
       find-store-path = ''function { nix-shell -p $1 --command "nix eval -f "<nixpkgs>" --raw $1" }'';
       update-input = "nix flake lock --update-input $@";
-      rebuild-default = "pushd ~/NixOS &> /dev/null && sudo ./install.sh --Copy-Hardware && popd &> /dev/null";
-      rebuild-desktop = "clear && sudo nixos-rebuild switch --flake ~/NixOS#Desktop";
-      rebuild-laptop = "clear && sudo nixos-rebuild switch --flake ~/NixOS#Laptop";
+      rebuild-default = "pushd ~/HyprNixos &> /dev/null && sudo ./install.sh --Copy-Hardware && popd &> /dev/null";
+      rebuild-desktop = "clear && sudo nixos-rebuild switch --flake ~/HyprNixos#Desktop";
+      rebuild-laptop = "clear && sudo nixos-rebuild switch --flake ~/HyprNixos#Laptop";
       build-iso = "nix build .#nixosConfigurations.iso.config.system.build.isoImage";
 
       # Directory Shortcuts.
-      dots = "cd ~/NixOS/";
+      dots = "cd ~/HyprNixos/";
       games = "cd /mnt/games/";
       work = "cd /mnt/work/";
       media = "cd /mnt/work/media/";
