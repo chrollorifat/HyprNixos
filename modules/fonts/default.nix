@@ -78,6 +78,7 @@
     font-awesome_5
     inter-nerdfont
     (callPackage ./font-awesome {})
+    (callPackage ./phospor.nix {})
 
     # Nerd Fonts
     nerd-fonts.fira-code
