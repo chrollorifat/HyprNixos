@@ -136,6 +136,7 @@
       rebuild-desktop = "clear && sudo nixos-rebuild switch --flake ~/HyprNixos#Desktop";
       rebuild-laptop = "clear && sudo nixos-rebuild switch --flake ~/HyprNixos#Laptop";
       build-iso = "nix build .#nixosConfigurations.iso.config.system.build.isoImage";
+      sysup = "sudo nixos-rebuild switch --cores 2 --flake ~/HyprNixos#Default --upgrade-all --show-trace";
 
       # Directory Shortcuts.
       dots = "cd ~/HyprNixos/";

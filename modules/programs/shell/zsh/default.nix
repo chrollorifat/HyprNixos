@@ -239,6 +239,7 @@
           find-store-path = ''function { nix-shell -p $1 --command "nix eval -f \"<nixpkgs>\" --raw $1" }'';
           update-input = "nix flake update $@";
           rebuild = "~/.config/hypr/scripts/rebuild.sh";
+          sysup = "sudo nixos-rebuild switch --cores 2 --flake ~/HyprNixos#Default --upgrade-all --show-trace";
 
           # Directory Shortcuts.
           dots = "cd ~/HyprNixos/";
