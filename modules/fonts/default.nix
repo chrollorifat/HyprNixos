@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ndots, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # imports = [./personal/default.nix];  # doesn't exactlty work as intended (WIP)
@@ -87,7 +87,7 @@
     nerd-fonts.victor-mono
     nerd-fonts.iosevka
     nerd-fonts.iosevka-term
-    maple-mono-NF
+    maple-mono.NF
     udev-gothic-nf	# Programming font with UD Gothic, JBrains and NF
     (callPackage ./personal/caskaydia-cove {})
 
