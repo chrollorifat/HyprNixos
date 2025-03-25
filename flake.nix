@@ -38,11 +38,11 @@
       url = "github:nix-community/nix4nvchad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nvchad-on-steroids = {
+    # nvchad-on-steroids = {
       # <- here
-      url = "github:maotseantonio/nvchad_config";
-      flake = false;
-    };
+      # url = "github:maotseantonio/nvchad_config";
+      # flake = false;
+    # };
     #hyprpanel= {
     #      url = "github:Jas-SinghFSU/HyprPanel";
     #      inputs.nixpkgs.follows = "nixpkgs";

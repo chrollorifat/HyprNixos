@@ -1,140 +1,134 @@
 # Edit this configuration file to define what should be installed on
 # your system.
 
-{ config, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
 
-    #ckb-next
-    #wpsoffice
+    # ckb-next
+    # wpsoffice
     arandr
-    #arc-theme
+    # arc-theme
     avahi
     baobab
-    bash-completion
-    bat  
-    bibata-cursors
+    # bibata-cursors
     blueberry
     btop
     curl
     dex
     dmenu
-    #dropbox
+    # dropbox
     duf
     edid-decode
-    #etcher
+    # etcher
     evince
     feh
-    #filezilla
+    # filezilla
     flameshot
     font-manager
     fsearch
-    #gimp
-    git
+    # gimp
+    # git
     dconf-editor
     gnome-disk-utility
-    #gnome.gvfs   # Enabled through NixOS options
+    # gnome.gvfs   # Enabled through NixOS options
     hblock
     hw-probe
     hwinfo
-    #i3lock-fancy
-    #inkscape
-    #insync
-    #inxi
+    # i3lock-fancy
+    # inkscape
+    # insync
+    # inxi
     keepassxc
-    #killall
+    # killall
     libgccjit
     llvmPackages_17.libcxxClang
-    #lm_sensors  # Already declared in common.nix
-    #lollypop
+    # lm_sensors  # Already declared in common.nix
+    # lollypop
     lshw
     meld
     most
-    neovim
-    #neofetch
-    #fastfetch  # Enabled through modules
+    # neovim
+    # fastfetch  # Enabled through modules
     networkmanagerapplet
     nixos-generators
 
-    # Image
+    ###----- Image -----###
     nomacs
     imv
-    #variety   # Wallpaper selector
+    # variety   # Wallpaper selector
 
-    # Video
-    #vlc
+    ###----- Video -----###
+    # vlc
     # mpv  # Enabled through module
 
-    # Screen Recording
-    #obs-studio
-    #simplescreenrecorder  # Only works with x11, no wayland support atm
+    ###----- Screen Recording -----###
+    # obs-studio
+    # simplescreenrecorder  # Only works with x11, no wayland support atm
 
     numlockx
     #ookla-speedtest
     platinum-searcher
-    #polybar
+    # polybar
     qt6Packages.qtstyleplugin-kvantum
-    #ripgrep
+    # ripgrep
     scrot
-    #spotify
-    tree
+    # spotify
     volumeicon
+    brightnessctl
     wget
     xorg.xkill
-    #zsh
-    zsh-autosuggestions
-    zsh-completions
-    zsh-syntax-highlighting
 
-    # Chess Toolkits
-    #en-croissant
+    ###----- Chess Toolkits -----###
+    # en-croissant
 
     
-    # Terminals   
-    #alacritty  # Activated through the modules
-    #ghostty    
-    #kitty    # Activated through the modules
-    #starship
-    #wezterm
+    ###----- Terminal -----###   
+    # alacritty  # Enabled through the modules
+    # ghostty    
+    # kitty    # Enabled through the modules
+    # starship
+    # wezterm  # Enabled through the modules
+    bash-completion
+    bat  
+    tree
+    # zsh
+    # zsh-autosuggestions
+    # zsh-completions
+    # zsh-syntax-highlighting
 
 
     anki-bin
-    #discord
+    # discord
     telegram-desktop
     qbittorrent-enhanced
 
-    # Editors  
-    zed-editor
+    ###----- Editors -----###  
+    # zed-editor
     sublime4
-    #vscode
+    # vscode
 
-    # Browsers
+    ###----- Browsers -----###
     google-chrome
     ungoogled-chromium
     widevine-cdm
-    #firefox-devedition
-    #vivaldi
-    #vivaldi-ffmpeg-codecs
+    # firefox-devedition
+    # vivaldi
+    # vivaldi-ffmpeg-codecs
 
     
-    brightnessctl
+    nwg-look
+    waytrogen # Fast wallpaper setter for wayland
 
-    # SDDM
-    #sddm-astronaut
-
-    # Anime & Manga Stuff
-    #miru
+    ###----- Anime & Manga Stuff -----###
+    # miru
 
     # Find username across all social netwrks
     sherlock
 
     pdfarranger  # pdf merging and splitting tool
     ventoy-full  # usb flasher
-
-    nwg-look
-    waytrogen # Fast wallpaper setter for wayland
-
     yt-dlp   # cli tool for downloading youtube videos
 
   ];
