@@ -105,7 +105,7 @@
     qbittorrent-enhanced
 
     ###----- Editors -----###  
-    # zed-editor
+    zed-editor
     sublime4
     # vscode
 

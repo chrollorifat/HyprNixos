@@ -103,7 +103,7 @@
     kochi-substitute  # Free replacement for MS Gothic and MS Mincho JP
 
     # Personal Custom Fonts
-    (callPackage ./personal/kalpurush {})  # Kalpurush Bangla Font
+    # (callPackage ./personal/kalpurush {})  # Kalpurush Bangla Font
     (callPackage ./personal/beyond-wonderland {})  # Beyond Wonderland Font
     (callPackage ./personal/sutonnymj {})  # SutonnyMj Bangla Font
     (callPackage ./personal/siyamrupali {})  # Siyam Rupali Bangla Font
