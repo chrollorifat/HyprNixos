@@ -15,6 +15,7 @@
     ../common.nix
     ../../modules/fonts
     ../../modules/scripts
+    ../../pkgs
 
     ../../modules/desktop/hyprland # Enable hyprland window manager
 
@@ -74,7 +75,7 @@
       home.packages = with pkgs; [
         #krita
         #gimp
-        (pkgs.callPackage ../../pkgs/pokego.nix {})
+        # (pkgs.callPackage ../../pkgs/pokego.nix {})
         kdePackages.okular # pdf viwer
         evince
         # godot_4

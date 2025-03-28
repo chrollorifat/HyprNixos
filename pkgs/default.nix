@@ -6,6 +6,7 @@
 }: let
   excludeFiles = [
     "${toString ./lact.nix}"
+    "${toString ./sysfex/default.nix}"
     # Add more files here as needed
   ];
 
