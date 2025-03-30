@@ -1,5 +1,6 @@
 {
   inputs,
+  outputs,
   pkgs,
   overlays,
   username,
@@ -248,9 +249,11 @@ in {
   users.defaultUserShell = pkgs.zsh;
 
   nixpkgs = {
-    config.allowUnfree = true;
-    # config.allowUnfreePredicate = _: true;
-    inherit overlays;
+    overlays = builtins.attrValues outputs.overlays;
+    config = {
+      allowUnfree = true;
+      # allowUnfreePredicate = _: true;
+    };
   };
 
   environment.sessionVariables = {

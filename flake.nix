@@ -54,10 +54,12 @@
   };
 
   outputs = {
+    self,
     nixpkgs,
     nixpkgs-stable,
     ...
   } @ inputs: let
+    inherit (self) outputs;
     settings = {
       # User configuration
       username = "rif"; # no need to touch this since install.sh uses sed to replace this (otherwise if manually installing then you need to change this yourself)
@@ -76,20 +78,6 @@
       kbdLayout = "us"; # CHOOSE YOUR KEYBOARD LAYOUT
       kbdVariant = ""; # CHOOSE YOUR KEYBOARD VARIANT (Can leave empty)
       consoleKeymap = "us-acentos"; # CHOOSE YOUR CONSOLE KEYMAP (Affects the tty?)
-
-      overlays = [
-        inputs.nur.overlays.default
-        #inputs.hyprpanel.overlay
-        (
-          _final: _prev: {
-            stable = import nixpkgs-stable {
-              system = forAllSystems (system: system);
-              config.allowUnfree = true;
-              config.nvidia.acceptLicense = true;
-            };
-          }
-        )
-      ];
     };
 
     systems = [
@@ -99,11 +87,12 @@
         forAllSystems = nixpkgs.lib.genAttrs systems;
       in {
         templates = import ./dev-shells;
+        overlays = import ./overlays {inherit inputs settings;};
         formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
         nixosConfigurations = {
           Default = nixpkgs.lib.nixosSystem {
             system = forAllSystems (system: system);
-            specialArgs = (settings // {inherit inputs;}) // inputs;
+            specialArgs = settings // {inherit self inputs outputs;};
             modules = [./hosts/Default/configuration.nix];
 
       };
