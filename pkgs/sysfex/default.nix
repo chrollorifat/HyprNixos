@@ -1,4 +1,4 @@
-{ stdenv, pkgs , fetchFromGitHub, cmake, viu, icu }:
+{ stdenv, pkgs , lib, fetchFromGitHub, cmake, viu, icu }:
 
 stdenv.mkDerivation rec {
   pname = "sysfex";
@@ -29,7 +29,7 @@ stdenv.mkDerivation rec {
     cp build/sysfex $out/bin/
   '';
 
-  meta = with pkgs.lib; {
+  meta = with lib; {
     description = "Just another system information fetching tool written in C++ ";
     homepage = "https://github.com/mehedirm6244/sysfex";
     license = licenses.gpl3; 

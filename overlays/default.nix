@@ -12,6 +12,7 @@
     sddm-astronaut = prev.callPackage ../pkgs/sddm-themes/astronaut.nix {
       theme = settings.sddmTheme;
     };
+    sysfex = prev.callPackage ../pkgs/sysfex {};
 
   };
 
