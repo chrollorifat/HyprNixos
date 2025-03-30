@@ -276,13 +276,11 @@ in {
     lm_sensors
     jq
     bibata-cursors
+    sddm-astronaut # Overlayed
     pkgs.kdePackages.qtsvg
     pkgs.kdePackages.qtmultimedia
     pkgs.kdePackages.qtvirtualkeyboard
     #vulkan-tools
-    (pkgs.callPackage ../pkgs/sddm-themes/astronaut.nix {
-          theme = sddmTheme;
-    })
     # libsForQt5.qt5.qtgraphicaleffects 
 
     # Development
