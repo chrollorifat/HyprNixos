@@ -15,7 +15,7 @@
     ../common.nix
     ../../modules/fonts
     ../../modules/scripts
-    ../../pkgs
+    # ../../pkgs
 
     ../../modules/desktop/hyprland # Enable hyprland window manager
 

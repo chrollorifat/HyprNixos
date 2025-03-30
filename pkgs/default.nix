@@ -7,6 +7,7 @@
   excludeFiles = [
     "${toString ./lact.nix}"
     "${toString ./sysfex/default.nix}"
+    "${toString ./sddm-themes/astronaut-old.nix}"
     # Add more files here as needed
   ];
 
