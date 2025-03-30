@@ -2,7 +2,6 @@
   inputs,
   outputs,
   pkgs,
-  overlays,
   username,
   browser,
   terminal,
