@@ -10,7 +10,7 @@
     "NixOS Options"
     "NixOS Wiki"
     "Home Manager Options"
-    "Google"
+    "google"
   ];
   engines = {
     "Startpage" = {
@@ -127,8 +127,8 @@
         "@ng"
     ];
     };
-    "Bing".metaData.hidden = true;
+    "bing".metaData.hidden = true;
     "Ebay".metaData.hidden = true;
-    "Google".metaData.alias = "@g"; # builtin engines only support specifying one additional alias
+    "google".metaData.alias = "@g"; # builtin engines only support specifying one additional alias
   };
 }
