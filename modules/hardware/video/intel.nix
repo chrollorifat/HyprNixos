@@ -3,7 +3,7 @@
 with lib;
 
 let
-  cfg = config.hardware.intel; # Changed from drivers.intel to standard namespace
+  cfg = config.hardware.intel; 
 in {
   options.hardware.intel = {
     enable = mkEnableOption "Intel hardware configuration";
@@ -32,7 +32,7 @@ in {
       # Power Management
       powerManagement = {
         enable = true;
-        cpuFreqGovernor = "balanced";
+        cpuFreqGovernor = "performance";
         powertop.enable = true;
       };
 
