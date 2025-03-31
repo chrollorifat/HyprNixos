@@ -62,7 +62,7 @@
     inherit (self) outputs;
     settings = {
       # User configuration
-      username = "rif"; # no need to touch this since install.sh uses sed to replace this (otherwise if manually installing then you need to change this yourself)
+      username = "rif"; # automatically set with install.sh and rebuild.sh via the logname command
       editor = "nvchad"; # nixvim, vscode, emacs, nvchad, neovim
       terminal = "wezterm"; # kitty or alacritty
       browser = "floorp"; # firefox, floorp, zen
@@ -92,7 +92,7 @@
         nixosConfigurations = {
           Default = nixpkgs.lib.nixosSystem {
             system = forAllSystems (system: system);
-            specialArgs = settings // {inherit self inputs outputs;};
+            specialArgs = {inherit self inputs outputs;} // settings;
             modules = [./hosts/Default/configuration.nix];
 
       };
