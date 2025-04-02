@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -43,14 +42,14 @@
       # url = "github:maotseantonio/nvchad_config";
       # flake = false;
     # };
-    #hyprpanel= {
-    #      url = "github:Jas-SinghFSU/HyprPanel";
-    #      inputs.nixpkgs.follows = "nixpkgs";
-    #    };
-    #nixpkgs-f2k = {
-    #  url = "github:moni-dz/nixpkgs-f2k";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
+    # hyprpanel= {
+          # url = "github:Jas-SinghFSU/HyprPanel";
+          # inputs.nixpkgs.follows = "nixpkgs";
+        # };
+    # nixpkgs-f2k = {
+      # url = "github:moni-dz/nixpkgs-f2k";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = {
