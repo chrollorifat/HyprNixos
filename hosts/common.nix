@@ -53,7 +53,7 @@ in {
       home.homeDirectory = "/home/${username}";
       home.stateVersion = "23.11"; # Please read the comment before changing.
       home.sessionVariables = {
-        EDITOR = editor;
+        EDITOR = "nvim";
         BROWSER = browser;
         TERMINAL = terminal;
       };
@@ -66,9 +66,8 @@ in {
         # Terminal
         fzf
         fd
-        git
         gh
-        github-desktop
+        git
         htop
         nix-prefetch-scripts
         neofetch

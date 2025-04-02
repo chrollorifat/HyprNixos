@@ -9,5 +9,5 @@
   pokego = pkgs.callPackage ./pokego.nix {};
   # lact = pkgs.callPackage ./lact.nix {};
   sddm-astronaut = pkgs.callPackage ./sddm-themes/astronaut.nix {theme = settings.sddmTheme;}; 
-  sysfex = prev.callPackage ../pkgs/sysfex {};
+  sysfex = pkgs.callPackage ../pkgs/sysfex {};
 }
