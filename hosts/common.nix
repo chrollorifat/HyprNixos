@@ -53,7 +53,7 @@ in {
       home.homeDirectory = "/home/${username}";
       home.stateVersion = "23.11"; # Please read the comment before changing.
       home.sessionVariables = {
-        EDITOR = "nvim";
+        EDITOR = editor;
         BROWSER = browser;
         TERMINAL = terminal;
       };
@@ -357,14 +357,14 @@ in {
       warn-dirty = false;
       keep-outputs = true;
       keep-derivations = true;
-      };
+    };
 
-  # Garbage Collection
-  #gc = {
-      #    automatic = true;
-      #dates = "daily";
-      #options = "--delete-older-than 6d";
-    #};
+    # Garbage Collection
+    # gc = {
+        # automatic = true;
+        # dates = "daily";
+        # options = "--delete-older-than 6d";
+    # };
     optimise.automatic = true;
     package = pkgs.nixVersions.stable;
   };
