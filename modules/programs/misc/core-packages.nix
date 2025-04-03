@@ -6,7 +6,6 @@
 {
   environment.systemPackages = with pkgs; [
 
-    # ckb-next
     # wpsoffice
     arandr
     # arc-theme
@@ -18,11 +17,8 @@
     curl
     dex
     dmenu
-    # dropbox
     duf
     edid-decode
-    # etcher
-    evince
     feh
     # filezilla
     flameshot
@@ -33,7 +29,7 @@
     dconf-editor
     gnome-disk-utility
     # gnome.gvfs   # Enabled through NixOS options
-    hblock
+    # hblock
     hw-probe
     hwinfo
     # i3lock-fancy
@@ -68,15 +64,15 @@
     # simplescreenrecorder  # Only works with x11, no wayland support atm
 
     numlockx
-    #ookla-speedtest
-    platinum-searcher
-    # polybar
-    qt6Packages.qtstyleplugin-kvantum
-    # ripgrep
-    scrot
-    # spotify
     volumeicon
     brightnessctl
+    platinum-searcher
+    # ripgrep
+    # polybar
+    qt6Packages.qtstyleplugin-kvantum
+    scrot
+    # spotify
+    # ookla-speedtest
     wget
     xorg.xkill
 
@@ -127,7 +123,9 @@
     # Find username across all social netwrks
     sherlock
 
+    evince
     pdfarranger  # pdf merging and splitting tool
+    # etcher
     ventoy-full  # usb flasher
     yt-dlp   # cli tool for downloading youtube videos
 
