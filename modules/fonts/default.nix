@@ -32,6 +32,7 @@
         "DejaVu Sans"
         "SFProDisplay Nerd Font"
         "Noto Sans CJK JP"
+        "IBM Plex Sans"
         "Noto Color Emoji"
       ];
       serif = [
@@ -56,6 +57,7 @@
     dejavu_fonts
     fragment-mono
     hack-font
+    ibm-plex
     inter
     jost
     lato
