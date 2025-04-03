@@ -49,10 +49,8 @@
     ../../modules/programs/media/thunderbird
     ../../modules/programs/media/mpv
 
-    # ../../modules/programs/misc/lact # gpu power and fan control (WIP)
     # ../../modules/programs/misc/nix-ld
     # ../../modules/programs/misc/virt-manager
-    # ../../modules/programs/misc/env-vars.nix
     ../../modules/programs/misc/core-packages.nix
     ../../modules/programs/misc/fcitx
     ../../modules/programs/misc/kdeconnect.nix
@@ -74,8 +72,8 @@
       home.packages = with pkgs; [
         pokego # Overlayed
         # lact # Overlayed [LONG COMPILE]
-        #krita
-        #gimp
+        # krita
+        # gimp
         github-desktop
         kdePackages.okular # pdf viwer
         evince
