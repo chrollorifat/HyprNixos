@@ -43,9 +43,9 @@
       # flake = false;
     # };
     # hyprpanel= {
-          # url = "github:Jas-SinghFSU/HyprPanel";
-          # inputs.nixpkgs.follows = "nixpkgs";
-        # };
+      # url = "github:Jas-SinghFSU/HyprPanel";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    # };
     # nixpkgs-f2k = {
       # url = "github:moni-dz/nixpkgs-f2k";
       # inputs.nixpkgs.follows = "nixpkgs";
@@ -71,7 +71,7 @@
 
       # System configuration
       gpuDriver = "intel"; # CHOOSE YOUR GPU DRIVERS (nvidia or amdgpu or intel) THIS IS IMPORTANT
-      hostname = "chrono"; # CHOOSE A HOSTNAME HERE
+      hostname = "HyprNixos"; # CHOOSE A HOSTNAME HERE
       locale = "en_GB.UTF-8"; # CHOOSE YOUR LOCALE
       timezone = "Asia/Dhaka"; # CHOOSE YOUR TIMEZONE
       kbdLayout = "us"; # CHOOSE YOUR KEYBOARD LAYOUT
