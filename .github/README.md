@@ -77,6 +77,10 @@ where NAME is any of the templates defined in dev-shells/default.nix
 sudo nixos-rebuild switch --flake .#Default
 ``` -->
 ### Credits/Inspiration
-https://github.com/Sly-Harvey/NixOS<br>
-https://github.com/JaKooLit/Hyprland-Dots<br>
-https://github.com/prasanthrangan/hyprdots
+| Credit                                                              |  Reason                                |
+|---------------------------------------------------------------------|----------------------------------------|
+| [NixOS](https://github.com/Sly-Harvey/NixOS)                        | The Whole dotfiles is based on this    | 
+| [Hyprland-Dots](https://github.com/JaKooLit/Hyprland-Dots)          | Script and Waybar templates            |
+| [HyDE](https://github.com/HyDE-Project/HyDE)                        | Some more useful scripts               |
+| [Rofi](https://github.com/adi1090x/rofi)                            | Rofi launcher templates                |
+| [VimJoyer](https://www.youtube.com/@vimjoyer)                       | Short, simple, concise guides and info |
