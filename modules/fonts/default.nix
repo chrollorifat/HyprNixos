@@ -34,6 +34,11 @@
         "Noto Sans CJK JP"
         "IBM Plex Sans"
         "Noto Color Emoji"
+        "Himu Unicode"
+        "Kalpurush"
+        "Bangla"
+        "SutonnyMj"
+        "Font Awesome 6 Pro"
       ];
       serif = [
         "Lora"
@@ -43,6 +48,10 @@
         "SFProDisplay Nerd Font"
         "Noto Serif CJK JP"
         "Noto Color Emoji"
+        "Kalpurush"
+        "Himu Unicode"
+        "SutonnyMj"
+        "Font Awesome 6 Pro"
       ];
       emoji = [ "Noto Color Emoji" ];
     };
