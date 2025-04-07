@@ -36,7 +36,7 @@
         "Noto Color Emoji"
         "Himu Unicode"
         "Kalpurush"
-        "Bangla"
+        "Siyam Rupali"
         "SutonnyMj"
         "Font Awesome 6 Pro"
       ];
@@ -45,11 +45,13 @@
         "Merriweather"
         "MigMix"
         "DejaVu Serif"
+        "IBM Plex Serif"
         "SFProDisplay Nerd Font"
         "Noto Serif CJK JP"
         "Noto Color Emoji"
         "Kalpurush"
         "Himu Unicode"
+        "Siyam Rupali"
         "SutonnyMj"
         "Font Awesome 6 Pro"
       ];
