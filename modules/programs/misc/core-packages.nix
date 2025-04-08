@@ -119,14 +119,17 @@
 
     ###----- Anime & Manga Stuff -----###
     # miru
+    # yacreader
 
     # Find username across all social netwrks
     sherlock
 
     evince
     pdfarranger  # pdf merging and splitting tool
+
     # etcher
     ventoy-full  # usb flasher
+
     yt-dlp   # cli tool for downloading youtube videos
 
   ];

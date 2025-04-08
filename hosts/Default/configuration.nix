@@ -75,8 +75,9 @@
         # krita
         # gimp
         github-desktop
-        kdePackages.okular # pdf viwer
+        kdePackages.okular # pdf viewer
         evince
+        yacreader  # comic viewer
         # godot_4
         # unityhub
         # gparted
