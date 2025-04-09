@@ -78,6 +78,7 @@
         kdePackages.okular # pdf viewer
         evince
         yacreader  # comic viewer
+        readest  # Ebook reader
         # godot_4
         # unityhub
         # gparted
