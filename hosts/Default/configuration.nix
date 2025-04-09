@@ -79,6 +79,7 @@
         evince
         yacreader  # comic viewer
         readest  # Ebook reader
+        koodo-reader # Ebook reader (cross platform)
         # godot_4
         # unityhub
         # gparted
