@@ -80,6 +80,7 @@
         yacreader  # comic viewer
         readest  # Ebook reader
         koodo-reader # Ebook reader (cross platform)
+        obsidian  # Markdown Note Taking app
         # godot_4
         # unityhub
         # gparted
