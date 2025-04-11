@@ -37,6 +37,7 @@
         "Himu Unicode"
         "Kalpurush"
         "Siyam Rupali"
+        "Shonar Bangla"
         "SutonnyMj"
         "Font Awesome 6 Pro"
       ];
@@ -52,6 +53,7 @@
         "Kalpurush"
         "Himu Unicode"
         "Siyam Rupali"
+        "Shonar Bangla"
         "SutonnyMj"
         "Font Awesome 6 Pro"
       ];
