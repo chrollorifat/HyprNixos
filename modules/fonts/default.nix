@@ -34,11 +34,11 @@
         "Noto Sans CJK JP"
         "IBM Plex Sans"
         "Noto Color Emoji"
-        "Himu Unicode"
         "Kalpurush"
         "Siyam Rupali"
         "Shonar Bangla"
         "SutonnyMj"
+        "Himu Unicode"
         "Font Awesome 6 Pro"
       ];
       serif = [
@@ -51,10 +51,10 @@
         "Noto Serif CJK JP"
         "Noto Color Emoji"
         "Kalpurush"
-        "Himu Unicode"
         "Siyam Rupali"
         "Shonar Bangla"
         "SutonnyMj"
+        "Himu Unicode"
         "Font Awesome 6 Pro"
       ];
       emoji = [ "Noto Color Emoji" ];
