@@ -32,6 +32,7 @@
         "DejaVu Sans"
         "SFProDisplay Nerd Font"
         "Noto Sans CJK JP"
+        "Font Awesome 6 Pro"
         "IBM Plex Sans"
         "Noto Color Emoji"
         "Kalpurush"
@@ -39,13 +40,13 @@
         "Shonar Bangla"
         "SutonnyMj"
         "Himu Unicode"
-        "Font Awesome 6 Pro"
       ];
       serif = [
         "Lora"
         "Merriweather"
         "MigMix"
         "DejaVu Serif"
+        "Font Awesome 6 Pro"
         "IBM Plex Serif"
         "SFProDisplay Nerd Font"
         "Noto Serif CJK JP"
@@ -55,7 +56,6 @@
         "Shonar Bangla"
         "SutonnyMj"
         "Himu Unicode"
-        "Font Awesome 6 Pro"
       ];
       emoji = [ "Noto Color Emoji" ];
     };
@@ -119,13 +119,11 @@
 
     # Personal Custom Fonts
     (callPackage ./personal/kalpurush {})  # Kalpurush Bangla Font
-    (callPackage ./personal/beyond-wonderland {})  # Beyond Wonderland Font
     (callPackage ./personal/sutonnymj {})  # SutonnyMj Bangla Font
     (callPackage ./personal/siyamrupali {})  # Siyam Rupali Bangla Font
     (callPackage ./personal/bangla {})  
     (callPackage ./personal/shonar-bangla {})  # Microsoft's Shonar Bangla Font
     (callPackage ./personal/apona-lohit {})  # AponaLohit Bangla Font
-    (callPackage ./personal/bd-protidin {})  # BDProtidin newspaper Bangla Font
     (callPackage ./personal/bengali-dhaka-ssk {})
     (callPackage ./personal/himu {})  # Himu Bangla Font
     (callPackage ./personal/nikosh {})  # Nikosh Bangla Font
