@@ -24,6 +24,7 @@
         "FiraCode Nerd Font Mono"
         "Maple Mono Nerd Font"
         "Noto Color Emoji"
+        "Kalpurush"
       ];
       sansSerif = [
         "Lexend"
