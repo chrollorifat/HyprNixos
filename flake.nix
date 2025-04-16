@@ -37,15 +37,6 @@
       url = "github:nix-community/nix4nvchad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # nvchad-on-steroids = {
-      # <- here
-      # url = "github:maotseantonio/nvchad_config";
-      # flake = false;
-    # };
-    # hyprpanel= {
-      # url = "github:Jas-SinghFSU/HyprPanel";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    # };
     # nixpkgs-f2k = {
       # url = "github:moni-dz/nixpkgs-f2k";
       # inputs.nixpkgs.follows = "nixpkgs";
@@ -73,7 +64,7 @@
       gpuDriver = "intel"; # CHOOSE YOUR GPU DRIVERS (nvidia or amdgpu or intel) THIS IS IMPORTANT
       hostname = "HyprNixos"; # CHOOSE A HOSTNAME HERE
       locale = "en_GB.UTF-8"; # CHOOSE YOUR LOCALE
-      timezone = "Asia/Dhaka"; # CHOOSE YOUR TIMEZONE
+      timezone = "Europe/London"; # CHOOSE YOUR TIMEZONE
       kbdLayout = "us"; # CHOOSE YOUR KEYBOARD LAYOUT
       kbdVariant = ""; # CHOOSE YOUR KEYBOARD VARIANT (Can leave empty)
       consoleKeymap = "us-acentos"; # CHOOSE YOUR CONSOLE KEYMAP (Affects the tty?)
