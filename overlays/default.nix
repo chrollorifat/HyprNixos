@@ -8,7 +8,7 @@
   };
 
   # https://wiki.nixos.org/wiki/Overlays
-  modifications = final: prev: {
+  modifications = final: _prev: {
     nur = inputs.nur.overlays.default;
     stable = import inputs.nixpkgs-stable {
       system = final.system;
