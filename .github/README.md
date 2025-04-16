@@ -5,7 +5,7 @@
    <br>
       <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" /> <br>
    <div align="center">
-
+### Contributions are greatly welcomed. 
    <div align="center">
       <p></p>
       <div align="center">
