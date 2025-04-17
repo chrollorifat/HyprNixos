@@ -38,7 +38,6 @@
         "Noto Color Emoji"
         "Kalpurush"
         "Siyam Rupali"
-        "Shonar Bangla"
         "SutonnyMj"
         "Himu Unicode"
       ];
@@ -54,7 +53,6 @@
         "Noto Color Emoji"
         "Kalpurush"
         "Siyam Rupali"
-        "Shonar Bangla"
         "SutonnyMj"
         "Himu Unicode"
       ];
@@ -119,16 +117,13 @@
     kochi-substitute  # Free replacement for MS Gothic and MS Mincho JP
 
     # Personal Custom Fonts
-    (callPackage ./personal/kalpurush {})  # Kalpurush Bangla Font
-    (callPackage ./personal/sutonnymj {})  # SutonnyMj Bangla Font
-    (callPackage ./personal/siyamrupali {})  # Siyam Rupali Bangla Font
-    (callPackage ./personal/bangla {})  
-    (callPackage ./personal/shonar-bangla {})  # Microsoft's Shonar Bangla Font
-    (callPackage ./personal/apona-lohit {})  # AponaLohit Bangla Font
-    (callPackage ./personal/bengali-dhaka-ssk {})
-    (callPackage ./personal/himu {})  # Himu Bangla Font
-    (callPackage ./personal/nikosh {})  # Nikosh Bangla Font
-    (callPackage ./personal/shurjo {})  # Shurjo Bangla Font
+    (callPackage ./personal/kalpurush {})  
+    (callPackage ./personal/sutonnymj {})  
+    (callPackage ./personal/siyamrupali {})  
+    (callPackage ./personal/shonar-bangla {})  
+    (callPackage ./personal/apona-lohit {})  
+    (callPackage ./personal/himu {})  
+    (callPackage ./personal/nikosh {})  
     (callPackage ./proxima-nova {})
     (callPackage ./helvetica-neue {})
     (callPackage ./code-pro {})
