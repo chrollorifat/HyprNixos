@@ -14,9 +14,7 @@
   config,
   self,
   ...
-}: let
-  scripts = pkgs.callPackage ../modules/scripts {};
-in {
+}: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.nix-index-database.nixosModules.nix-index
@@ -266,8 +264,6 @@ in {
     templates = "${self}/dev-shells";
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     # System
     killall
@@ -279,11 +275,11 @@ in {
     pkgs.kdePackages.qtmultimedia
     pkgs.kdePackages.qtvirtualkeyboard
     #vulkan-tools
-    # libsForQt5.qt5.qtgraphicaleffects 
+    # libsForQt5.qt5.qtgraphicaleffects
 
-    # Development
-    #devbox # faster nix-shells
-    #shellify # faster nix-shells
+    # devenv
+    # devbox
+    # shellify
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
