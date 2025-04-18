@@ -156,6 +156,7 @@ in {
       changeBrowserTheme = false;
       enableForProtectedPages = true;
       fetchNews = false;
+      syncSitesFixes = true;
       previewNewDesign = true;
       # Catppuccin mocha theme
             /*
@@ -172,11 +173,11 @@ in {
               stylesheet = "";
               darkSchemeBackgroundColor = "#1e1e2e";
               darkSchemeTextColor = "#cdd6f4";
-              lightSchemeBackgroundColor = "#dcdad7";
-              lightSchemeTextColor = "#181a1b";
+              lightSchemeBackgroundColor = "#eff1f5";
+              lightSchemeTextColor = "#4c4f69";
               scrollbarColor = "";
-              selectionColor = "#585b70";
-              styleSystemControls = false;
+              selectionColor = "#585b70"; # For the light scheme: #acb0be
+              styleSystemControls = true;
               lightColorScheme = "Default";
               darkColorScheme = "Default";
               immediateModify = false;
