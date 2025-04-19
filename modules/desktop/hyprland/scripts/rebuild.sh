@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
 if [[ $EUID -eq 0 ]]; then
   echo "This script should not be executed as root! Exiting..."
   exit 1
@@ -11,13 +16,22 @@ if [[ ! "$(grep -i nixos </etc/os-release)" ]]; then
   exit 1
 fi
 
-scriptdir=$HOME/HyprNixos
+
+if [ -f "$HOME/NixOS/flake.nix" ]; then
+  flake=$HOME/HyprNixos
+elif [ -f "/etc/nixos/flake.nix" ]; then
+  flake=/etc/nixos
+else
+  echo "Error: flake not found. ensure flake.nix exists in either $HOME/HyprNixos or /etc/nixos"
+  exit 1
+fi
+
 currentUser=$(logname)
 
 pushd "$HOME/HyprNixos" &>/dev/null || exit 0
 
 # replace username variable in flake.nix with $USER
-sed -i -e "s/username = \".*\"/username = \"$currentUser\"/" "$scriptdir/flake.nix"
+sudo sed -i -e "s/username = \".*\"/username = \"$currentUser\"/" "$flake/flake.nix"
 
 if [ ! -f "$scriptdir/hosts/Default/hardware-configuration.nix" ]; then
   if [ -f "/etc/nixos/hardware-configuration.nix" ]; then
@@ -25,6 +39,11 @@ if [ ! -f "$scriptdir/hosts/Default/hardware-configuration.nix" ]; then
       host=${host%*/}
       cat "/etc/nixos/hardware-configuration.nix" >"$host/hardware-configuration.nix"
     done
+    elif [ -f "/etc/nixos/hosts/Default/hardware-configuration.nix" ]; then
+      for host in "$scriptdir"/hosts/*/; do
+        host=${host%*/}
+        cat "/etc/nixos/hosts/Default/hardware-configuration.nix" >"$host/hardware-configuration.nix"
+      done
   else
     # Generate new config
     clear
@@ -43,7 +62,6 @@ rm ~/HyprNixos/hosts/Default/hardware-configuration.nix &>/dev/null
 git restore --staged ~/HyprNixos/hosts/Default/hardware-configuration.nix &>/dev/null
 
 echo
-read -rsn1 -p"Press any key to continue"
+read -rsn1 -p"$(echo -e "${GREEN}Press any key to continue${NC}")"
 
 popd "$HOME/HyprNixos" &>/dev/null || exit 0
-
