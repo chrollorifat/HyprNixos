@@ -132,9 +132,7 @@
       list-gens = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system/";
       find-store-path = ''function { nix-shell -p $1 --command "nix eval -f "<nixpkgs>" --raw $1" }'';
       update-input = "nix flake lock --update-input $@";
-      rebuild-default = "pushd ~/HyprNixos &> /dev/null && sudo ./install.sh --Copy-Hardware && popd &> /dev/null";
-      rebuild-desktop = "clear && sudo nixos-rebuild switch --flake ~/HyprNixos#Desktop";
-      rebuild-laptop = "clear && sudo nixos-rebuild switch --flake ~/HyprNixos#Laptop";
+      rebuild = "sudo ${../../../desktop/hyprland/scripts/rebuild.sh}";
       build-iso = "nix build .#nixosConfigurations.iso.config.system.build.isoImage";
       sysup = "sudo nixos-rebuild switch --cores 2 --flake ~/HyprNixos#Default --upgrade-all --show-trace";
 
