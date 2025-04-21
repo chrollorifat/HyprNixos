@@ -19,7 +19,7 @@
 
     ../../modules/desktop/hyprland # Enable hyprland window manager
 
-    #../../modules/programs/games
+    # ../../modules/programs/games
 
     # ../../modules/programs/terminal/${terminal} # Set terminal defined in flake.nix
     # ../../modules/programs/terminal/alacritty
@@ -44,8 +44,8 @@
     ../../modules/programs/cli/cava
     ../../modules/programs/cli/btop
 
-    #../../modules/programs/media/obs
-    #../../modules/programs/media/spicetify
+    # ../../modules/programs/media/obs
+    # ../../modules/programs/media/spicetify
     ../../modules/programs/media/discord
     ../../modules/programs/media/thunderbird
     ../../modules/programs/media/mpv
@@ -91,12 +91,13 @@
 
   # Define system packages here
   environment.systemPackages = with pkgs; [
-    ### Archiving Utilities
+    # Archiving Utilities
     p7zip-rar
     p7zip
     gnutar
     zip
     unrar-free
+    unzip
     kdePackages.ark
   ];
 

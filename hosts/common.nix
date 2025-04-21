@@ -59,7 +59,8 @@
       # Packages that don't require configuration. If you're looking to configure a program see the /modules dir
       home.packages = with pkgs; [
         # Applications
-        #kate
+        #micro
+        sublime4
 
         # Terminal
         fzf
@@ -72,7 +73,6 @@
         microfetch
         ripgrep
         tldr
-        unzip
         (pkgs.writeShellScriptBin "hello" ''
           echo "Hello ${username}!"
         '')
@@ -156,7 +156,7 @@
 
   security = {
     polkit.enable = true;
-    #sudo.wheelNeedsPassword = false;
+    # sudo.wheelNeedsPassword = false;
   };
 
   xdg.portal = {
@@ -274,7 +274,7 @@
     pkgs.kdePackages.qtsvg
     pkgs.kdePackages.qtmultimedia
     pkgs.kdePackages.qtvirtualkeyboard
-    #vulkan-tools
+    # vulkan-tools
     # libsForQt5.qt5.qtgraphicaleffects
 
     # devenv
@@ -354,12 +354,6 @@
       keep-derivations = true;
     };
 
-    # Garbage Collection
-    # gc = {
-        # automatic = true;
-        # dates = "daily";
-        # options = "--delete-older-than 6d";
-    # };
     optimise.automatic = true;
     package = pkgs.nixVersions.latest;
   };

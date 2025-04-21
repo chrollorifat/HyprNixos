@@ -21,7 +21,7 @@
     edid-decode
     feh
     # filezilla
-    flameshot
+    # flameshot
     font-manager
     fsearch
     # gimp
@@ -102,7 +102,7 @@
 
     ###----- Editors -----###  
     zed-editor
-    sublime4
+    # sublime4
     # vscode
 
     ###----- Browsers -----###
@@ -124,7 +124,6 @@
     # Find username across all social netwrks
     sherlock
 
-    evince
     pdfarranger  # pdf merging and splitting tool
 
     # etcher
