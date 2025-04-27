@@ -63,16 +63,11 @@
         sublime4
 
         # Terminal
-        fzf
         fd
         gh
-        git
-        htop
         nix-prefetch-scripts
         neofetch
         microfetch
-        ripgrep
-        tldr
         (pkgs.writeShellScriptBin "hello" ''
           echo "Hello ${username}!"
         '')
@@ -266,11 +261,28 @@
 
   environment.systemPackages = with pkgs; [
     # System
+    arandr
+    bat 
+    btop
+    curl
+    duf
+    htop
+    fzf
+    git
+    tree
     killall
     lm_sensors
+    lshw
+    most
+    numlockx
+    hw-probe
+    hwinfo
     jq
     bibata-cursors
+    ripgrep
+    tldr
     sddm-astronaut # Overlayed
+    wget
     pkgs.kdePackages.qtsvg
     pkgs.kdePackages.qtmultimedia
     pkgs.kdePackages.qtvirtualkeyboard

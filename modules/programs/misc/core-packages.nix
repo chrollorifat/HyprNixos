@@ -7,17 +7,17 @@
   environment.systemPackages = with pkgs; [
 
     # wpsoffice
-    arandr
+    # arandr
     # arc-theme
     avahi
-    baobab
+    # baobab
     # bibata-cursors
     blueberry
-    btop
-    curl
+    # btop
+    # curl
     dex
     dmenu
-    duf
+    # duf
     edid-decode
     feh
     # filezilla
@@ -30,29 +30,29 @@
     gnome-disk-utility
     # gnome.gvfs   # Enabled through NixOS options
     # hblock
-    hw-probe
-    hwinfo
+    # hw-probe
+    # hwinfo
     # i3lock-fancy
     # inkscape
     # insync
     # inxi
-    keepassxc
+    # keepassxc
     # killall
     libgccjit
     llvmPackages_17.libcxxClang
     # lm_sensors  # Already declared in common.nix
     # lollypop
-    lshw
-    meld
-    most
+    # lshw
+    # meld
+    # most
     # neovim
     # fastfetch  # Enabled through modules
     networkmanagerapplet
     nixos-generators
 
     ###----- Image -----###
-    nomacs
-    imv
+    # nomacs
+    # imv
     # variety   # Wallpaper selector
 
     ###----- Video -----###
@@ -63,9 +63,9 @@
     # obs-studio
     # simplescreenrecorder  # Only works with x11, no wayland support atm
 
-    numlockx
-    volumeicon
-    brightnessctl
+    # numlockx
+    # volumeicon
+    # brightnessctl
     platinum-searcher
     # ripgrep
     # polybar
@@ -73,7 +73,7 @@
     scrot
     # spotify
     # ookla-speedtest
-    wget
+    # wget
     xorg.xkill
 
     ###----- Chess Toolkits -----###
@@ -87,8 +87,8 @@
     # starship
     # wezterm  # Enabled through the modules
     bash-completion
-    bat  
-    tree
+    # bat  
+    # tree
     # zsh
     # zsh-autosuggestions
     # zsh-completions
@@ -124,10 +124,10 @@
     # Find username across all social netwrks
     sherlock
 
-    pdfarranger  # pdf merging and splitting tool
+    # pdfarranger  # pdf merging and splitting tool
 
     # etcher
-    ventoy-full  # usb flasher
+    # ventoy-full  # usb flasher
 
     yt-dlp   # cli tool for downloading youtube videos
 

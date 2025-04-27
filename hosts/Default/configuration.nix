@@ -77,14 +77,20 @@
         # gimp
         github-desktop
         kdePackages.okular # pdf viewer
+        pdfarranger  # pdf merging and splitting tool
         evince
         yacreader  # comic viewer
         readest  # Ebook reader
         koodo-reader # Ebook reader (cross platform)
+        keepassxc
+        meld
         obsidian  # Markdown Note Taking app
         # godot_4
         # unityhub
         # gparted
+        ventoy-full  # usb flasher
+        nomacs
+
       ];
     })
   ];
@@ -99,6 +105,8 @@
     unrar-free
     unzip
     kdePackages.ark
+
+    imv
   ];
 
   networking.hostName = hostname; # Set hostname defined in flake.nix
