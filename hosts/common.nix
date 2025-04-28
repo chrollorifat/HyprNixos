@@ -58,11 +58,13 @@
 
       # Packages that don't require configuration. If you're looking to configure a program see the /modules dir
       home.packages = with pkgs; [
-        # Applications
-        #micro
+        ###---Applications---###
+        # micro
         sublime4
+        telegram-desktop
+        qbittorrent-enhanced
 
-        # Terminal
+        ###---Terminal---###
         fd
         gh
         nix-prefetch-scripts
@@ -264,6 +266,8 @@
     arandr
     bat 
     btop
+    blueberry
+    networkmanagerapplet
     curl
     duf
     htop

@@ -71,26 +71,49 @@
   home-manager.sharedModules = [
     (_: {
       home.packages = with pkgs; [
-        pokego # Overlayed
-        # lact # Overlayed [LONG COMPILE]
-        # krita
+        ###---Terminal---###
+        pokego  # Overlayed
+        bash-completion
+        sherlock  # Find username across all social netwrks 
+        yt-dlp  # Cli tool for downloading youtube videos
+
+        ###---Image---###
         # gimp
+        imv
+        # krita
+        nomacs
+        waytrogen # Fast wallpaper setter for wayland
+
+        # lact # Overlayed [LONG COMPILE]
+        anki-bin
         github-desktop
-        kdePackages.okular # pdf viewer
-        pdfarranger  # pdf merging and splitting tool
+        nwg-look
+        zed-editor
+
+        ###---Documents---###
         evince
-        yacreader  # comic viewer
-        readest  # Ebook reader
+        kdePackages.okular # pdf viewer
         koodo-reader # Ebook reader (cross platform)
-        keepassxc
         meld
         obsidian  # Markdown Note Taking app
+        pdfarranger  # pdf merging and splitting tool
+        readest  # Ebook reader
+        yacreader  # comic viewer
+
+        keepassxc
         # godot_4
         # unityhub
         # gparted
         ventoy-full  # usb flasher
-        nomacs
+        
 
+        ###----- Browsers -----###
+        google-chrome
+        ungoogled-chromium
+        widevine-cdm
+        # firefox-devedition
+        # vivaldi
+        # vivaldi-ffmpeg-codecs
       ];
     })
   ];
@@ -106,7 +129,16 @@
     unzip
     kdePackages.ark
 
-    imv
+    dconf-editor
+    dex
+    font-manager
+    fsearch
+    gnome-disk-utility
+    # libgccjit
+    # llvmPackages_17.libcxxClang
+    nixos-generators
+    platinum-searcher
+    scrot
   ];
 
   networking.hostName = hostname; # Set hostname defined in flake.nix
