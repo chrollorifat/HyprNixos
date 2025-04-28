@@ -52,7 +52,6 @@
 
     # ../../modules/programs/misc/nix-ld
     # ../../modules/programs/misc/virt-manager
-    ../../modules/programs/misc/core-packages.nix
     ../../modules/programs/misc/fcitx
     ../../modules/programs/misc/kdeconnect.nix
     ../../modules/programs/misc/thunar
