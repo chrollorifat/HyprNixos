@@ -106,13 +106,6 @@
         ventoy-full  # usb flasher
         
 
-        ###----- Browsers -----###
-        google-chrome
-        ungoogled-chromium
-        widevine-cdm
-        # firefox-devedition
-        # vivaldi
-        # vivaldi-ffmpeg-codecs
       ];
     })
   ];
@@ -127,6 +120,14 @@
     unrar-free
     unzip
     kdePackages.ark
+
+    ###----- Browsers -----###
+    google-chrome
+    ungoogled-chromium
+    widevine-cdm
+    # firefox-devedition
+    # vivaldi
+    # vivaldi-ffmpeg-codecs
 
     dconf-editor
     dex
