@@ -139,6 +139,7 @@
     nixos-generators
     platinum-searcher
     scrot
+    tlp  # Laptop Power Management
   ];
 
   networking.hostName = hostname; # Set hostname defined in flake.nix
