@@ -59,11 +59,11 @@
   ];
 
   # UnComment this section only if you have chosen intel as your gpu in flake.nix
-  hardware.intel = {
-    enable = true;
-    enableThermal = true;
-    enableMediaAccel = true;
-  };
+  # hardware.intel = {
+   # enable = true;
+   # enableThermal = true;
+   # enableMediaAccel = true;
+  # };
 
 
   # Home-manager config

@@ -61,7 +61,7 @@
       wallpaper = "dark-forest.jpg"; # see modules/themes/wallpapers
 
       # System configuration
-      gpuDriver = "intel"; # CHOOSE YOUR GPU DRIVERS (nvidia or amdgpu or intel) THIS IS IMPORTANT
+      gpuDriver = "nvidia"; # CHOOSE YOUR GPU DRIVERS (nvidia or amdgpu or intel) THIS IS IMPORTANT
       hostname = "HyprNixos"; # CHOOSE A HOSTNAME HERE
       locale = "en_GB.UTF-8"; # CHOOSE YOUR LOCALE
       timezone = "Asia/Dhaka"; # CHOOSE YOUR TIMEZONE
