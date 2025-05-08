@@ -12,7 +12,9 @@
     "Home Manager Options"
     "google"
   ];
-  engines = {
+  engines = let
+    icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+  in {
     "Startpage" = {
       urls = [
         {
@@ -50,6 +52,7 @@
       definedAliases = ["@sx"];
     };
     "NixOS Packages" = {
+      inherit icon;
       urls = [
         {
           template = "https://search.nixos.org/packages";
@@ -69,6 +72,7 @@
       definedAliases = ["@np" "@nixpkgs"];
     };
     "NixOS Options" = {
+      inherit icon;
       urls = [
         {
           template = "https://search.nixos.org/options";
@@ -88,12 +92,14 @@
       definedAliases = ["@no" "@nixopts"];
     };
     "NixOS Wiki" = {
+      inherit icon;
       urls = [{template = "https://nixos.wiki/index.php?search={searchTerms}";}];
       icon = "https://wiki.nixos.org/favicon.ico";
       updateInterval = 24 * 60 * 60 * 1000; # every day
       definedAliases = ["@nw"];
     };
     "Home Manager" = {
+      inherit icon;
       urls = [{template = "https://home-manager-options.extranix.com/?query={searchTerms}";}];
       # urls = [
       #   {
@@ -110,22 +116,22 @@
       definedAliases = ["@hm" "@home" "'homeman"];
     };
     "My NixOS" = {
-    urls = [{template = "https://mynixos.com/search?q={searchTerms}";}];
-    icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake-white.svg";
-    definedAliases = [
+      inherit icon;
+      urls = [{template = "https://mynixos.com/search?q={searchTerms}";}];
+      definedAliases = [
         "@mn"
         "@nx"
         "@mynixos"
-    ];
+      ];
     };
     "Noogle" = {
-    urls = [{template = "https://noogle.dev/q?term={searchTerms}";}];
-    iconUpdateUrl = "https://noogle.dev/favicon.png";
-    updateInterval = 24 * 60 * 60 * 1000;
-    definedAliases = [
+      inherit icon;
+      urls = [{template = "https://noogle.dev/q?term={searchTerms}";}];
+      updateInterval = 24 * 60 * 60 * 1000;
+      definedAliases = [
         "@noogle"
         "@ng"
-    ];
+      ];
     };
     "bing".metaData.hidden = true;
     "Ebay".metaData.hidden = true;

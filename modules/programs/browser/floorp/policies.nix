@@ -1,13 +1,4 @@
-{lib, ...}: let
-  lock-false = {
-    Value = false;
-    Status = "locked";
-  };
-  lock-true = {
-    Value = true;
-    Status = "locked";
-  };
-in {
+{lib, ...}: {
   AllowFileSelectionDialogs = true;
   AppAutoUpdate = false;
   AutofillAddressEnabled = false;
@@ -20,7 +11,7 @@ in {
   BlockAboutSupport = false;
   #Containers = { };
   DisableAppUpdate = true;
-  DisableFirefoxAccounts = false;
+  DisableFirefoxAccounts = true;
   DisableFirefoxScreenshots = true;
   DisableFirefoxStudies = true;
   DisableFormHistory = true;
@@ -57,8 +48,8 @@ in {
   HardwareAcceleration = true;
   ManualAppUpdateOnly = true;
   NoDefaultBookmarks = false;
-  OfferToSaveLogins = true;
-  PasswordManagerEnabled = true;
+  OfferToSaveLogins = false;
+  PasswordManagerEnabled = false;
   PictureInPicture = {
     Enabled = true;
   };
