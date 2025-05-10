@@ -1,11 +1,11 @@
 {pkgs, ...}: {
   force = true;
-  default = "Brave";
-  privateDefault = "Searx";
+  default = "google";
+  privateDefault = "Startpage";
   order = [
-    "Brave"
     "Startpage"
     "Searx"
+    "Brave"
     "NixOS Packages"
     "NixOS Options"
     "NixOS Wiki"
@@ -68,7 +68,6 @@
           ];
         }
       ];
-      icon = "''${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
       definedAliases = ["@np" "@nixpkgs"];
     };
     "NixOS Options" = {
@@ -88,13 +87,11 @@
           ];
         }
       ];
-      icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
       definedAliases = ["@no" "@nixopts"];
     };
     "NixOS Wiki" = {
       inherit icon;
       urls = [{template = "https://nixos.wiki/index.php?search={searchTerms}";}];
-      icon = "https://wiki.nixos.org/favicon.ico";
       updateInterval = 24 * 60 * 60 * 1000; # every day
       definedAliases = ["@nw"];
     };
@@ -112,7 +109,6 @@
       #     ];
       #   }
       # ];
-      icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
       definedAliases = ["@hm" "@home" "'homeman"];
     };
     "My NixOS" = {

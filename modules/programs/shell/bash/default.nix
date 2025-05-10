@@ -118,7 +118,7 @@
       tree = "${pkgs.eza}/bin/eza --icons=auto --tree"; # dir tree
       vc = "code"; # gui code editor
       nv = "nvim";
-      nf = "${pkgs.neofetch}/bin/neofetch";
+      nf = "${pkgs.microfetch}/bin/microfetch";
       cp = "cp -iv";
       mv = "mv -iv";
       rm = "rm -vI";
@@ -127,17 +127,18 @@
       tp = "${pkgs.trash-cli}/bin/trash-put";
       tpr = "${pkgs.trash-cli}/bin/trash-restore";
       grep = "grep --color=always";
+      pokemon = "pokego --random 1-8 --no-title";
 
       # Nixos
       list-gens = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system/";
       find-store-path = ''function { nix-shell -p $1 --command "nix eval -f "<nixpkgs>" --raw $1" }'';
       update-input = "nix flake lock --update-input $@";
-      rebuild = "sudo ${../../../desktop/hyprland/scripts/rebuild.sh}";
+      rebuild = "${../../../desktop/hyprland/scripts/rebuild.sh}";
       build-iso = "nix build .#nixosConfigurations.iso.config.system.build.isoImage";
-      sysup = "sudo nixos-rebuild switch --cores 2 --flake ~/HyprNixos#Default --upgrade-all --show-trace";
+      sysup = "sudo nixos-rebuild switch --flake ~/NixOS#Default --upgrade-all --show-trace";
 
       # Directory Shortcuts.
-      dots = "cd ~/HyprNixos/";
+      dots = "cd ~/NixOS/";
       games = "cd /mnt/games/";
       work = "cd /mnt/work/";
       media = "cd /mnt/work/media/";

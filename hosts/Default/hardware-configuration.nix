@@ -14,11 +14,9 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/dfcac3bb-174b-4aa6-a0f0-d4e4e278babf";
+    { device = "/dev/disk/by-uuid/7124f8ec-53b1-4ee6-b1d3-2addecac01f1";
       fsType = "ext4";
     };
-
-  boot.initrd.luks.devices."luks-5f9814c6-33de-4334-90d5-8cfc38b28193".device = "/dev/disk/by-uuid/5f9814c6-33de-4334-90d5-8cfc38b28193";
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/4493-F71D";

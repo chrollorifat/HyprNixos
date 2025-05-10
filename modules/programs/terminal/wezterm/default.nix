@@ -1,6 +1,5 @@
 {pkgs, ...}: {
-  # fonts.packages = with pkgs;
-  #   [nerd-fonts.jetbrains-mono nerd-fonts.symbols-only nerd-fonts.iosevka-term ipaexfont hachimarupop migmix font-awesome_5 material-design-icons ];
+  fonts.packages = with pkgs.nerd-fonts; [jetbrains-mono];
   home-manager.sharedModules = [
     (_: {
       programs.wezterm = {
@@ -10,7 +9,7 @@
           local wezterm = require ("wezterm")
 
           local function font_with_fallback(name, params)
-            local names = { name, "Material Symbols Outlined", "Noto Sans CJK JP", "Material Design Icons", "Noto Fonts Emoji"}
+            local names = { name, "Material Symbols Outlined"}
             return wezterm.font_with_fallback(names, params)
           end
 
@@ -47,11 +46,7 @@
               top = 0,
               bottom = 0,
             },
-
-            -- Enable image rendering
-            enable_kitty_graphics = true,
             enable_wayland = true,
-
             check_for_updates = false,
             default_cursor_style = "SteadyBar",
             automatically_reload_config = true,
@@ -72,7 +67,7 @@
                 key = "t",
                 mods = "CTRL",
                 action = wezterm.action.SpawnCommandInNewWindow({ args = { os.getenv("SHELL"), "-c", "tmux-sessionizer" }}),
-                },
+              },
               },
                 window_close_confirmation = "NeverPrompt",
               }

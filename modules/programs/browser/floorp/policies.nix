@@ -146,36 +146,37 @@
       enabledByDefault = true;
       changeBrowserTheme = false;
       enableForProtectedPages = true;
-      fetchNews = false;
+      fetchNews = true;
       syncSitesFixes = true;
       previewNewDesign = true;
+      # previewNewestDesign = true; # TODO: test
+
       # Catppuccin mocha theme
-            /*
-            theme = {
-              mode = 1;
-              brightness = 100;
-              contrast = 100;
-              grayscale = 0;
-              sepia = 0;
-              useFont = false;
-              fontFamily = "Open Sans";
-              textStroke = 0;
-              engine = "dynamicTheme";
-              stylesheet = "";
-              darkSchemeBackgroundColor = "#1e1e2e";
-              darkSchemeTextColor = "#cdd6f4";
-              lightSchemeBackgroundColor = "#eff1f5";
-              lightSchemeTextColor = "#4c4f69";
-              scrollbarColor = "";
-              selectionColor = "#585b70"; # For the light scheme: #acb0be
-              styleSystemControls = true;
-              lightColorScheme = "Default";
-              darkColorScheme = "Default";
-              immediateModify = false;
-            };
-            */
-            # enabledFor = [];
-            # disabledFor = [];
+      /* theme = {
+        mode = 1;
+        brightness = 100;
+        contrast = 100;
+        grayscale = 0;
+        sepia = 0;
+        useFont = false;
+        fontFamily = "Open Sans";
+        textStroke = 0;
+        engine = "dynamicTheme";
+        stylesheet = "";
+        darkSchemeBackgroundColor = "#1e1e2e";
+        darkSchemeTextColor = "#cdd6f4";
+        lightSchemeBackgroundColor = "#eff1f5";
+        lightSchemeTextColor = "#4c4f69";
+        scrollbarColor = "";
+        selectionColor = "#585b70"; # For the light scheme: #acb0be
+        styleSystemControls = true;
+        lightColorScheme = "Default";
+        darkColorScheme = "Default";
+        immediateModify = false;
+      }; */
+
+      # enabledFor = [];
+      # disabledFor = [];
     };
     "uBlock0@raymondhill.net" = {
       advancedSettings = [
@@ -197,13 +198,14 @@
           advancedUserEnabled = true;
           userFiltersTrusted = true;
           importedLists = [
+            "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt"
             "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
             "https://gitflic.ru/project/magnolia1234/bypass-paywalls-clean-filters/blob/raw?file=bpc-paywall-filter.txt"
             "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt"
             "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs for uBo/clear_urls_uboified.txt"
             "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Dandelion Sprout's Anti-Malware List.txt"
             "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
-            "https://raw.githubusercontent.com/OsborneLabs/Columbia/master/Columbia.txt"
+            # "https://raw.githubusercontent.com/OsborneLabs/Columbia/master/Columbia.txt"
             "https://raw.githubusercontent.com/bogachenko/fuckfuckadblock/master/fuckfuckadblock.txt?_=rawlist"
             "https://raw.githubusercontent.com/iam-py-test/my_filters_001/main/antimalware.txt"
             "https://raw.githubusercontent.com/liamengland1/miscfilters/master/antipaywall.txt"
@@ -250,17 +252,18 @@
           "FRA-0"
           "NLD-0"
           "RUS-0"
+          "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt"
+          "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
+          "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Dandelion Sprout's Anti-Malware List.txt"
           "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
           "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt"
-          "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Dandelion Sprout's Anti-Malware List.txt"
           "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt"
           "https://raw.githubusercontent.com/yokoffing/filterlists/main/annoyance_list.txt"
-          "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
           "https://raw.githubusercontent.com/liamengland1/miscfilters/master/antipaywall.txt"
           "https://gitflic.ru/project/magnolia1234/bypass-paywalls-clean-filters/blob/raw?file=bpc-paywall-filter.txt"
           "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs for uBo/clear_urls_uboified.txt"
           "https://raw.githubusercontent.com/iam-py-test/my_filters_001/main/antimalware.txt"
-          "https://raw.githubusercontent.com/OsborneLabs/Columbia/master/Columbia.txt"
+          # "https://raw.githubusercontent.com/OsborneLabs/Columbia/master/Columbia.txt"
           "https://raw.githubusercontent.com/bogachenko/fuckfuckadblock/master/fuckfuckadblock.txt?_=rawlist"
           "user-filters"
         ];

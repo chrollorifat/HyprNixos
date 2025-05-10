@@ -5,13 +5,11 @@
   username,
   browser,
   terminal,
-  sddmTheme,
   locale,
   timezone,
   kbdLayout,
   kbdVariant,
   consoleKeymap,
-  config,
   self,
   ...
 }: {
@@ -48,7 +46,10 @@
 
       xdg.enable = true;
       home.username = username;
-      home.homeDirectory = "/home/${username}";
+      home.homeDirectory =
+        if pkgs.stdenv.isDarwin
+        then "/Users/${username}"
+        else "/home/${username}";
       home.stateVersion = "23.11"; # Please read the comment before changing.
       home.sessionVariables = {
         EDITOR = "nvim";
@@ -93,34 +94,31 @@
   boot = {
     tmp.cleanOnBoot = true;
     kernelPackages = pkgs.linuxPackages_zen; # _latest, _zen, _xanmod_latest, _hardened, _rt, _OTHER_CHANNEL, etc.
-    #kernelPackages = pkgs.linuxKernel.packages.linux_6_12;
-    # extraModulePackages = with config.boot.kernelPackages; [
-          # rtl88xxau-aircrack # Driver to ensure Wi-Fi adapters work
-    # ];
     loader = {
-      efi.canTouchEfiVariables = true;
       systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
       # efi.efiSysMountPoint = "/boot";
-      timeout = 5; # Display bootloader indefinitely until user selects OS
-      # grub = {
-      #  enable = true;
-      #  device = "/dev/sda";
-      #  efiSupport = true;
-      #  useOSProber = true;
-      #  gfxmodeEfi = "2715x1527"; # for 4k: 3840x2160
-      #  gfxmodeBios = "2715x1527"; # for 4k: 3840x2160
-      #  theme = pkgs.stdenv.mkDerivation {
-      #    pname = "distro-grub-themes";
-      #    version = "3.1";
-      #    src = pkgs.fetchFromGitHub {
-      #      owner = "AdisonCavani";
-      #      repo = "distro-grub-themes";
-      #      rev = "v3.1";
-      #      hash = "sha256-ZcoGbbOMDDwjLhsvs77C7G7vINQnprdfI37a9ccrmPs=";
-      #    };
-      #    installPhase = "cp -r customize/nixos $out";
-      #  };
-      # };
+      timeout = null; # Display bootloader indefinitely until user selects OS
+      /* grub = {
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
+        useOSProber = true;
+        gfxmodeEfi = "2715x1527"; # for 4k: 3840x2160
+        gfxmodeBios = "2715x1527"; # for 4k: 3840x2160
+        theme = pkgs.stdenv.mkDerivation {
+          pname = "distro-grub-themes";
+          version = "3.1";
+          src = pkgs.fetchFromGitHub {
+            owner = "AdisonCavani";
+            repo = "distro-grub-themes";
+            rev = "v3.1";
+            hash = "sha256-ZcoGbbOMDDwjLhsvs77C7G7vINQnprdfI37a9ccrmPs=";
+          };
+          installPhase = "cp -r customize/nixos $out";
+        };
+      };
+      */
     };
   };
 
@@ -138,11 +136,6 @@
     LC_TELEPHONE = locale;
     LC_TIME = locale;
   };
-  # Japanese Locale support
-  i18n.supportedLocales = [
-    "all"
-  ];
-
   console.keyMap = consoleKeymap; # Configure console keymap
   services.xserver = {
     exportConfiguration = true; # Make sure /etc/X11/xkb is populated so localectl works correctly
@@ -154,7 +147,7 @@
 
   security = {
     polkit.enable = true;
-    # sudo.wheelNeedsPassword = false;
+    #sudo.wheelNeedsPassword = false;
   };
 
   xdg.portal = {
@@ -168,9 +161,9 @@
   # Enable bluetooth
   services.blueman.enable = true;
   hardware.bluetooth = {
-      enable = true;
-      powerOnBoot = true;
-      settings.General.Experimental = true;
+    enable = true;
+    powerOnBoot = true;
+    settings.General.Experimental = true;
   };
 
   # Enable networking
@@ -200,25 +193,9 @@
     };
   };
 
-  # Setup  keyring
+  # Setup keyring
   services.gnome.gnome-keyring.enable = true;
-  /* # Setup Auth Agent (No need if hyprpolkitagent is activated)
-  systemd = {
-    user.services.polkit-kde-authentication-agent-1 = {
-      description = "polkit-kde-authentication-agent-1";
-      wantedBy = ["graphical-session.target"];
-      wants = ["graphical-session.target"];
-      after = ["graphical-session.target"];
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.libsForQt5.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
-      };
-    };
-  };
-  */
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -230,7 +207,14 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    wireplumber.enable = true;
+    wireplumber = {
+      enable = true;
+      configPackages = [
+        (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/11-bluetooth-policy.conf" ''
+          bluetooth.autoswitch-to-headset-profile = false
+        '')
+      ];
+    };
   };
 
   services.xserver.enable = true; # Enable the X11 windowing system.
@@ -241,6 +225,11 @@
   # Default shell
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
+
+  fonts.packages = with pkgs.nerd-fonts; [
+    jetbrains-mono
+    fira-code
+  ];
 
   nixpkgs = {
     overlays = builtins.attrValues outputs.overlays;
@@ -310,18 +299,18 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-
+  /*
      services.openssh = {
-      enable = true;
-      settings = {
-        PasswordAuthentication = true;
-        # AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
-        UseDns = true;
-        X11Forwarding = false;
-        PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
-      };
+    enable = true;
+    settings = {
+      PasswordAuthentication = true;
+      AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
+      UseDns = true;
+      X11Forwarding = false;
+      PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
     };
-
+  };
+  */
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -329,22 +318,21 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-
   programs = {
     nh = {
       enable = true;
+      # Automatic garbage collection
       clean = {
         enable = true;
-        extraArgs = "--keep-since 3d --keep 3";
+        extraArgs = "--keep-since 7d --keep 3";
       };
-      flake = "/home/${username}/HyprNixos";
+      flake = "/home/${username}/NixOS";
     };
   };
-
   nix = {
     # Nix Package Manager Settings
     settings = {
-      auto-optimise-store = true;
+      auto-optimise-store = true; # May make rebuilds longer
       substituters = [
         "https://cache.nixos.org/"
         "https://nix-community.cachix.org/"
@@ -353,7 +341,6 @@
         "https://nixpkgs-wayland.cachix.org"
         "https://nix-gaming.cachix.org/"
         "https://devenv.cachix.org"
-
       ];
       trusted-public-keys = [
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
@@ -362,7 +349,7 @@
         "cachix.cachix.org-1:eWNHQldwUO7G2VkjpnjDbWwy4KQ/HNxht7H4SSoMckM="
         "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
         "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
-         "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+        "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
       ];
       experimental-features = ["nix-command" "flakes"];
       use-xdg-base-directories = false;
@@ -370,7 +357,6 @@
       keep-outputs = true;
       keep-derivations = true;
     };
-
     optimise.automatic = true;
     package = pkgs.nixVersions.latest;
   };

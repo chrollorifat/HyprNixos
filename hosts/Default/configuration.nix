@@ -1,6 +1,6 @@
 {
   pkgs,
-  gpuDriver,
+  videoDriver,
   hostname,
   browser,
   editor,
@@ -10,66 +10,48 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/hardware/video/${gpuDriver}.nix # Enable gpu drivers defined in flake.nix
-    ../../modules/hardware/drives
+    ../../modules/hardware/video/${videoDriver}.nix # Enable gpu drivers defined in flake.nix
+    # ../../modules/hardware/drives
+
     ../common.nix
-    ../../modules/scripts
-    ../../modules/fonts
     ../../modules/scripts
 
     ../../modules/desktop/hyprland # Enable hyprland window manager
+    # ../../modules/desktop/i3-gaps # Enable i3 window manager [WIP]
 
-    # ../../modules/programs/games
-
-    # ../../modules/programs/terminal/${terminal} # Set terminal defined in flake.nix
-    # ../../modules/programs/terminal/alacritty
-    ../../modules/programs/terminal/kitty
-    ../../modules/programs/terminal/wezterm
-
+    ../../modules/programs/games
     ../../modules/programs/browser/${browser} # Set browser defined in flake.nix
-    ../../modules/programs/browser/zen
+    ../../modules/programs/terminal/${terminal} # Set terminal defined in flake.nix
     ../../modules/programs/editor/${editor} # Set editor defined in flake.nix
-    # ../../modules/programs/editor/nvchad
-    # ../../modules/programs/editor/vscode
-
-    ../../modules/programs/shell/bash
-    ../../modules/programs/shell/zsh
-
+    ../../modules/programs/cli/${terminalFileManager} # Set file-manager defined in flake.nix
     ../../modules/programs/cli/starship
-    ../../modules/programs/cli/fastfetch
     ../../modules/programs/cli/tmux
     ../../modules/programs/cli/direnv
-    ../../modules/programs/cli/${terminalFileManager} # Set file-manager defined in flake.nix
     ../../modules/programs/cli/lazygit
     ../../modules/programs/cli/cava
     ../../modules/programs/cli/btop
-
-    # ../../modules/programs/media/obs
-    # ../../modules/programs/media/spicetify
+    ../../modules/programs/shell/bash
+    ../../modules/programs/shell/zsh
     ../../modules/programs/media/discord
-    ../../modules/programs/media/thunderbird
+    ../../modules/programs/media/spicetify
+    # ../../modules/programs/media/youtube-music
+    # ../../modules/programs/media/thunderbird
+    ../../modules/programs/media/obs-studio
     ../../modules/programs/media/mpv
-
+    ../../modules/programs/misc/tlp
+    ../../modules/programs/misc/thunar
     # ../../modules/programs/misc/nix-ld
     # ../../modules/programs/misc/virt-manager
-    ../../modules/programs/misc/fcitx
-    ../../modules/programs/misc/kdeconnect.nix
-    ../../modules/programs/misc/thunar
-    ../../modules/programs/misc/tlp
+    # ../../modules/programs/misc/lact # gpu power and fan control (WIP)
   ];
-
-  # UnComment this section only if you have chosen intel as your gpu in flake.nix
-  # hardware.intel = {
-   # enable = true;
-   # enableThermal = true;
-   # enableMediaAccel = true;
-  # };
-
 
   # Home-manager config
   home-manager.sharedModules = [
     (_: {
       home.packages = with pkgs; [
+        # pokego # Overlayed
+        # lact # Overlayed [LONG COMPILE]
+
         ###---Terminal---###
         pokego  # Overlayed
         bash-completion
@@ -77,9 +59,9 @@
         yt-dlp  # Cli tool for downloading youtube videos
 
         ###---Image---###
-        # gimp
+        gimp
         imv
-        # krita
+        krita
         nomacs
         waytrogen # Fast wallpaper setter for wayland
 
@@ -103,9 +85,6 @@
         # godot_4
         # unityhub
         # gparted
-        ventoy-full  # usb flasher
-        
-
       ];
     })
   ];
@@ -139,14 +118,13 @@
     nixos-generators
     platinum-searcher
     scrot
+    ventoy-full  # usb flasher
   ];
 
   networking.hostName = hostname; # Set hostname defined in flake.nix
 
   nixpkgs.config.permittedInsecurePackages = [
     "openssl-1.1.1w"
-    # "electron-19.1.9"
   ];
-
 
 }

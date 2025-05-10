@@ -9,14 +9,14 @@ if pidof yad >/dev/null; then
 fi
 
 # get_nix_value() {
-#     grep "$1" "$HOME/HyprNixos/flake.nix" | sed -E 's/.*"([^"]+)".*/\1/'
+#     grep "$1" "$HOME/NixOS/flake.nix" | sed -E 's/.*"([^"]+)".*/\1/'
 # }
 get_nix_value() {
     awk '
-    /settings = {/ {inside_settings=1; next}
-    inside_settings && /}/ {inside_settings=0}
+    /settings = {/ {inside_settings=1; next} 
+    inside_settings && /}/ {inside_settings=0} 
     inside_settings && $0 ~ key {print gensub(/.*"([^"]+)".*/, "\\1", "g", $0)}
-    ' key="$1" "$HOME/HyprNixos/flake.nix"
+    ' key="$1" "$HOME/NixOS/flake.nix"
 }
 
 
@@ -29,7 +29,7 @@ yad \
   --title="Hyprland Keybinds" \
   --no-buttons \
   --list \
-  --width=740 \
+  --width=745 \
   --height=920 \
   --column=Key: \
   --column=Description: \
@@ -39,12 +39,13 @@ yad \
   "SUPER T" "Launch terminal" "$_terminal" \
   "SUPER E" "Launch file manager" "$_terminal_FM" \
   "SUPER F" "Launch browser" "$_browser" \
+  "SUPER SHIFT S" "Launch spotify" "spotify" \
   "CTRL ALT Delete" "Open system monitor" "$_terminal -e 'btop'" \
-  "SUPER A" "Launch application menu" "\$launcher" \
-  "SUPER SPACE" "Launch application menu" "\$launcher" \
+  "SUPER A" "Launch application menu" "scripts/rofi.sh drun" \
+  "SUPER SPACE" "Launch application menu" "scripts/rofi.sh drun" \
   "SUPER F9" "Enable night mode" "hyprsunset --temperature 2500" \
   "SUPER F10" "Disable night mode" "pkill hyprsunset" \
-    "SUPER CTRL C" "Colour picker" "hyprpicker --autocopy --format=hex" \
+  "SUPER CTRL C" "Colour picker" "hyprpicker --autocopy" \
   "SUPER, Left Click" "Move window with mouse" "movewindow" \
   "SUPER, Right Click" "Resize window with mouse" "resizewindow" \
   "SUPER SHIFT →" "Resize window right" "resizeactive 30 0" \
@@ -64,8 +65,6 @@ yad \
   "XF86AudioPlay" "Play/Pause media" "playerctl play-pause" \
   "XF86AudioNext" "Next media track" "playerctl next" \
   "XF86AudioPrev" "Previous media track" "playerctl previous" \
-  "SUPER Q" "Close active window" "dontkillsteam.sh" \
-  "ALT F4" "Close active window" "dontkillsteam.sh" \
   "SUPER Delete" "Exit Hyprland session" "exit" \
   "SUPER W" "Toggle floating window" "togglefloating" \
   "SUPER SHIFT G" "Toggle window group" "togglegroup" \
@@ -73,20 +72,21 @@ yad \
   "SUPER ALT L" "Lock screen" "hyprlock" \
   "SUPER Backspace" "Power menu" "wlogout -b 4" \
   "CTRL Escape" "Toggle Waybar" "pkill waybar || waybar" \
-  "SUPER Z" "Launch emoji picker" "Scripts/emoji.sh" \
-  "SUPER ALT K" "Change keyboard layout" "Scripts/keyboardswitch.sh" \
   "SUPER SHIFT N" "Open notification panel" "swaync-client -t -sw" \
   "SUPER SHIFT Q" "Open notification panel" "swaync-client -t -sw" \
+  "SUPER Q" "Close active window" "scripts/dontkillsteam.sh" \
+  "ALT F4" "Close active window" "scripts/dontkillsteam.sh" \
+  "SUPER Z" "Launch emoji picker" "scripts/rofi.sh emoji" \
+  "SUPER ALT K" "Change keyboard layout" "scripts/keyboardswitch.sh" \
   "SUPER U" "Rebuild system" "$_terminal -e scripts/rebuild.sh" \
-  "SUPER G" "Launch game launcher" "Scripts/gamelauncher.sh" \
-  "SUPER ALT G" "Enable game mode" "Scripts/gamemode.sh" \
-  "SUPER V" "Clipboard manager" "Scripts/ClipManager.sh" \
-  "SUPER M" "Online music" "Scripts/rofimusic.sh" \
-  "SUPER SHIFT M" "Online music" "Scripts/rofimusic.sh" \
-  "SUPER P" "Screenshot (select area)" "Scripts/screenshot.sh s" \
-  "SUPER CTRL P" "Screenshot (frozen screen)" "Scripts/screenshot.sh sf" \
-  "SUPER Print" "Screenshot (current monitor)" "Scripts/screenshot.sh m" \
-  "SUPER ALT P" "Screenshot (all monitors)" "Scripts/screenshot.sh p" \
+  "SUPER G" "Game launcher" "scripts/rofi.sh games" \
+  "SUPER ALT G" "Enable game mode" "scripts/gamemode.sh" \
+  "SUPER V" "Clipboard manager" "scripts/ClipManager.sh" \
+  "SUPER M" "Online music" "scripts/rofimusic.sh" \
+  "SUPER P" "Screenshot (select area)" "scripts/screenshot.sh s" \
+  "SUPER CTRL P" "Screenshot (frozen screen)" "scripts/screenshot.sh sf" \
+  "SUPER Print" "Screenshot (current monitor)" "scripts/screenshot.sh m" \
+  "SUPER ALT P" "Screenshot (all monitors)" "scripts/screenshot.sh p" \
   "SUPER SHIFT CTRL ←" "Move window left" "movewindow l" \
   "SUPER SHIFT CTRL →" "Move window right" "movewindow r" \
   "SUPER SHIFT CTRL ↑" "Move window up" "movewindow u" \
@@ -104,5 +104,5 @@ yad \
   "SUPER ↓" "Move focus down" "movefocus d" \
   "ALT Tab" "Move focus down" "movefocus d" \
   "SUPER 1-0" "Switch to workspace 1-10" "workspace 1-10" \
-  "SUPER SHIFT 1-0" "Move window to workspace 1-10" "movetoworkspace 1-10" \
-  "SUPER SHIFT 1-0" "Silently move window to workspace 1-10" "movetoworkspacesilent 1-10" \
+  "SUPER SHIFT 1-0" "Move to workspace 1-10" "movetoworkspace 1-10" \
+  "SUPER SHIFT 1-0" "Silently move to workspace 1-10" "movetoworkspacesilent 1-10" \

@@ -1,4 +1,5 @@
-{pkgs,...}: {
+{pkgs, ...}: {
+  fonts.packages = with pkgs.nerd-fonts; [jetbrains-mono];
   home-manager.sharedModules = [
     (_: {
       programs.waybar = {
@@ -11,6 +12,7 @@
           {
             layer = "top";
             position = "top";
+            height = 32; # 35
             exclusive = true;
             passthrough = false;
             gtk-layer-shell = true;
@@ -22,10 +24,9 @@
             margin-bottom = 0;
 
             modules-left = ["hyprland/workspaces" "cava"];
-            modules-center = ["clock" "custom/notification"];
-            # modules-center = ["idle_inhibitor" "clock"];
-            modules-right = ["custom/gpuinfo" "cpu" "memory" "pulseaudio" "backlight" "network" "bluetooth" "tray" "battery"];
-
+            # modules-center = ["clock" "custom/notification"];
+            modules-center = ["idle_inhibitor" "clock"];
+            modules-right = ["custom/gpuinfo" "cpu" "memory" "backlight" "pulseaudio" "bluetooth" "network" "tray" "battery"];
 
             "custom/notification" = {
               tooltip = false;
@@ -78,8 +79,8 @@
             };
             "custom/icon" = {
               # format = " ";
-                exec = "echo ' '";
-                format = "{}";
+              exec = "echo ' '";
+              format = "{}";
             };
             "mpris" = {
               format = "{player_icon} {title} - {artist}";
@@ -189,24 +190,25 @@
             };
 
             "backlight" = {
-              #interval = 2;
               format = "{icon} {percent}%";
               format-icons = ["" "" "" "" "" "" "" "" ""];
               on-scroll-up = "${pkgs.brightnessctl}/bin/brightnessctl set 2%+";
               on-scroll-down = "${pkgs.brightnessctl}/bin/brightnessctl set 2%-";
-              smooth-scrolling-threshold = 1;
             };
 
             "network" = {
+              # on-click = "nm-connection-editor";
               # "interface" = "wlp2*"; # (Optional) To force the use of this interface
-              format-wifi = "󰤨 {essid}";
+              format-wifi = "󰤨 Wi-Fi";
+              # format-wifi = " {bandwidthDownBits}  {bandwidthUpBits}";
+              # format-wifi = "󰤨 {essid}";
               format-ethernet = "󱘖 Wired";
+              # format-ethernet = " {bandwidthDownBits}  {bandwidthUpBits}";
               format-linked = "󱘖 {ifname} (No IP)";
-              format-disconnected = "󰤮 Disconnected";
+              format-disconnected = "󰤮 Off";
+              # format-disconnected = "󰤮 Disconnected";
+              format-alt = "󰤨 {signalStrength}%";
               tooltip-format = "󱘖 {ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}";
-              #format-alt = "󰤨 {signalStrength}%";
-              on-click = "nm-connection-editor";
-              interval = 5;
             };
 
             "bluetooth" = {
@@ -415,7 +417,7 @@
 
           #bluetooth,
           #backlight {
-            color: @lavender;
+            color: @blue;
           }
 
           #battery {

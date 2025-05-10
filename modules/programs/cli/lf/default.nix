@@ -42,7 +42,7 @@
           mo = "$chmod +x $f";
           C = "clear";
 
-          gn = "cd ~/HyprNixos";
+          gn = "cd ~/NixOS";
           gD = "cd ~/Documents";
           gd = "cd ~/Downloads";
           gp = "cd ~/Pictures";

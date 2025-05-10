@@ -13,7 +13,7 @@
           };
           listener = [
             {
-              timeout = 1200; # 5 Minutes == 300 secs
+              timeout = 300; # 5 Minutes
               on-timeout = "loginctl lock-session";
             }
             /* {

@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   wallpaper,
   ...
@@ -8,7 +7,6 @@
   accent = "mauve";
   catppuccin-kvantum-pkg = pkgs.catppuccin-kvantum.override {inherit variant accent;};
   catppuccin = "catppuccin-${variant}-${accent}";
-
 in {
   home-manager.sharedModules = [
     ({config, ...}: {
@@ -19,7 +17,6 @@ in {
         platformTheme.name = "gtk";
         style.name = "kvantum";
       };
-
       gtk = {
         enable = true;
         theme = {
@@ -33,18 +30,8 @@ in {
         iconTheme = {
           # package = pkgs.adwaita-icon-theme;
           # name = "Adwaita";
-          # package = pkgs.papirus-icon-theme;
-          # name = "Papirus-Dark";
-          # package = pkgs.tela-icon-theme;
-          # name = "Tela-purple-dark";
-          # package = pkgs.qogir-icon-theme;
-          # name = "Qogir";
-          # package = pkgs.epapirus-icon-theme;
-          # name = "Epapirus-Dark";
-          package = pkgs.dracula-icon-theme;
-          name = "Dracula";
-          # package = pkgs.vimix-icon-theme;
-          # name = "Vimix";
+          package = pkgs.papirus-icon-theme;
+          name = "Papirus-Dark";
         };
         gtk3.extraConfig = {
           Settings = ''
@@ -60,25 +47,25 @@ in {
 
       # Set wallpaper
       services.hyprpaper = {
-          enable = true;
-          settings = {
-           preload = ["${../wallpapers/${wallpaper}}"];
-           wallpaper = [",${../wallpapers/${wallpaper}}"];
-          };
+        enable = true;
+        settings = {
+          preload = ["${../wallpapers/${wallpaper}}"];
+          wallpaper = [",${../wallpapers/${wallpaper}}"];
+        };
       };
 
       dconf.settings = {
-          "org/gnome/desktop/interface" = {
-            color-scheme = "prefer-dark";
-           };
+        "org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+        };
       };
 
       home.pointerCursor = {
-          gtk.enable = true;
-          x11.enable = true;
-          package = pkgs.bibata-cursors;
-          name = "Bibata-Modern-Classic";
-          size = 24;
+        gtk.enable = true;
+        x11.enable = true;
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Classic";
+        size = 24;
       };
 
       xdg.configFile = {

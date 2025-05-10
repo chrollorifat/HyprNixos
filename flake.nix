@@ -37,74 +37,49 @@
       url = "github:nix-community/nix4nvchad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # nixpkgs-f2k = {
-      # url = "github:moni-dz/nixpkgs-f2k";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    # };
   };
 
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-stable,
     ...
   } @ inputs: let
     inherit (self) outputs;
     settings = {
       # User configuration
-      username = "rif"; # automatically set with install.sh and rebuild.sh via the logname command
-      editor = "nvchad"; # nixvim, vscode, emacs, nvchad, neovim
-      terminal = "wezterm"; # kitty or alacritty
+      username = "rif"; # automatically set with install.sh and live-install.sh
+      editor = "nvchad"; # nixvim, vscode, nvchad, neovim, emacs (WIP)
       browser = "floorp"; # firefox, floorp, zen
+      terminal = "wezterm"; # kitty, alacritty, wezterm
       terminalFileManager = "yazi"; # yazi or lf
       sddmTheme = "purple_leaves"; # astronaut, black_hole, purple_leaves, jake_the_dog, hyprland_kath
-      wallpaper = "dark-forest.jpg"; # see modules/themes/wallpapers
+      wallpaper = "kurzgesagt.png"; # see modules/themes/wallpapers
 
       # System configuration
-      gpuDriver = "nvidia"; # CHOOSE YOUR GPU DRIVERS (nvidia or amdgpu or intel) THIS IS IMPORTANT
+      videoDriver = "nvidia"; # CHOOSE YOUR GPU DRIVERS (nvidia or amdgpu or intel) THIS IS IMPORTANT
       hostname = "HyprNixos"; # CHOOSE A HOSTNAME HERE
       locale = "en_GB.UTF-8"; # CHOOSE YOUR LOCALE
       timezone = "Asia/Dhaka"; # CHOOSE YOUR TIMEZONE
       kbdLayout = "us"; # CHOOSE YOUR KEYBOARD LAYOUT
       kbdVariant = ""; # CHOOSE YOUR KEYBOARD VARIANT (Can leave empty)
-      consoleKeymap = "us-acentos"; # CHOOSE YOUR CONSOLE KEYMAP (Affects the tty?)
+      consoleKeymap = "us"; # CHOOSE YOUR CONSOLE KEYMAP (Affects the tty?)
     };
 
     systems = [
-          "x86_64-linux"
-          "aarch64-linux"
-        ];
-        forAllSystems = nixpkgs.lib.genAttrs systems;
-      in {
-        templates = import ./dev-shells;
-        overlays = import ./overlays {inherit inputs settings;};
-        formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
-        nixosConfigurations = {
-          Default = nixpkgs.lib.nixosSystem {
-            system = forAllSystems (system: system);
-            specialArgs = {inherit self inputs outputs;} // settings;
-            modules = [./hosts/Default/configuration.nix];
-
+      "x86_64-linux"
+      "aarch64-linux"
+    ];
+    forAllSystems = nixpkgs.lib.genAttrs systems;
+  in {
+    templates = import ./dev-shells;
+    overlays = import ./overlays {inherit inputs settings;};
+    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+    nixosConfigurations = {
+      Default = nixpkgs.lib.nixosSystem {
+        system = forAllSystems (system: system);
+        specialArgs = {inherit self inputs outputs;} // settings;
+        modules = [./hosts/Default/configuration.nix];
       };
     };
-    devShells = forAllSystems (system: let
-          pkgs = import nixpkgs {
-            system = system;
-            config.allowUnfree = true;
-            config.nvidia.acceptLicense = true;
-            # overlays = settings.overlays;
-          };
-        in {
-          default = pkgs.mkShellNoCC {
-            packages = with pkgs; [
-              git
-              neovim
-              nix
-              figlet
-              lolcat
-            ];
-            NIX_CONFIG = "experimental-features = nix-command flakes";
-          };
-        });
-      };
+  };
 }

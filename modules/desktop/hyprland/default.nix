@@ -13,10 +13,10 @@
     ./programs/waybar
     ./programs/wlogout
     ./programs/rofi
-    ./programs/dunst
     ./programs/hypridle
     ./programs/hyprlock
     ./programs/swaync
+    # ./programs/dunst
   ];
 
   nix.settings = {
@@ -24,27 +24,24 @@
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
-  # Setup hyprpolkitagent
   systemd.user.services.hyprpolkitagent = {
-      description = "Hyprpolkitagent - Polkit authentication agent";
-      wantedBy = ["graphical-session.target"];
-      wants = ["graphical-session.target"];
-      after = ["graphical-session.target"];
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
-      };
+    description = "Hyprpolkitagent - Polkit authentication agent";
+    wantedBy = ["graphical-session.target"];
+    wants = ["graphical-session.target"];
+    after = ["graphical-session.target"];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
   };
-
   services.displayManager.defaultSession = "hyprland";
 
   programs.hyprland = {
     enable = true;
     # withUWSM = true;
-    xwayland.enable = true;
   };
 
   home-manager.sharedModules = let
@@ -52,8 +49,6 @@
   in [
     ({...}: {
       home.packages = with pkgs; [
-        blueman
-        brightnessctl
         hyprpaper
         hyprpicker
         cliphist
@@ -62,17 +57,18 @@
         kdePackages.dolphin
         kdePackages.kio-extras    # Adds compress, extract functionalities in dolphin
         libnotify
+        brightnessctl
         networkmanagerapplet
         pamixer
         pavucontrol
         playerctl
-        swaynotificationcenter
         waybar
         wtype
         wl-clipboard
         xdotool
         yad
-
+        # socat # for and autowaybar.sh
+        # jq # for and autowaybar.sh
       ];
 
       xdg.configFile."hypr/icons" = {
@@ -83,7 +79,6 @@
       #test later systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
       wayland.windowManager.hyprland = {
         enable = true;
-        xwayland.enable = true;
         plugins = [
           # inputs.hyprland-plugins.packages.${pkgs.system}.hyprwinwrap
         ];
@@ -93,9 +88,6 @@
         };
         settings = {
           "$mainMod" = "SUPER";
-          # "$launcher" = "pkill rofi || rofi -show drun -modi drun,filebrowser,run,window -theme $XDG_CONFIG_HOME/rofi/launchers/type-4/style-7.rasi";
-          # "$launcher" = "pkill rofi || rofi -show drun -modi drun,filebrowser,run,window -theme $XDG_CONFIG_HOME/rofi/launchers/type-4/style-3.rasi";
-          "$launcher" = "pkill rofi || rofi -show drun -modi drun,filebrowser,run,window -theme $XDG_CONFIG_HOME/rofi/launchers/type-2/style-2.rasi";
           "$term" = "${getExe pkgs.${terminal}}";
           "$editor" = "code --disable-gpu";
           "$fileManager" = "$term --class \"terminalFileManager\" -e ${terminalFileManager}";
@@ -127,25 +119,23 @@
             #"[workspace 1 silent] ${terminal}"
             #"[workspace 5 silent] ${browser}"
             #"[workspace 6 silent] spotify"
-            #"[workspace special silent] ${browser} --new-instance -P private"
+            #"[workspace special silent] ${browser} --private-window"
             #"[workspace special silent] ${terminal}"
 
             "hyprpaper"
-            "sleep 1 && waybar"
+            "waybar"
             "swaync"
             "fcitx5 -d -r"
             "fcitx5-remote -r"
-            "pamixer --set-volume 40"
-            #"dunst"
-            # "blueman-applet"
             "nm-applet --indicator"
             "wl-clipboard-history -t"
             "${getExe' pkgs.wl-clipboard "wl-paste"} --type text --watch cliphist store" # clipboard store text data
             "${getExe' pkgs.wl-clipboard "wl-paste"} --type image --watch cliphist store" # clipboard store image data
             "rm '$XDG_CACHE_HOME/cliphist/db'" # Clear clipboard
             "${./scripts/batterynotify.sh}" # battery notification
+            # "${./scripts/autowaybar.sh}" # uncomment packages at the top
             "polkit-agent-helper-1"
-            #"systemctl start --user polkit-kde-authentication-agent-1"
+            "pamixer --set-volume 50"
           ];
           input = {
             kb_layout = "${kbdLayout},ru";
@@ -167,7 +157,7 @@
             "col.active_border" = "rgba(ca9ee6ff) rgba(f2d5cfff) 45deg";
             "col.inactive_border" = "rgba(b4befecc) rgba(6c7086cc) 45deg";
             resize_on_border = true;
-            layout = "master"; # dwindle or master
+            layout = "dwindle"; # dwindle or master
             # allow_tearing = true; # Allow tearing for games (use immediate window rules for specific games or all titles)
           };
           decoration = {
@@ -177,8 +167,8 @@
             blur = {
               enabled = true;
               special = true;
-              size = 6;
-              passes = 3;
+              size = 6; # 6
+              passes = 2; # 3
               new_optimizations = true;
               ignore_opacity = true;
               xray = false;
@@ -242,7 +232,7 @@
             vfr = true; # always keep on
             vrr = 1; # enable variable refresh rate (0=off, 1=on, 2=fullscreen only)
           };
-          xwayland.force_zero_scaling = true;
+          xwayland.force_zero_scaling = false;
           gestures = {
             workspace_swipe = true;
             workspace_swipe_fingers = 3;
@@ -285,7 +275,6 @@
             "opacity 0.80 0.80,class:^(codium-url-handler)$"
             "opacity 0.80 0.80,class:^(code)$"
             "opacity 0.80 0.80,class:^(code-url-handler)$"
-            "opacity 0.80 0.80,class:^(kitty)$"
             "opacity 0.80 0.80,class:^(terminalFileManager)$"
             "opacity 0.80 0.80,class:^(org.kde.dolphin)$"
             "opacity 0.80 0.80,class:^(org.kde.ark)$"
@@ -303,7 +292,6 @@
             "opacity 0.90 0.90,class:^(WebCord)$" #WebCord-Electron
             "opacity 0.80 0.80,class:^(app.drey.Warp)$" #Warp-Gtk
             "opacity 0.80 0.80,class:^(net.davidotek.pupgui2)$" #ProtonUp-Qt
-            "opacity 0.80 0.80,class:^(yad)$" #Protontricks-Gtk
             "opacity 0.80 0.80,class:^(Signal)$" #Signal-Gtk
             "opacity 0.80 0.80,class:^(io.gitlab.theevilskeleton.Upscaler)$" #Upscaler-Gtk
 
@@ -359,7 +347,7 @@
               "$mainMod CTRL, K, exec, ${./scripts/keybinds.sh}"
 
               # Night Mode (lower value means warmer temp)
-              "$mainMod, F9, exec, ${getExe pkgs.hyprsunset} --temperature 2500"
+              "$mainMod, F9, exec, ${getExe pkgs.hyprsunset} --temperature 3500" # good values: 3500, 3000, 2500
               "$mainMod, F10, exec, pkill hyprsunset"
 
               # Window/Session actions
@@ -370,7 +358,7 @@
               "$mainMod SHIFT, G, togglegroup" # toggle the window on focus to float
               "ALT, return, fullscreen" # toggle the window on focus to fullscreen
               "$mainMod ALT, L, exec, hyprlock" # lock screen
-              "$mainMod, backspace, exec, wlogout -b 4" # logout menu
+              "$mainMod, backspace, exec, pkill -x wlogout || wlogout -b 4" # logout menu
               "$CONTROL, ESCAPE, exec, pkill waybar || waybar" # toggle waybar
 
               "$mainMod, Return, exec, $term"
@@ -378,6 +366,7 @@
               "$mainMod, E, exec, $fileManager"
               "$mainMod, C, exec, $editor"
               "$mainMod, F, exec, $browser"
+              "$mainMod SHIFT, S, exec, spotify"
               "$CONTROL ALT, DELETE, exec, $term -e '${getExe pkgs.btop}'" # System Monitor
               "$mainMod CTRL, C, exec, hyprpicker --autocopy --format=hex" # Colour Picker
 
@@ -386,7 +375,6 @@
               "$mainMod, Z, exec, pkill -x rofi || ${./scripts/rofi.sh} emoji" # launch emoji picker
               # "$mainMod, tab, exec, pkill -x rofi || ${./scripts/rofi.sh} window" # switch between desktop applications
               # "$mainMod, R, exec, pkill -x rofi || ${./scripts/rofi.sh} file" # brrwse system files
-
               "$mainMod ALT, K, exec, ${./scripts/keyboardswitch.sh}" # change keyboard layout
               "$mainMod SHIFT, N, exec, swaync-client -t -sw" # swayNC panel
               "$mainMod SHIFT, Q, exec, swaync-client -t -sw" # swayNC panel
