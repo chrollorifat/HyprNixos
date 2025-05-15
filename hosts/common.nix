@@ -99,7 +99,8 @@
       efi.canTouchEfiVariables = true;
       # efi.efiSysMountPoint = "/boot";
       timeout = null; # Display bootloader indefinitely until user selects OS
-      /* grub = {
+      /*
+      grub = {
         enable = true;
         device = "nodev";
         efiSupport = true;
@@ -136,6 +137,12 @@
     LC_TELEPHONE = locale;
     LC_TIME = locale;
   };
+
+ # All Locales support
+  i18n.supportedLocales = [
+    "all"
+  ];
+
   console.keyMap = consoleKeymap; # Configure console keymap
   services.xserver = {
     exportConfiguration = true; # Make sure /etc/X11/xkb is populated so localectl works correctly

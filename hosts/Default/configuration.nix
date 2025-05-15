@@ -11,17 +11,19 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/hardware/video/${videoDriver}.nix # Enable gpu drivers defined in flake.nix
+    ../../modules/fonts
     # ../../modules/hardware/drives
 
     ../common.nix
     ../../modules/scripts
 
     ../../modules/desktop/hyprland # Enable hyprland window manager
-    # ../../modules/desktop/i3-gaps # Enable i3 window manager [WIP]
+    # ../../modules/desktop/i3-gaps # Enable i3 window manager 
 
     ../../modules/programs/games
     ../../modules/programs/browser/${browser} # Set browser defined in flake.nix
     ../../modules/programs/terminal/${terminal} # Set terminal defined in flake.nix
+    ../../modules/programs/terminal/kitty  # Enable kitty terminal
     ../../modules/programs/editor/${editor} # Set editor defined in flake.nix
     ../../modules/programs/cli/${terminalFileManager} # Set file-manager defined in flake.nix
     ../../modules/programs/cli/starship
@@ -43,6 +45,7 @@
     # ../../modules/programs/misc/nix-ld
     # ../../modules/programs/misc/virt-manager
     # ../../modules/programs/misc/lact # gpu power and fan control (WIP)
+    ../../modules/programs/misc/fcitx
   ];
 
   # Home-manager config
@@ -102,6 +105,7 @@
 
     ###----- Browsers -----###
     google-chrome
+    brave
     ungoogled-chromium
     widevine-cdm
     # firefox-devedition
