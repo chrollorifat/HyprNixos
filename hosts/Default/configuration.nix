@@ -104,7 +104,7 @@
     kdePackages.ark
 
     ###----- Browsers -----###
-    google-chrome
+    # google-chrome
     brave
     ungoogled-chromium
     widevine-cdm
