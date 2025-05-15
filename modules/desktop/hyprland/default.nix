@@ -112,7 +112,7 @@
             "WLR_RENDERER_ALLOW_SOFTWARE,1"
             "NIXPKGS_ALLOW_UNFREE,1"
             "QT_IM_MODULE, fcitx"
-            "GTK_IM_MODULE, fcitx"
+            # "GTK_IM_MODULE, fcitx"
             "XMODIFIERS, @im=fcitx"
           ];
           exec-once = [
