@@ -22,10 +22,6 @@
             # userChrome = builtins.readFile ./userChrome.css;
             # userContent = builtins.readFile ./userContent.css;
             extraConfig = ''
-              # ${builtins.readFile "${inputs.betterfox}/Fastfox.js"}
-              # ${builtins.readFile "${inputs.betterfox}/Peskyfox.js"}
-              # ${builtins.readFile "${inputs.betterfox}/Securefox.js"}
-              # ${builtins.readFile "${inputs.betterfox}/Smoothfox.js"}
               lockPref("extensions.activeThemeID", "{8446b178-c865-4f5c-8ccc-1d7887811ae3}");
               lockPref("extensions.formautofill.addresses.enabled", false);
               lockPref("extensions.formautofill.creditCards.enabled", false);
