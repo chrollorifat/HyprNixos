@@ -94,7 +94,7 @@
       install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
     };
     "{c4b582ec-4343-438c-bda2-2f691c16c262}" = {
-      private_browsing = true;Add commentMore actions
+      private_browsing = true;
       default_area = "navbar";
       installation_mode = "force_installed";
       install_url = "https://addons.mozilla.org/firefox/downloads/latest/600-sound-volume/latest.xpi";

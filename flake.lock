@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "betterfox": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1747271743,
-        "narHash": "sha256-QEZZBlIzVWhI+Eurhzi82Pa8h3/DCbWWGFZd8ACRfoc=",
-        "owner": "yokoffing",
-        "repo": "Betterfox",
-        "rev": "8c39175a02db144d002b899a0c8431332f5184da",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yokoffing",
-        "repo": "Betterfox",
-        "type": "github"
-      }
-    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -406,7 +390,6 @@
     },
     "root": {
       "inputs": {
-        "betterfox": "betterfox",
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
