@@ -107,7 +107,7 @@
     # google-chrome
     brave
     ungoogled-chromium
-    widevine-cdm
+    # widevine-cdm
     # firefox-devedition
     # vivaldi
     # vivaldi-ffmpeg-codecs
