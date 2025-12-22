@@ -84,6 +84,10 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
+  # Flatpak Support 
+  services.flatpak.enable = true;
+
+
   services.scx = {
     enable = true;
     package = pkgs.scx.rustscheds;
