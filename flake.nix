@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixos-hardware.url = "github:nixos/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,6 +43,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixos-hardware,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -78,7 +80,8 @@
       Default = nixpkgs.lib.nixosSystem {
         system = forAllSystems (system: system);
         specialArgs = {inherit self inputs outputs;} // settings;
-        modules = [./hosts/Default/configuration.nix];
+        modules = [./hosts/Default/configuration.nix
+                    nixos-hardware.nixosModules.lenovo-ideapad-15ach6];
       };
     };
   };
