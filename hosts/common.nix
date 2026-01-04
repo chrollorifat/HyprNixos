@@ -78,8 +78,6 @@
     };
   };
 
-  # Filesystems support
-  boot.supportedFilesystems = ["ntfs" "exfat" "ext4" "fat32" "btrfs"];
   services.devmon.enable = true;
   services.gvfs.enable = true;
   services.udisks2.enable = true;
@@ -96,6 +94,9 @@
 
   # Bootloader.
   boot = {
+
+    # Filesystems support
+    supportedFilesystems = ["ntfs" "exfat" "ext4" "fat32" "btrfs"];
     tmp.cleanOnBoot = true;
     kernelPackages = pkgs.linuxPackages_zen; # _latest, _zen, _xanmod_latest, _hardened, _rt, _OTHER_CHANNEL, etc.
     loader = {
